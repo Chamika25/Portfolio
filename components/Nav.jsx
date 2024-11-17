@@ -3,28 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const links = [
-    {
-        name: "Home",
-        path: "/",
-    },
-    {
-        name: "Services",
-        path: "/services",
-    },
-    {
-        name: "Work",
-        path: "/work",
-    },
-    {
-        name: "About",
-        path: "/about",
-    },
-    {
-        name: "Contact",
-        path: "/contact",
-    },
-];
+// Menu items
+import menuItems from "@/data/menu";
 
 const Nav = () => {
 
@@ -32,10 +12,10 @@ const Nav = () => {
 
     return (
         <nav className="flex gap-8">
-            {links.map((link, index) => {
+            {menuItems.map((item, index) => {
                 return (
-                    <Link href={link.path} key={index} className={`${link.path === pathName && "text-accent border-b-2 border-accent"} capitalize font-medium hover:text-accent transition-all`}>
-                        {link.name}
+                    <Link href={item.path} key={index} className={`${item.path === pathName && "text-accent border-b-2 border-accent"} capitalize font-medium hover:text-accent transition-all`}>
+                        {item.name}
                     </Link>
                 );
             })}
