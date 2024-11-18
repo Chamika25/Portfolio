@@ -66,3 +66,15 @@
     @apply font-primary bg-primary text-white leading-loose;
   }
 }
+
+@layer utilities {
+  .text-shadow-accent {
+    text-shadow: -1px -1px 20px #00ff99, 1px 5px 20px #00ff99;
+  }
+  .text-shadow-white {
+    text-shadow: 0px 2px 25px rgba(255, 255, 255, 0.8);
+  }
+  .button-shadow-accent {
+    box-shadow: 0px 2px 20px #00ff99;
+  }
+}
