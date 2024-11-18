@@ -3,14 +3,15 @@ import { FiDownload } from "react-icons/fi";
 
 // Components
 import Social from "@/components/Social";
+import Photo from "@/components/Photo";
 
 export default function Home() {
   return (
     <section>
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-8">
           {/* Text */}
-          <div className="text-center xl:text-left">
+          <div className="text-center xl:text-left order-2 xl:order-none">
             <h1 className="h1 mb-6">
               Hello, I'm <br/> <span className="text-accent">Buddika Kasun</span>
             </h1>
@@ -27,13 +28,15 @@ export default function Home() {
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyle="flex gap-6"
-                  iconStyle="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+                  iconStyle="w-9 h-9 border-[1.5px] border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
                 />
               </div>
             </div>
           </div>
           {/* Photo */}
-          <div>photo</div>
+          <div className="order-1 xl:order-none mb-8 xl:mb-0 xl:mr-20">
+            <Photo />
+          </div>
         </div>
       </div>
     </section>
