@@ -9,13 +9,13 @@ module.exports = {
   theme: {
 	container: {
 		center: true,
-		padding: "15px",
+		padding: "2rem",
 	},
 	screens: {
 		sm: '640px',
         md: '768px',
         lg: '960px',
-        xl: '1200px',
+        xl: '1280px',
 	},
 	fontFamily: {
 		primary: 'var(--font-jetbrains-mono)',
@@ -42,8 +42,8 @@ module.exports = {
   				foreground: 'hsl(var(--muted-foreground))'
   			},
   			accent: {
-  				DEFAULT: '#00ff99',
-				hover: '#00e187',
+  				DEFAULT: '#01ffbb',
+				hover: '#01e1a7',
 			},
   			destructive: {
   				DEFAULT: 'hsl(var(--destructive))',
