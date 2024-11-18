@@ -14,15 +14,15 @@ const StairTransition = () => {
         <>
             <AnimatePresence mode='wait'>
                 <div key={pathName}>
-                    <div className='h-screen w-screen fixed left-0 right-0 pointer-events-none z-40 flex ' /* top-0 */>
+                    <div className='h-screen w-screen fixed left-0 right-0 pointer-events-none z-40 flex top-0 lg:top-20' /* top-0 */>
                         <Stair />
                     </div>
 
                     <motion.div
-                        className='h-screen w-screen fixed bg-primary pointer-events-none' /* top-0 */
+                        className='h-screen w-screen fixed bg-primary pointer-events-none top-0 lg:top-20' /* top-0 */
                         initial={{opacity: 1}}
                         animate={{opacity: 0, transition: {
-                            delay: 1,
+                            delay: 0,
                             duration: 0.4,
                             ease: 'easeInOut',
                         }}}
