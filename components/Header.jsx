@@ -11,8 +11,8 @@ const Header = () => {
         <div className="flex justify-between items-center">
 
             {/* Logo */}
-            <Link href="/">
-                <h1 className="text-4xl font-semibold hover:text-shadow-white">
+            <Link href="/" className="cursor-none">
+                <h1 className="text-4xl font-semibold hover:text-shadow-white w">
                     Kasun<span className="text-accent">.</span>
                 </h1>
             </Link>
