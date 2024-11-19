@@ -128,15 +128,22 @@ html, body {
   cursor: none; /* Hide the default cursor */
 }
 
-/* Custom Disk Cursor */
+
+/* Custom Cursor */
 .custom-cursor {
-  position: absolute;
-  width: 5px; /* Initial size of the disk */
-  height: 5px;
-  background-color: #01ffbb; /* Cursor color */
-  border-radius: 50%; /* Make it circular */
-  pointer-events: none; /* Ensure it doesn't block interactions */
-  transition: width 0.2s, height 0.2s; /* Smooth transition for resizing */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
   z-index: 100;
+  mix-blend-mode: difference;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 3px 20px #01ffbb;
+  background-color: #01ffbb;
 }
