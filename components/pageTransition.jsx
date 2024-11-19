@@ -13,7 +13,7 @@ const PageTransition = ({children}) => {
                 <motion.div
                     initial={{opacity: 1}}
                     animate={{opacity: 0, transition: {delay: 1, duration: 0.4, ease: 'easeInOut'}}}
-                    className="h-screen w-screen fixed bg-primary pointer-events-none " /* top-0 */
+                    className="h-screen w-screen fixed bg-primary pointer-events-none top-0 lg:top-20" /* top-0 */
                 />
                 {children}
             </div>
