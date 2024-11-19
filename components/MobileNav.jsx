@@ -7,7 +7,7 @@ import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
 
 // Menu items
-import menuItems from "@/data/menu";
+import menuItems from "@/data/nav";
 
 const MobileNav = () => {
   const pathname = usePathname();
