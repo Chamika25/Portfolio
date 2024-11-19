@@ -14,7 +14,7 @@ const Nav = () => {
         <nav className="flex gap-8">
             {menuItems.map((item, index) => {
                 return (
-                    <Link href={item.path} key={index} className={`${item.path === pathName && "text-accent border-b-2 border-accent"} capitalize font-medium hover:text-accent transition-all ${item.path !== pathName &&"hover:text-shadow-accent"}`}>
+                    <Link href={item.path} key={index} className={`${item.path === pathName && "text-accent border-b-2 border-accent"} cursor-none capitalize font-medium hover:text-accent transition-all ${item.path !== pathName &&"hover:text-shadow-accent"}`}>
                         {item.name}
                     </Link>
                 );
