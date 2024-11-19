@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 // Menu items
-import menuItems from "@/data/menu";
+import menuItems from "@/data/nav";
 
 const Nav = () => {
 
