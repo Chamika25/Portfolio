@@ -1,75 +1,76 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import gsap from "gsap";
+import { useEffect } from "react";
 
 const CustomCursor = () => {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [isHoveringButton, setIsHoveringButton] = useState(false); // Track button hover state
 
-  useEffect(() => {
-    // Track mouse movements to update cursor position
-    const handleMouseMove = (event) => {
-      setCursorPosition({ x: event.pageX, y: event.pageY });
-    };
+    useEffect(() => {
 
-    // Add event listener for mouse move
-    window.addEventListener("mousemove", handleMouseMove);
+        const cursor = document.getElementById("custom-cursor");
 
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+        // Cursor movement
+        const onMouseMove = (event) => {
+            const { clientX, clientY } = event;
+            gsap.to(cursor, { x: clientX, y: clientY, duration: 0.2 });
+        };
 
-  // Handle mouse enter and leave for buttons
-  const handleButtonMouseEnter = () => {
-    setIsHoveringButton(true); // Change cursor when hovering over button
-  };
+        // Link hover effects
+        const onMouseEnterLink = (event) => {
+            gsap.to(cursor, { scale: 3, delay: 0.1 });
+        };
 
-  const handleButtonMouseLeave = () => {
-    setIsHoveringButton(false); // Revert cursor when leaving button
-  };
+        const onMouseLeaveLink = () => {
+            gsap.to(cursor, { scale: 1 });
+        };
 
-  return (
-    <>
-      {/* Custom cursor */}
-      <div
-        className="custom-cursor"
-        style={{
-          left: cursorPosition.x - 15 + "px", // Adjust cursor to center it on the pointer
-          top: cursorPosition.y - 15 + "px",  // Adjust cursor to center it on the pointer
-          width: "15px", // Size of the custom cursor
-          height: "15px",
-          backgroundColor: isHoveringButton ? "#ffffff" : "#01ffbb", // White on hover, green by default
-          border: isHoveringButton ? "2px solid #000000" : "none", // Black border on button hover
-          borderRadius: "50%", // Make it circular
-          pointerEvents: "none", // Ensure the cursor doesn't interfere with interactions
-          transition: "background-color 0.3s, border 0.3s", // Smooth transition
-        }}
-      />
+        // White text hover effects
+        const onMouseEnterWhiteText = () => {
+            cursor.style.backgroundColor = '#01ffbb3c';
+            cursor.style.border = '2px solid #01ffbb'
+            cursor.style.mixBlendMode = 'normal';
+        };
 
-      {/* Add event listener for buttons dynamically */}
-      <style jsx>{`
-        button,
-        .btn {
-          outline: none;
-          cursor: none; /* Hide the default cursor */
-        }
+        const onMouseLeaveWhiteText = () => {
+            cursor.style.backgroundColor = '#01ffbb';
+            cursor.style.border = 'none'
+            cursor.style.mixBlendMode = 'difference';
+        };
 
-        button:hover,
-        .btn:hover {
-          transform: scale(1.05); /* Slightly scale button on hover */
-        }
-      `}</style>
+        // Attach global mousemove event
+        document.addEventListener("mousemove", onMouseMove);
 
-      {/* Add event listener to buttons dynamically */}
-      <div
-        className="button-hover-listener"
-        onMouseEnter={handleButtonMouseEnter}
-        onMouseLeave={handleButtonMouseLeave}
-      />
-    </>
-  );
+        // Select elements and attach listeners
+        const linkElements = document.querySelectorAll("a");
+        linkElements.forEach((link) => {
+            link.addEventListener("mouseenter", onMouseEnterLink);
+            link.addEventListener("mouseleave", onMouseLeaveLink);
+        });
+
+        const whiteTextElements = document.querySelectorAll(".w");
+        whiteTextElements.forEach((text) => {
+            text.addEventListener("mouseenter", onMouseEnterWhiteText);
+            text.addEventListener("mouseleave", onMouseLeaveWhiteText);
+        });
+
+        // Cleanup event listeners on unmount
+        return () => {
+            document.removeEventListener("mousemove", onMouseMove);
+
+            linkElements.forEach((link) => {
+                link.removeEventListener("mouseenter", onMouseEnterLink);
+                link.removeEventListener("mouseleave", onMouseLeaveLink);
+            });
+
+            whiteTextElements.forEach((text) => {
+                text.removeEventListener("mouseenter", onMouseEnterWhiteText);
+                text.removeEventListener("mouseleave", onMouseLeaveWhiteText);
+            });
+        };
+
+    }, []);
+
+    return <div id="custom-cursor" className="custom-cursor" />;
 };
 
 export default CustomCursor;
