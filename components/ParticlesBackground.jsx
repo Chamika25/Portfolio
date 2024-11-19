@@ -69,41 +69,62 @@ const ParticlesBackground = () => {
       // Add delay before initializing particles
       const timer = setTimeout(initializeParticles, delay);
 
-      // Handle mousemove event
-      const handleMouseMove = (event) => {
-        if (window.pJSDom && window.pJSDom.length > 0) {
-          const particlesInstance = window.pJSDom[0].pJS;
-
-          // Manually trigger repulse effect by setting the position
-          if (particlesInstance && particlesInstance.fn && particlesInstance.fn.interactivity) {
-            particlesInstance.fn.interactivity.mouse.pos_x = event.clientX;
-            particlesInstance.fn.interactivity.mouse.pos_y = event.clientY;
-
-            // Refresh particles with the new mouse position
-            particlesInstance.fn.particlesRefresh();
-          }
-        }
-      };
-
       // Handle click event to trigger push mode (click to add particles)
       const handleClick = (event) => {
 
         const par = { pos_x: event.clientX, pos_y: event.clientY };
 
         if (window.pJSDom && window.pJSDom.length > 0) {
-          const particlesInstance = window.pJSDom[0].pJS; console.log(particlesInstance);
+          const particlesInstance = window.pJSDom[0].pJS;
           particlesInstance.fn.modes.pushParticles(2, par);
+          particlesInstance.fn.modes.removeParticles(2);
         }
       }
 
-      // Add event listeners for mousemove and click
+      // Handle mousemove event for repulse
+      const handleMouseMove = (event) => {
+        if (window.pJSDom && window.pJSDom.length > 0) {
+          const particlesInstance = window.pJSDom[0].pJS;
+          if (particlesInstance) {
+            const canvas = particlesInstance.canvas.el;
+            const rect = canvas.getBoundingClientRect();
+
+            const par = {
+              pos_x: (event.clientX - rect.left) * particlesInstance.canvas.pxratio,
+              pos_y: (event.clientY - rect.top) * particlesInstance.canvas.pxratio,
+            };
+
+            particlesInstance.interactivity.mouse.pos_x = par.pos_x;
+            particlesInstance.interactivity.mouse.pos_y = par.pos_y;
+            particlesInstance.interactivity.status = "mousemove";
+          }
+        }
+      };
+
+      // Cleanup interactivity when mouse leaves the canvas
+      const handleMouseLeave = () => {
+        if (window.pJSDom && window.pJSDom.length > 0) {
+          const particlesInstance = window.pJSDom[0].pJS;
+          if (particlesInstance) {
+            particlesInstance.interactivity.mouse.pos_x = null;
+            particlesInstance.interactivity.mouse.pos_y = null;
+            particlesInstance.interactivity.status = "mouseleave";
+          }
+        }
+      };
+
+      // Add event listeners for mousemove and mouseleave
       window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseleave", handleMouseLeave);
+
+      // Add event listeners for click
       window.addEventListener("click", handleClick);
 
       // Cleanup event listeners on component unmount
       return () => {
         clearTimeout(timer);
         window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("mouseleave", handleMouseLeave);
         window.removeEventListener("click", handleClick);
       };
     }
