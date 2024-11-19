@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Photo = () => {
     return (
-        <div className="h-full w-full relative group">
+        <div className="h-full w-full relative z-10 group">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{
@@ -16,7 +16,7 @@ const Photo = () => {
                         ease: "easeIn",
                     },
                 }}
-                className="relative"
+                className="relative bg-primary rounded-full"
             >
                 {/* Circle */}
                 <motion.svg
@@ -103,7 +103,7 @@ const Photo = () => {
                             ease: "easeInOut",
                         },
                     }}
-                    className="relative w-[298px] h-[298px] xl:w-[380px] xl:h-[380px] mix-blend-lighten rounded-full overflow-hidden"
+                    className="relative w-[298px] h-[298px] xl:w-[380px] xl:h-[380px] rounded-full overflow-hidden"
                 >
                     <Image
                         src="/assets/dp/dp3.png"
@@ -111,7 +111,7 @@ const Photo = () => {
                         quality={100}
                         fill
                         alt=""
-                        className="object-contain p-6 rounded-full transition-transform duration-500 group-hover:scale-110 ease-in-out"
+                        className="object-contain p-6 rounded-full transition-transform duration-500 group-hover:scale-110 ease-in-out mix-blend-lighten"
                     />
                 </motion.div>
             </motion.div>
