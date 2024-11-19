@@ -73,11 +73,12 @@ const ParticlesBackground = () => {
       const handleClick = (event) => {
 
         const par = { pos_x: event.clientX, pos_y: event.clientY };
+        const particalCount = 4;
 
         if (window.pJSDom && window.pJSDom.length > 0) {
           const particlesInstance = window.pJSDom[0].pJS;
-          particlesInstance.fn.modes.pushParticles(2, par);
-          particlesInstance.fn.modes.removeParticles(2);
+          particlesInstance.fn.modes.pushParticles(particalCount, par);
+          particlesInstance.fn.modes.removeParticles(particalCount);
         }
       }
 
