@@ -14,9 +14,9 @@ export default function Home() {
           {/* Text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
             <h1 className="h1 mb-6">
-              Hello, I'm <br/> <span className="text-accent">Buddika Kasun</span>
+              <span className="w">Hello, I'm</span><br/><span className="text-accent">Buddika Kasun</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
+            <p className="max-w-[500px] mb-9 text-white/80 w">
               I excel at crafting elegant digital experiences and I am proficient in verious programming languages and thechnology.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
