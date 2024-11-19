@@ -1,4 +1,4 @@
-const menuItems = [
+const navItem = [
     {
         name: "Home",
         path: "/",
@@ -21,4 +21,4 @@ const menuItems = [
     },
 ];
 
-export default menuItems;
+export default navItem;
