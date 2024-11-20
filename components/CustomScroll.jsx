@@ -25,7 +25,7 @@ const CustomScroll = ({ children }) => {
 
     return (
         <div className="pt-4 pb-2 h-[100vh]">
-            <div className="custom-scroll h-full pt-24 xl:pt-20">
+            <div className="custom-scroll h-full">
                 {children}
             </div>
         </div>
