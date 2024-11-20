@@ -70,7 +70,7 @@ const CustomCursor = () => {
 
     }, []);
 
-    return <div id="custom-cursor" className="custom-cursor" />;
+    return <div id="custom-cursor" className="custom-cursor hidden lg:flex" />;
 };
 
 export default CustomCursor;
