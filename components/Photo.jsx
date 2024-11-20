@@ -103,7 +103,9 @@ const Photo = () => {
                             ease: "easeInOut",
                         },
                     }}
-                    className="relative w-[298px] h-[298px] xl:w-[380px] xl:h-[380px] rounded-full overflow-hidden"
+                    whileHover={{ scale: 1.1, rotate: 2}}
+                    transition={{ duration:0.5, type: "spring", stiffness: 300, damping: 8, }}
+                    className="relative w-[298px] h-[298px] xl:w-[380px] xl:h-[380px] rounded-full overflow-hidden mix-blend-lighten"
                 >
                     <Image
                         src="/assets/dp/dp3.png"
@@ -111,7 +113,7 @@ const Photo = () => {
                         quality={100}
                         fill
                         alt=""
-                        className="object-contain p-6 rounded-full transition-transform duration-500 group-hover:scale-110 ease-in-out mix-blend-lighten"
+                        className="object-contain p-6 rounded-full"
                     />
                 </motion.div>
             </motion.div>
