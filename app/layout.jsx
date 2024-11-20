@@ -1,14 +1,6 @@
 import { JetBrains_Mono } from 'next/font/google';
 import "./globals.css";
 
-// Components
-import Header from '@/components/Header';
-import PageTransition from '@/components/pageTransition';
-import StairTransition from '@/components/StairTransition';
-import ParticlesBackground from '@/components/ParticlesBackground';
-import CustomCursor from '@/components/CustomCursor';
-import CustomScroll from '@/components/CustomScroll';
-
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
