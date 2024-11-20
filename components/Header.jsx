@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { Button } from "./ui/button";
 
 // Components
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
+import HireMeBtn from "./HireMeBtn";
 
 const Header = () => {
+
   return (
-    <header className="py-6 container mx-auto text-white">
+    <header className="py-6 w-full px-8 mx-auto text-white fixed z-20 transition-colors duration-300 ease-in-out" /* bg-[#193432cc] */>
         <div className="flex justify-between items-center">
 
             {/* Logo */}
@@ -20,9 +21,7 @@ const Header = () => {
             {/* Desktop nav & Hire me button */}
             <div className="hidden xl:flex items-center gap-8">
                 <Nav />
-                <Link href="/contact">
-                    <Button>Hire me</Button>
-                </Link>
+                <HireMeBtn />
             </div>
 
             {/* Mobile nav */}
