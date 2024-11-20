@@ -7,6 +7,7 @@ import PageTransition from '@/components/pageTransition';
 import StairTransition from '@/components/StairTransition';
 import ParticlesBackground from '@/components/ParticlesBackground';
 import CustomCursor from '@/components/CustomCursor';
+import CustomScroll from '@/components/CustomScroll';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -25,11 +26,13 @@ export default function RootLayout({ children }) {
       <body className={jetbrainsMono.variable} >
         <ParticlesBackground />
         <CustomCursor />
-        <Header />
         <StairTransition />
-        <PageTransition>
-          {children}
-        </PageTransition>
+        <Header />
+        <CustomScroll>
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </CustomScroll>
       </body>
     </html>
   );
