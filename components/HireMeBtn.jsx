@@ -1,16 +1,15 @@
-import Link from "next/link";
 import { Button } from "./ui/button";
 import MotionBtn from "./MotionBtn";
 
-const HireMeBtn = () => {
+const HireMeBtn = ({onNavigate}) => {
     return (
-        <Link href="/contact">
+        <div onClick={() => onNavigate("service")}>
             <MotionBtn>
                 <Button>
                     Hire me
                 </Button>
             </MotionBtn>
-        </Link>
+        </div>
     );
 }
 
