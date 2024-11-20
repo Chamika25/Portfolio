@@ -24,15 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={jetbrainsMono.variable} >
-        <ParticlesBackground />
-        <CustomCursor />
-        <StairTransition />
-        <Header />
-        <CustomScroll>
-          <PageTransition>
-            {children}
-          </PageTransition>
-        </CustomScroll>
+        {children}
       </body>
     </html>
   );
