@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* import Link from "next/link";
 
 // Components
 import Nav from "./Nav";
@@ -8,23 +8,23 @@ import HireMeBtn from "./HireMeBtn";
 const Header = () => {
 
   return (
-    <header className="py-6 w-full px-8 mx-auto text-white fixed z-20 transition-colors duration-300 ease-in-out" /* bg-[#193432cc] */>
+    <header className="py-6 w-full px-8 mx-auto text-white fixed z-20 transition-colors duration-300 ease-in-out">
         <div className="flex justify-between items-center">
 
-            {/* Logo */}
+            {/* Logo *}
             <Link href="/" className="cursor-none">
                 <h1 className="text-4xl font-semibold hover:text-shadow-white w">
                     Kasun<span className="text-accent">.</span>
                 </h1>
             </Link>
 
-            {/* Desktop nav & Hire me button */}
+            {/* Desktop nav & Hire me button *}
             <div className="hidden xl:flex items-center gap-8">
                 <Nav />
                 <HireMeBtn />
             </div>
 
-            {/* Mobile nav */}
+            {/* Mobile nav *}
             <div className="xl:hidden">
                 <MobileNav />
             </div>
@@ -33,4 +33,32 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header; */
+
+//  v2
+
+// Components
+import Nav from "./Nav";
+
+const Header = () => {
+  return (
+    <header className="py-6 w-full px-8 mx-auto text-white fixed z-20 transition-colors duration-300 ease-in-out">
+      <div className="flex justify-between items-center">
+        {/* Logo */}
+        <a href="/" className="cursor-none w">
+          <h1 className="text-4xl font-semibold hover:text-shadow-white">
+            Kasun<span className="text-accent">.</span>
+          </h1>
+        </a>
+
+        {/* Nav & Hire me button */}
+        <div className="flex items-center gap-8">
+          <Nav />
+        </div>
+
+      </div>
+    </header>
+  );
+};
+
+export default Header;
