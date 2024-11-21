@@ -64,7 +64,7 @@ export default function Page() {
       <Header />
 
       {/* Body */}
-      <CustomScroll>
+      {/* <CustomScroll> */}
 
         <section id="home">
             <Home />
@@ -74,7 +74,20 @@ export default function Page() {
             <Service />
         </section>
 
-      </CustomScroll>
+        <section id="work">
+            <Service />
+            <Service />
+        </section>
+
+        <section id="about">
+            <Service />
+        </section>
+
+        <section id="contact">
+            <Service />
+        </section>
+
+      {/* </CustomScroll> */}
     </>
   );
 }
