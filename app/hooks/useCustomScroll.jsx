@@ -118,6 +118,25 @@ const useCustomScroll = () => {
     }, []);
     // ----------------------------------------------------------------------------------
 
+    // ------------------ Function to handle header background color --------------------
+    useEffect(() => {
+        const handleScroll = () => {
+            const header = document.querySelector("header");
+            if (window.scrollY > 0) {
+                header.classList.add("bg-[#193432cc]", "shadow-lg");
+            } else {
+                header.classList.remove("bg-[#193432cc]", "shadow-lg");
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+    // -----------------------------------------------------------------------------------
+
     // Return values
     return {
         scrollDirection,
