@@ -134,7 +134,7 @@ html, body {
 }
 
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* Custom Cursor */
@@ -157,7 +157,7 @@ body {
 }
 
 /* Custom Scrollbar Styling */
-.custom-scroll {
+.html {
   scrollbar-width: thin; /* For Firefox - thin scrollbar */
   scrollbar-color: #01ffbb #282c3422; /* Thumb (green) and Track (dark background) */
   overflow-y: auto; /* Enable vertical scrolling */
@@ -165,27 +165,36 @@ body {
 }
 
 /* For Webkit-based browsers (e.g., Chrome, Edge, Safari) */
-.custom-scroll::-webkit-scrollbar {
-  width: 8px; /* Scrollbar width */
+html::-webkit-scrollbar {
+  width: 5px; /* Scrollbar width */
   border-radius: 10px;
+  background-color: transparent;
 }
 
-.custom-scroll::-webkit-scrollbar-thumb {
-  background: #01ffbb; /* Thumb color */
+html::-webkit-scrollbar-thumb {
+  background: #01ffbbbb; /* Thumb color */
   border-radius: 10px; /* Fully rounded edges */
 }
 
-.custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: #00e6a3; /* Lighter green for hover effect */
+html::-webkit-scrollbar-thumb:hover {
+  background: #01ffbb; /* Lighter green for hover effect */
 }
 
-.custom-scroll::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   background: #1f1f1f; /* Slightly lighter dark background for track */
   border-radius: 10px; /* Matches thumb rounding for cohesive design */
 }
 
 
 .section {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   @apply pt-24 lg:pt-[60px] lg:h-[calc(100vh-24px)] flex flex-col justify-center
+}
+
+.progress-bar-left {
+  transform-origin: left;
+}
+
+.progress-bar-right {
+  transform-origin: right;
 }
