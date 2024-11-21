@@ -24,8 +24,8 @@ const CustomScroll = ({ children }) => {
       }, []);
 
     return (
-        <div className="pt-4 pb-2 h-[100vh]">
-            <div className="custom-scroll h-full">
+        <div className="pt-4 pb-2 h-[100vh] overflow-hidden">
+            <div className="custom-scroll h-full overflow-auto">
                 {children}
             </div>
         </div>
