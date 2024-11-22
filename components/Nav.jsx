@@ -310,7 +310,7 @@ const Nav = () => {
                                             :
                                                 "progress-bar-left"
                                             )
-                                    */
+                                    */ /*
                                         scrollDirection === 'down' ?
                                             (enteredSection === item.path ?
                                                 'progress-bar-left'
@@ -323,7 +323,7 @@ const Nav = () => {
                                             :
                                                 'progress-bar-right'
                                             )
-                                    }
+                                    */''}
                                     absolute bottom-2 left-0 right-0 h-1 bg-accent
                                     `}
                                 style={{ scaleX: sectionProgress[item.path] }}
