@@ -188,7 +188,7 @@ html::-webkit-scrollbar-track {
 
 .section {
   /* border: 1px solid white; */
-  @apply pt-24 lg:pt-[60px] lg:h-[calc(100vh-24px)] flex flex-col justify-center
+  @apply pt-24 lg:pt-[60px] lg:h-[calc(100vh)] flex flex-col justify-center
 }
 
 .progress-bar-left {
