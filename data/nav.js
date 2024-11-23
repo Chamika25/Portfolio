@@ -4,16 +4,16 @@ const navItem = [
         path: "home",
     },
     {
+        name: "About",
+        path: "about",
+    },
+    {
         name: "Services",
         path: "service",
     },
     {
         name: "Work",
         path: "work",
-    },
-    {
-        name: "About",
-        path: "about",
     },
     {
         name: "Contact",
