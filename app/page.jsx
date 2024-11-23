@@ -70,16 +70,15 @@ export default function Page() {
             <Home />
         </section>
 
+        <section id="about">
+            <Service />
+        </section>
+
         <section id="service">
             <Service />
         </section>
 
         <section id="work">
-            <Service />
-            <Service />
-        </section>
-
-        <section id="about">
             <Service />
         </section>
 
