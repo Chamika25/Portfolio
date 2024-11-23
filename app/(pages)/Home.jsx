@@ -8,7 +8,7 @@ import TextShadingView from "../animations/TextShadingView";
 
 const Home = () => {
     return (
-        <div className="container mx-auto section">
+        <div className="container mx-auto">
             <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-8">
 
                 {/* Text */}
