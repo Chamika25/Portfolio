@@ -3,6 +3,8 @@
 import CVBtn from "@/components/CVBtn";
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";
+import TypingEffect from "@/components/TypingEffect";
+import TextShadingView from "../animations/TextShadingView";
 
 const Home = () => {
     return (
@@ -14,10 +16,13 @@ const Home = () => {
                     <h1 className="h1 mb-6">
                         <span className="w">Hello, I'm</span><br/>
                         <span className="text-accent">Buddika Kasun</span>
+                        <TypingEffect />
                     </h1>
-                    <p className="max-w-[500px] mb-9 text-white/80 w">
-                        I excel at crafting elegant digital experiences and I am proficient in verious programming languages and thechnology.
-                    </p>
+                    <div className="max-w-[500px] mb-9 text-white/80 w">
+                        <TextShadingView>
+                            I excel at crafting elegant digital experiences and I am proficient in verious programming languages and thechnology.
+                        </TextShadingView>
+                    </div>
 
                     <div className="flex flex-col xl:flex-row items-center gap-8">
 
