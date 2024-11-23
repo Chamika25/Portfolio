@@ -3,7 +3,7 @@ import MotionBtn from "./MotionBtn";
 
 const HireMeBtn = ({onNavigate}) => {
     return (
-        <div onClick={() => onNavigate("service")}>
+        <div onClick={() => onNavigate("contact")}>
             <MotionBtn>
                 <Button>
                     Hire me
