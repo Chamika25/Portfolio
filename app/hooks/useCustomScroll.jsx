@@ -99,7 +99,7 @@ const useCustomScroll = () => {
 
             // Calculate the percentage of the section visible in the viewport
             const visibleHeight = Math.min(sectionBottom, window.innerHeight) - Math.max(sectionTop, 0);
-            const sectionProgressValue = Math.max(0, Math.min(visibleHeight / sectionHeight, 1));
+            const sectionProgressValue = Math.max(0, Math.min(visibleHeight / window.innerHeight, 0.99));
             progressData[section.id] = sectionProgressValue; // Store progress for this section
         });
 
@@ -112,8 +112,11 @@ const useCustomScroll = () => {
             calculateProgress();
         };
         window.addEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleScroll);
+
         return () => {
             window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleScroll);
         };
     }, []);
     // ----------------------------------------------------------------------------------
