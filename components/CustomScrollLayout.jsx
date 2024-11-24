@@ -31,16 +31,16 @@ const CustomScrollLayout = ({ children }) => {
         scale: 1,
       },
       hover: {
-        y: [-5, 2],
+        y: [5, -2],
         scale: 1.1,
         transition: {
-          delay: 0.2,
-          duration: 1,
+          delay: 0.5,
+          duration: 2,
           repeat: Infinity,
           ease: "easeInOut",
           type: "spring",
           stiffness: 300,
-          damping: 10,
+          damping: 6,
         }
       }
     }
