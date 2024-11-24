@@ -205,16 +205,16 @@ export default Nav;
 //  v3
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 
 // Menu items
 import menuItems from "@/data/nav";
 
 // Components
-import PageTransition from "./pageTransition";
+import PageTransition from "./PageTransition";
 import HireMeBtn from "./HireMeBtn";
 import useCustomScroll from "@/app/hooks/useCustomScroll";
 
@@ -250,19 +250,8 @@ const Nav = () => {
         }
     };
 
-    // Scroll progress using framer-motion
-    const { scrollYProgress } = useScroll();
-    const scaleX = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001
-    });
-
     return (
         <>
-            {/* Global scroll progress bar */}
-            <motion.div className="progress-bar-left fixed left-0 right-0 top-0 bg-accent h-1" style={{ scaleX }} />
-
             {/* Desktop Nav */}
             <nav className="gap-8 hidden lg:flex">
                 {menuItems.map((item, index) => (
