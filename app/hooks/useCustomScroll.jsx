@@ -166,8 +166,8 @@ const useCustomScroll = () => {
     const [lastScrollPosition, setLastScrollPosition] = useState(0);
     const [enteredSection, setEnteredSection] = useState({});
     const [leavedSection, setLeavedSection] = useState({});
-    const [activeSection, setActiveSection] = useState("home");
-    const [sectionProgress, setSectionProgress] = useState({}); // Track progress for each section
+    const [activeSection, setActiveSection] = useState('home');
+    const [sectionProgress, setSectionProgress] = useState({home: 0.99}); // Track progress for each section
 
     useEffect(() => {
         // Reference the scrollable container
