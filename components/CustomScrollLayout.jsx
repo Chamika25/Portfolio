@@ -25,6 +25,26 @@ const CustomScrollLayout = ({ children }) => {
       });
     };
 
+    const varient = {
+      initial: {
+        y: 0,
+        scale: 1,
+      },
+      hover: {
+        y: [-5, 2],
+        scale: 1.1,
+        transition: {
+          delay: 0.2,
+          duration: 1,
+          repeat: Infinity,
+          ease: "easeInOut",
+          type: "spring",
+          stiffness: 300,
+          damping: 10,
+        }
+      }
+    }
+
     return (
       <div id="main-container" ref={containerRef} className="h-screen overflow-auto">
 
@@ -40,6 +60,8 @@ const CustomScrollLayout = ({ children }) => {
           className="fixed bottom-2 right-5 w-20 h-20 z-10"
           viewBox="0 0 100 100"
           onClick={scrollToTop}
+          initial="initial"
+          whileHover="hover"
         >
 
           <motion.circle
@@ -60,6 +82,7 @@ const CustomScrollLayout = ({ children }) => {
             fill="transparent"
             className="stroke-accent opacity-0 transition-opacity ease-in-out duration-500"
             id="upArrow"
+            variants={varient}
           />
 
         </motion.svg>
