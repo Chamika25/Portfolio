@@ -50,13 +50,14 @@ import Service from "./(pages)/Service";
 import CustomCursor from "@/components/CustomCursor";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import Header from "@/components/Header";
-import CustomScroll from "@/components/CustomScroll";
-import PageTransition from "@/components/pageTransition";
+import Contact from "./(pages)/Contact";
+import CustomScrollLayout from "@/components/CustomScrollLayout";
 
 export default function Page() {
 
   return (
-    <>
+    <CustomScrollLayout>
+
       <ParticlesBackground />
       <CustomCursor />
 
@@ -64,29 +65,26 @@ export default function Page() {
       <Header />
 
       {/* Body */}
-      {/* <CustomScroll> */}
+      <section id="home" className="section">
+          <Home />
+      </section>
 
-        <section id="home">
-            <Home />
-        </section>
+      <section id="about" className="section">
+          <Service />
+      </section>
 
-        <section id="about">
-            <Service />
-        </section>
+      <section id="service" className="section">
+          <Service />
+      </section>
 
-        <section id="service">
-            <Service />
-        </section>
+      <section id="work" className="section">
+          <Contact />
+      </section>
 
-        <section id="work">
-            <Service />
-        </section>
+      <section id="contact" className="section">
+          <Contact />
+      </section>
 
-        <section id="contact">
-            <Service />
-        </section>
-
-      {/* </CustomScroll> */}
-    </>
+    </CustomScrollLayout>
   );
 }
