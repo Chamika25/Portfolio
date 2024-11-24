@@ -231,7 +231,7 @@ const Nav = () => {
         sectionProgress,
     } = useCustomScroll(); // Custom scroll hook
 
-    //console.log(scrollDirection,enteredSection,leavedSection)
+    //console.log(sectionProgress)
 
     // Scroll handling for smooth navigation
     const onNavigate = (id) => {
@@ -259,7 +259,7 @@ const Nav = () => {
                         key={index}
                         initial={{ y: 0 }}
                         whileHover={{
-                            y: item.path !== activeSection ? [20, -30, 30] : 0, // Smooth bounce only if not active
+                            y: !(item.path === activeSection) ? [20, -30, 30] : 0, // Smooth bounce only if not active
                             transition: {
                                 duration: 0.4,
                                 repeat: Infinity,
@@ -275,6 +275,7 @@ const Nav = () => {
                         }}
                         onClick={() => onNavigate(item.path)}
                         className={`${
+                            //item.path === activeSection
                             item.path === activeSection
                                 ? "text-accent"
                                 : "hover:text-shadow-accent"
