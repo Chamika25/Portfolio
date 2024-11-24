@@ -255,7 +255,7 @@ const useCustomScroll = () => {
             { root: container, threshold: 0.94 }
         );
 
-        const activeObserver = new IntersectionObserver(
+        /* const activeObserver = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -264,13 +264,19 @@ const useCustomScroll = () => {
                 });
             },
             { root: container, threshold: 0.5 }
-        );
+        ); */
+
+        // Find the section name with the max value (Active section)
+        const maxSectionName = Object.keys(sectionProgress).reduce((maxName, section) => {
+            return sectionProgress[section] > sectionProgress[maxName] ? section : maxName;
+        }, Object.keys(sectionProgress)[0]); // Start with the first section as the initial max
+        setActiveSection(maxSectionName);
 
         const sections = container.querySelectorAll("section");
         sections.forEach((section) => {
             enterObserver.observe(section);
             leaveObserver.observe(section);
-            activeObserver.observe(section);
+            //activeObserver.observe(section);
         });
 
         // Event listeners for scroll and resize
@@ -288,7 +294,7 @@ const useCustomScroll = () => {
             container.removeEventListener("scroll", handleUpArrow);
             enterObserver.disconnect();
             leaveObserver.disconnect();
-            activeObserver.disconnect();
+            //activeObserver.disconnect();
         };
     }, [lastScrollPosition]);
 
