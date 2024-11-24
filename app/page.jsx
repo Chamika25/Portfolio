@@ -52,6 +52,7 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 import Header from "@/components/Header";
 import Contact from "./(pages)/Contact";
 import CustomScrollLayout from "@/components/CustomScrollLayout";
+import Footer from "@/components/Footer";
 
 export default function Page() {
 
@@ -84,6 +85,9 @@ export default function Page() {
       <section id="contact" className="section">
           <Contact />
       </section>
+
+      {/* Footer */}
+      <Footer />
 
     </CustomScrollLayout>
   );
