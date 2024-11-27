@@ -53,6 +53,7 @@ import Header from "@/components/Header";
 import Contact from "./(pages)/Contact";
 import CustomScrollLayout from "@/components/CustomScrollLayout";
 import Footer from "@/components/Footer";
+import About from "./(pages)/About";
 
 export default function Page() {
 
@@ -71,7 +72,7 @@ export default function Page() {
       </section>
 
       <section id="about" className="section">
-          <Service />
+          <About />
       </section>
 
       <section id="service" className="section">
