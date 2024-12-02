@@ -25,7 +25,7 @@ const info = [
 
 const Contact = () => {
   return (
-    <div className="container max-auto pt-4 mb-8 lg:mb-0">
+    <div className="container max-auto pt-[70px] mb-8 lg:mb-0">
         <div className="flex flex-col lg:flex-row gap-[30px]">
             {/* Form */}
             <div className="order-2 lg:order-none">
