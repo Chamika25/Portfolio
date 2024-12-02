@@ -160,7 +160,7 @@ export default useCustomScroll;
 
 import { useEffect, useState } from "react";
 
-const useCustomScroll = () => {
+const useCustomScroll = ({sectionsClassName = 'section'} = {}) => {
     // States for scroll direction, section progress, etc.
     const [scrollDirection, setScrollDirection] = useState("down"); // 'up' or 'down'
     const [lastScrollPosition, setLastScrollPosition] = useState(0);
@@ -168,6 +168,7 @@ const useCustomScroll = () => {
     const [leavedSection, setLeavedSection] = useState({});
     const [activeSection, setActiveSection] = useState('home');
     const [sectionProgress, setSectionProgress] = useState({home: 0.99}); // Track progress for each section
+    const [subSectionProgress, setSubSectionProgress] = useState({});
 
     useEffect(() => {
         // Reference the scrollable container
@@ -193,7 +194,7 @@ const useCustomScroll = () => {
 
         // Section Progress Calculation
         const calculateProgress = () => {
-            const sections = container.querySelectorAll("section");
+            const sections = Array.from(container.getElementsByClassName(sectionsClassName));
             const progressData = {};
 
             sections.forEach((section) => {
