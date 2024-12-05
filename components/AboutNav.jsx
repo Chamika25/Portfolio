@@ -3,6 +3,11 @@ import { Button } from "./ui/button";
 
 const AboutNav = () => {
 
+    const { 
+        sectionProgress,
+        activeSection
+     } = useCustomScroll({ sectionsClassName: "aboutSubSection" });
+
     const aboutItems = [
         {
             name: 'Experience',
@@ -35,7 +40,7 @@ const AboutNav = () => {
             {aboutItems.map((item,index) => (
                 <Button
                     key={index}
-                    className="rounded-md bg-[#000000a0] text-white"
+                    className={`${activeSection === item.path ? 'bg-accent text-primary': 'bg-[#38383dbb] text-white'} rounded-md hover:text-primary`}
                     onClick={() => onNavigate(item.path)}
                 >
                     {item.name}
