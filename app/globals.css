@@ -212,5 +212,5 @@ html::-webkit-scrollbar-track,
 }
 
 .aboutSubSection {
-  @apply h-[100vh] pt-[220px] xl:pt-[100px] ;
+  @apply min-h-[100vh] pt-[220px] xl:pt-[100px];
 }
