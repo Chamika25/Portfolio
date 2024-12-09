@@ -22,11 +22,11 @@ const EducationSubSection = () => {
     return (
         <div className="relative">
             <h1>Education</h1>
-            <div className="before:absolute before:w-[2px] before:h-full before:bg-accent before:left-[calc(50%-1px)]">
+            <div className="before:absolute before:w-[2px] before:h-full before:bg-accent before:left-0 xl:before:left-[calc(50%-1px)]">
 
                 {education.map((item, index) => (
-                    <div key={index} className="mb-5 w-full relative odd:pr-[calc(50%+30px)] odd:text-right even:pl-[calc(50%+30px)]">
-                        <div className="h-5 w-5 bg-accent absolute left-[calc(50%-10px)] rounded-full top-2" />
+                    <div key={index} className="mb-6 w-full relative pl-4 xl:odd:pr-[calc(50%+30px)] xl:odd:text-right xl:even:pl-[calc(50%+30px)]">
+                        <div className="h-5 w-5 bg-accent absolute -left-2 xl:left-[calc(50%-10px)] rounded-full top-2" />
                         <div className="m-2">{item.year}</div>
                         <div className="border-2 rounded-xl border-accent py-4 px-6 hover:scale-105 transition-all duration-300 hover:bg-[#38383f55]">
                             <h3 className="text-accent text-lg pb-4">{item.title}</h3>
