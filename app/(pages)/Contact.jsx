@@ -25,10 +25,10 @@ const info = [
 
 const Contact = () => {
   return (
-    <div className="container max-auto pt-[70px] mb-8 lg:mb-0">
+    <div className="container max-auto lg:pt-[70px] mb-8 lg:mb-0">
         <div className="flex flex-col lg:flex-row gap-[30px]">
-            {/* Form */}
-            <div className="order-2 lg:order-none">
+            <div className="order-1 lg:order-none">
+                {/* Form */}
                 <form className="flex flex-col gap-2 p-6 bg-[#27272c50] rounded-xl">
                     <h3 className="text-3xl text-accent pb-4">Let's work together</h3>
                     <p className="text-white/60 text-sm">
@@ -50,9 +50,8 @@ const Contact = () => {
                     </div>
                 </form>
             </div>
-
             {/* Info */}
-            <div className="flex-1 flex items-center lg:justify-end order-1 lg:order-none mb-8 lg:mb-0 lg:pr-10 lg:pl-4">
+            <div className="flex-1 flex items-center lg:justify-end order-2 lg:order-none mb-8 lg:mb-0 lg:pr-10 lg:pl-4">
                 <ul className="flex flex-col gap-10">
                     {info.map((item, index) => {
                         return (
@@ -71,6 +70,7 @@ const Contact = () => {
                     })}
                 </ul>
             </div>
+
         </div>
     </div>
   )
