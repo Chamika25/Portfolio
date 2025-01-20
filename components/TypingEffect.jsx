@@ -89,6 +89,7 @@ export default TypingEffect;
 
 // v2
 
+/*
 "use client";
 
 import { motion } from "framer-motion";
@@ -120,7 +121,6 @@ const TypingEffect = () => {
 
   return (
     <div className="flex items-center">
-      {/* Typing and Deleting Animation */}
       <motion.div
         className="text-4xl font-semibold inline-block"
         initial="typing"
@@ -139,7 +139,6 @@ const TypingEffect = () => {
         ))}
       </motion.div>
 
-      {/* Blinking Cursor */}
       <motion.span
         className="text-4xl font-semibold ml-1"
         animate={{ opacity: [1, 0, 1] }} // Blink effect
@@ -156,3 +155,33 @@ const TypingEffect = () => {
 
 export default TypingEffect;
 
+*/
+
+"use client";
+
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+
+const TypingEffect = () => {
+  return (
+    <TypeAnimation 
+        sequence={[
+          'Front End Developer',
+          1000,
+          'Back End Developer',
+          1000,
+          'Full Stack Developer',
+          1000,
+          'Tester',
+          1000,
+          'Bug Fixer',
+          1000,
+      ]}
+      wrapper="span"
+      speed={50}
+      repeat={Infinity}
+    />
+  )
+};
+
+export default TypingEffect;
