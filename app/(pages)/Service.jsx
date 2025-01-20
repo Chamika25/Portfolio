@@ -5,39 +5,41 @@ import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 
 const Service = () => {
+
+    const services = [
+        {
+            title: "Front-End Development",
+            description: "Crafting responsive, user-friendly, and visually engaging interfaces using React and Next.js. Expertise in building modern, fast, and SEO-friendly web applications with cutting-edge technologies like HTML, CSS, and JavaScript.",
+        },
+        {
+            title: "Back-End Development",
+            description: "Developing robust, scalable, and secure server-side solutions using Next.js, Node.js, Express, MongoDB, SQL, Spring Boot, and ASP.NET. Expertise in creating RESTful APIs, managing databases, and implementing backend logic for complex systems.",
+        },
+        {
+            title: "Testing",
+            description: "Ensuring software reliability through comprehensive testing strategies, including unit testing, integration testing, and end-to-end testing.",
+        },
+        {
+            title: "Bug Fixing",
+            description: "Diagnosing and resolving software issues efficiently to enhance performance and maintain seamless functionality.",
+        },
+    ]; 
+
     return (
-        <div className="container mx-auto">
-            <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-8">
-
-                {/* Text */}
-                <div className="text-center xl:text-left order-2 xl:order-none">
-                    <h1 className="h1 mb-6">
-                        <span className="w">Hello, I'm</span><br/>
-                        <span className="text-accent">Buddika Kasun</span>
-                    </h1>
-                    <p className="max-w-[500px] mb-9 text-white/80 w">
-                        I excel at crafting elegant digital experiences and I am proficient in verious programming languages and thechnology.
-                    </p>
-
-                    <div className="flex flex-col xl:flex-row items-center gap-8">
-
-                        {/* CV button */}
-                        <CVBtn />
-
-                        {/* Social media */}
-                        <div className="mb-8 xl:mb-0">
-                            <Social
-                                containerStyle="flex gap-6"
-                                iconStyle="w-9 h-9 border-[1.5px] border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500 cursor-none"
-                            />
+        <div className="container mx-auto lg:pt-[120px]">
+            <h1 className="pb-4 lg:pb-0">Services</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:pt-8 xl:pb-8 gap-4 h-full">
+                {
+                    services.map((service, index) => (
+                        <div
+                            key={index}
+                            className="w-full bg-accent rounded-md text-primary h-fit md:min-h-[35vh] lg:max-h-[35vh] py-4 px-6 hover:bg-accent-hover hover:shadow-md"
+                        >
+                            <h2 className="text-xl pb-2 font-semibold">{service.title}</h2>
+                            <p className="text-base py-2">{service.description}</p>
                         </div>
-
-                    </div>
-                </div>
-                {/* Photo */}
-                <div className="order-1 xl:order-none mb-8 xl:mb-0 xl:mr-20">
-                    <Photo />
-                </div>
+                    ))
+                }
             </div>
         </div>
     );
