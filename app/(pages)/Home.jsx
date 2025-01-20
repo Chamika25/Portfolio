@@ -15,8 +15,8 @@ const Home = () => {
                 <div className="text-center xl:text-left order-2 xl:order-none">
                     <h1 className="h1 mb-6">
                         <span className="w">Hello, I'm</span><br/>
-                        <span className="text-accent">Buddika Kasun</span>
-                        <TypingEffect />
+                        <span className="text-accent">Buddika Kasun</span><br/>
+                        <span className="text-xl lg:text-4xl"><TypingEffect /></span>
                     </h1>
                     <div className="max-w-[500px] mb-9 text-white/80 w">
                         <TextShadingView>
