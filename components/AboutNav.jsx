@@ -10,21 +10,21 @@ const AboutNav = () => {
 
     const aboutItems = [
         {
-            name: 'Experience',
-            path: 'experience',
-        },
-        {
-            name: 'Education',
-            path: 'education',
+            name: 'About Me',
+            path: 'aboutMe',
         },
         {
             name: 'Skills',
             path:'skills',
         },
         {
-            name: 'About Me',
-            path: 'aboutMe',
-        }
+            name: 'Certificate',
+            path: 'certificate',
+        },
+        {
+            name: 'Education',
+            path: 'education',
+        },
     ];
 
     // Scroll handling for smooth navigation

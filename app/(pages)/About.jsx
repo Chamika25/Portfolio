@@ -34,11 +34,11 @@ const About = () => {
                             <AboutMeSubSection />
                         </div>
 
-                        <div className="aboutSubSection" id="experience">Experience</div>
-
                         <div className="aboutSubSection" id="skills">
                             <SkillsSubSection />
                         </div>
+
+                        <div className="aboutSubSection" id="certificate">Certificate</div>
 
                         <div className="aboutSubSection" id="education">
                             <EducationSubSection />
