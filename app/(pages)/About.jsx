@@ -1,7 +1,9 @@
 "use client"
 
+import AboutMeSubSection from "@/components/AboutMeSubSection";
 import AboutNav from "@/components/AboutNav";
 import EducationSubSection from "@/components/EducationSubSection";
+import SkillsSubSection from "@/components/SkillsSubSection";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -28,15 +30,19 @@ const About = () => {
                     {/* Content */}
                     <div className="relative top-[-220px] xl:top-0 z-0">
 
+                        <div className="aboutSubSection" id="aboutMe">
+                            <AboutMeSubSection />
+                        </div>
+
                         <div className="aboutSubSection" id="experience">Experience</div>
+
+                        <div className="aboutSubSection" id="skills">
+                            <SkillsSubSection />
+                        </div>
 
                         <div className="aboutSubSection" id="education">
                             <EducationSubSection />
                         </div>
-
-                        <div className="aboutSubSection" id="skills">Skills</div>
-
-                        <div className="aboutSubSection" id="aboutMe">About Me</div>
 
                     </div>
                 </div>
