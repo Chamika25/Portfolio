@@ -45,7 +45,7 @@ const SkillsSubSection = () => {
         },
         {
             name: 'MySQL',
-            icon: <GrMysql className="w-full h-full p-2" />,
+            icon: <GrMysql className="w-full h-full p-3" />,
         },
         {
             name: 'PHP',
@@ -53,7 +53,7 @@ const SkillsSubSection = () => {
         },
         {
             name: 'Java',
-            icon: <FaJava className="w-full h-full p-2" />,
+            icon: <FaJava className="w-full h-full p-3" />,
         },
         {
             name: 'JavaScript',
@@ -207,7 +207,7 @@ const SkillsSubSection = () => {
 
     return (
         <section>
-            <h1>Skills</h1>
+            <h1 className="pb-4">Skills</h1>
             <div className="flex flex-wrap items-center justify-center gap-4">
                 {
                     skills.map((skill, index) => (
