@@ -10,7 +10,7 @@ import useCustomScroll from "../hooks/useCustomScroll";
 
 const About = () => {
 
-    const { sectionProgress } = useCustomScroll(); console.log(sectionProgress.home == 0)
+    const { sectionProgress } = useCustomScroll();
 
     return (
         <motion.div
