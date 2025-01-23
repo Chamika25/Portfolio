@@ -54,12 +54,13 @@ import Contact from "./(pages)/Contact";
 import CustomScrollLayout from "@/components/CustomScrollLayout";
 import Footer from "@/components/Footer";
 import About from "./(pages)/About";
+import Project from "./(pages)/Project";
 
 export default function Page() {
 
   return (
     <CustomScrollLayout>
-
+  
       <ParticlesBackground />
       <CustomCursor />
 
@@ -79,8 +80,8 @@ export default function Page() {
           <Service />
       </section>
 
-      <section id="work" className="section">
-          <Contact />
+      <section id="projects" className="section">
+          <Project />
       </section>
 
       <section id="contact" className="section">
@@ -89,7 +90,7 @@ export default function Page() {
 
       {/* Footer */}
       <Footer />
-
+    
     </CustomScrollLayout>
   );
 }
