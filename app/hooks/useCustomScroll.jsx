@@ -169,6 +169,7 @@ const useCustomScroll = ({sectionsClassName = 'section'} = {}) => {
     const [activeSection, setActiveSection] = useState('home');
     const [sectionProgress, setSectionProgress] = useState({home: 0.99}); // Track progress for each section
     const [subSectionProgress, setSubSectionProgress] = useState({});
+    const [scrollYProgress, setScrollYProgress] = useState(0);
 
     useEffect(() => {
         // Reference the scrollable container
@@ -280,12 +281,28 @@ const useCustomScroll = ({sectionsClassName = 'section'} = {}) => {
             //activeObserver.observe(section);
         });
 
+        const calScrollYProgress = () => {
+            const section = container.querySelector(`.${sectionsClassName}`); // Get the section by class name
+            if (!section) return;
+
+            const containerHeight = container.scrollHeight - container.clientHeight;
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            // Calculate the scroll position and progress for the section
+            const sectionScrollTop = Math.max(0, container.scrollTop - sectionTop); // Scroll position inside section
+            const sectionProgress = Math.min(1, sectionScrollTop / sectionHeight);
+
+            setScrollYProgress(sectionProgress);
+        };
+
         // Event listeners for scroll and resize
         container.addEventListener("scroll", handleScrollDirection);
         container.addEventListener("scroll", calculateProgress);
         container.addEventListener("resize", calculateProgress);
         container.addEventListener("scroll", handleScrollHeader);
-        container.addEventListener("scroll", handleUpArrow)
+        container.addEventListener("scroll", handleUpArrow);
+        container.addEventListener("scroll", calScrollYProgress);
 
         return () => {
             container.removeEventListener("scroll", handleScrollDirection);
@@ -293,6 +310,7 @@ const useCustomScroll = ({sectionsClassName = 'section'} = {}) => {
             container.removeEventListener("resize", calculateProgress);
             container.removeEventListener("scroll", handleScrollHeader);
             container.removeEventListener("scroll", handleUpArrow);
+            container.removeEventListener("scroll", calScrollYProgress);
             enterObserver.disconnect();
             leaveObserver.disconnect();
             //activeObserver.disconnect();
@@ -307,6 +325,7 @@ const useCustomScroll = ({sectionsClassName = 'section'} = {}) => {
         leavedSection,
         activeSection,
         sectionProgress,
+        scrollYProgress,
     };
 };
 
