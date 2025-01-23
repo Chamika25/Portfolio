@@ -6,8 +6,11 @@ import CertificatesSubSection from "@/components/CertificatesSubSection";
 import EducationSubSection from "@/components/EducationSubSection";
 import SkillsSubSection from "@/components/SkillsSubSection";
 import { motion } from "framer-motion";
+import useCustomScroll from "../hooks/useCustomScroll";
 
 const About = () => {
+
+    const { sectionProgress } = useCustomScroll(); console.log(sectionProgress.home == 0)
 
     return (
         <motion.div
@@ -21,15 +24,15 @@ const About = () => {
                 }
             }}
         >
-            <div className="container mx-auto relative">
+            <div className="lg:container lg:mx-auto w-full relative">
                 <div className="flex flex-col xl:flex-row gap-5">
                     {/* Menu */}
-                    <div className="flex flex-col w-full max-w-80 h-fit mx-auto xl:mx-0 gap-6 sticky top-[100px] xl:top-[20vh] xl:pt-[100px] z-10">
+                    <div className={`flex flex-col lg:max-w-80 lg:min-w-64 h-fit lg:mx-auto xl:mx-0 gap-6 sticky top-[87.5px] p-4 px-8 lg:p-0 xl:top-[20vh] xl:pt-[100px] z-10 ${(sectionProgress.home == 0) && 'bg-[#193432cc]'} lg:bg-transparent`}>
                         <AboutNav />
                     </div>
 
                     {/* Content */}
-                    <div className="relative top-[-220px] xl:top-0 z-0">
+                    <div className="relative top-[-220px] xl:top-0 z-0 px-12 lg:px-0">
 
                         <div className="aboutSubSection" id="aboutMe">
                             <AboutMeSubSection />
