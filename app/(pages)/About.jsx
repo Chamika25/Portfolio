@@ -2,6 +2,7 @@
 
 import AboutMeSubSection from "@/components/AboutMeSubSection";
 import AboutNav from "@/components/AboutNav";
+import CertificatesSubSection from "@/components/CertificatesSubSection";
 import EducationSubSection from "@/components/EducationSubSection";
 import SkillsSubSection from "@/components/SkillsSubSection";
 import { motion } from "framer-motion";
@@ -38,7 +39,9 @@ const About = () => {
                             <SkillsSubSection />
                         </div>
 
-                        <div className="aboutSubSection" id="certificate">Certificate</div>
+                        <div className="aboutSubSection" id="certificate">
+                            <CertificatesSubSection />
+                        </div>
 
                         <div className="aboutSubSection" id="education">
                             <EducationSubSection />
