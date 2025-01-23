@@ -33,7 +33,7 @@ const Service = () => {
                     services.map((service, index) => (
                         <div
                             key={index}
-                            className="w-full bg-accent rounded-md text-primary h-fit md:min-h-[35vh] lg:max-h-[35vh] py-4 px-6 hover:bg-accent-hover hover:shadow-md"
+                            className="w-full bg-accent bg-opacity-80 rounded-md text-primary h-fit md:min-h-[35vh] lg:max-h-[35vh] py-4 px-6 hover:bg-accent-hover hover:shadow-md"
                         >
                             <h2 className="text-xl pb-2 font-semibold">{service.title}</h2>
                             <p className="text-base py-2">{service.description}</p>
