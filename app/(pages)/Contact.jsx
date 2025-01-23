@@ -52,18 +52,18 @@ const Contact = () => {
             </div>
             {/* Info */}
             <div className="flex-1 flex items-center lg:justify-end order-2 lg:order-none mb-8 lg:mb-0 lg:pr-10 lg:pl-4">
-                <ul className="flex flex-col gap-10">
+                <ul className="flex flex-col gap-10 w-full">
                     {info.map((item, index) => {
                         return (
                             <li key={index} className="flex items-center gap-6">
-                                <div className="w-[52px] h-[52px] lg:w-[60px] lg:h-[60px] bg-[#27272c60] text-accent rounded-md flex items-center justify-center">
+                                <div className="min-w-[52px] h-[52px] lg:min-w-[60px] lg:h-[60px] bg-[#27272c60] text-accent rounded-md flex items-center justify-center">
                                     <div className="text-[25px]">
                                         {item.icon}
                                     </div>
                                 </div>
-                                <div className="flex-1">
+                                <div className="flex flex-col">
                                     <p className="text-white/60 text-sm">{item.title}</p>
-                                    <h3 className="text-base">{item.value}</h3>
+                                    <h3 className="text-base text-ellipsis line-clamp-2">{item.value}</h3>
                                 </div>
                             </li>
                         )
