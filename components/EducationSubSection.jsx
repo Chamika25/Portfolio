@@ -3,20 +3,21 @@ const EducationSubSection = () => {
 
     const education = [
         {
-            title: "Hight School",
-            year: 2020,
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum vero sapiente quod repellat et aliquam illo neque aspernatur porro suscipit quo, quidem accusamus pariatur possimus nam ipsa earum similique.",
+            title: "GCE Ordinary Level (O/L)",
+            year: 2017,
+            description: "Achieved 6 A's, 2 B's, and 1 C while studying at Royal College, Panadura. Main subjects with distinctions (A's) include Mathematics, Science, ICT and English, showcasing strong analytical and linguistic skills.",
         },
         {
-            title: "University of Sri Jayewardenepura",
-            year: 2023,
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum vero sapiente quod repellat et aliquam illo neque aspernatur porro suscipit quo, quidem accusamus pariatur possimus nam ipsa earum similique.",
+            title: "GCE Advanced Level (A/L)",
+            year: 2020,
+            description: "Achieved 3 A's in the Technology Stream with an island rank of 20. Completed studies at Taxila Central College, Horana, demonstrating exceptional performance and expertise in technology-focused subjects.",
         },
         {
             title: "Bachelor of Information and Communication Technology (BICT) (Hons.)",
-            year: 2025,
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum vero sapiente quod repellat et aliquam illo neque aspernatur porro suscipit quo, quidem accusamus pariatur possimus nam ipsa earum similique.",
-        }
+            year: "Expected 2027",
+            description: "Currently pursuing a Bachelor of Information and Communication Technology (BICT) (Hons.) at the University of Sri Jayewardenepura. Acquired comprehensive knowledge and skills in areas such as advanced mathematics, physics, statistics, data structures, cybersecurity, networking, and programming. Proficient in multiple programming languages including C, C#, C++, Java, Python, SQL, and MongoDB, as well as front-end and back-end technologies like React, JavaScript, HTML, and CSS. Gained experience in IoT, machine learning, data mining, multimedia systems, and more.",
+        },
+        
     ];
 
     return (
