@@ -40,7 +40,7 @@ const AboutNav = () => {
             {aboutItems.map((item,index) => (
                 <Button
                     key={index}
-                    className={`${activeSection === item.path ? 'bg-accent text-primary': 'bg-[#38383dbb] text-white'} rounded-md hover:text-primary`}
+                    className={`${activeSection === item.path ? 'bg-accent text-primary': 'bg-[#38383dbb] text-white'} rounded-md lg:hover:text-primary`}
                     onClick={() => onNavigate(item.path)}
                 >
                     {item.name}
