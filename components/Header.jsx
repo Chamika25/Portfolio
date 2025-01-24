@@ -38,6 +38,7 @@ export default Header; */
 //  v2
 
 // Components
+import Link from "next/link";
 import Logo from "./Logo";
 import Nav from "./Nav";
 
@@ -46,12 +47,12 @@ const Header = () => {
     <header className="py-6 w-full px-8 mx-auto text-white fixed z-20 transition-colors duration-300 ease-in-out">
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <a href="/" className="cursor-none w">
+        <Link href="/" className="cursor-none w">
           {/*<h1 className="text-4xl font-semibold hover:text-shadow-white">
              Kasun<span className="text-accent">.</span>
           </h1>*/}
           <Logo />
-        </a>
+        </Link>
 
         {/* Nav & Hire me button */}
         <div className="flex items-center gap-8">

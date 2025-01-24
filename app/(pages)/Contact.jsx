@@ -30,9 +30,9 @@ const Contact = () => {
         <div className="order-1 lg:order-none">
           {/* Form */}
           <form className="flex flex-col gap-2 p-6 bg-[#27272c50] rounded-xl">
-            <h3 className="text-3xl text-accent pb-4">Let's work together</h3>
+            <h3 className="text-3xl text-accent pb-4">Let&apos;s work together</h3>
             <p className="text-white/60 text-sm">
-              I'm here to help you achieve your goals. Let's connect and create
+              I&apos;m here to help you achieve your goals. Let&apos;s connect and create
               a unique digital experience together.
             </p>
             <div className="pt-2 grid grid-cols-1 md:grid-cols-2 gap-2">

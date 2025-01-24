@@ -12,7 +12,7 @@ const Home = () => {
         {/* Text */}
         <div className="text-center xl:text-left order-2 xl:order-none">
           <h1 className="h1 mb-6">
-            <span className="w">Hello, I'm</span>
+            <span className="w">Hello, I&apos;m</span>
             <br />
             <span className="text-accent">Buddika Kasun</span>
             <br />
