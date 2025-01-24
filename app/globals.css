@@ -132,8 +132,9 @@ body {
   padding: 0;
   position: relative;
   cursor: none; /* Hide the default cursor */
-  overflow: hidden; 
+  /* overflow: hidden; */
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -162,10 +163,12 @@ body {
 /* Custom Scrollbar Styling */
 html,
 #main-container {
+  height: 100vh;
   scrollbar-width: thin; /* For Firefox - thin scrollbar */
   scrollbar-color: #01ffbb #282c3422; /* Thumb (green) and Track (dark background) */
   overflow-y: auto; /* Enable vertical scrolling */
   /* height: 100vh; */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* For Webkit-based browsers (e.g., Chrome, Edge, Safari) */

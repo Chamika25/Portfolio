@@ -47,7 +47,7 @@ const CustomScrollLayout = ({ children }) => {
     <div
       id="main-container"
       ref={containerRef}
-      className="h-[100vh] lg:h-screen overflow-auto"
+      className="h-screen overflow-auto"
     >
       {/* Global scroll progress bar */}
       <motion.div
