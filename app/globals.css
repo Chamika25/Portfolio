@@ -132,7 +132,7 @@ body {
   padding: 0;
   position: relative;
   cursor: none; /* Hide the default cursor */
-  /* overflow: hidden; */
+  overflow: hidden; 
   scroll-behavior: smooth;
 }
 
