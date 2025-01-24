@@ -41,16 +41,27 @@
 
 //2
 
+"use client"
 //pages
 import Home from "./(pages)/Home";
 import Service from "./(pages)/Service";
 
+import dynamic from 'next/dynamic';
 // Components
-import CustomCursor from "@/components/CustomCursor";
-import ParticlesBackground from "@/components/ParticlesBackground";
+//import CustomCursor from "@/components/CustomCursor";
+const CustomCursor = dynamic(() => import("@/components/CustomCursor"), {
+  ssr: false
+});
+//import ParticlesBackground from "@/components/ParticlesBackground";
+const ParticlesBackground = dynamic(() => import("@/components/ParticlesBackground"), {
+  ssr: false
+});
+//import CustomScrollLayout from "@/components/CustomScrollLayout";
+const CustomScrollLayout = dynamic(() => import("@/components/CustomScrollLayout"), {
+  ssr: false
+});
 import Header from "@/components/Header";
 import Contact from "./(pages)/Contact";
-import CustomScrollLayout from "@/components/CustomScrollLayout";
 import Footer from "@/components/Footer";
 import About from "./(pages)/About";
 import Project from "./(pages)/Project";
