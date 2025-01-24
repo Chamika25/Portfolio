@@ -57,7 +57,7 @@ const CustomScrollLayout = ({ children }) => {
         {children}
 
         <motion.svg
-          className="fixed bottom-2 right-5 w-20 h-20 z-10"
+          className="fixed bottom-2 right-2 lg:right-5 w-20 h-20 z-10"
           viewBox="0 0 100 100"
           onClick={scrollToTop}
           initial="initial"
