@@ -206,7 +206,7 @@ const SkillsSubSection = () => {
 
   return (
     <section>
-      <h1 className="pb-4">Skills</h1>
+      <h1 className="text-2xl font-semibold pb-8">Skills</h1>
       <div className="flex flex-wrap items-center justify-center gap-4">
         {skills.map((skill, index) => (
           <div
