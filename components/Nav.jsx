@@ -219,75 +219,75 @@ import HireMeBtn from "./HireMeBtn";
 import useCustomScroll from "@/app/hooks/useCustomScroll";
 
 const Nav = () => {
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const [isTransitioning, setIsTransitioning] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+  const {
+    scrollDirection,
+    enteredSection,
+    leavedSection,
+    activeSection,
+    sectionProgress,
+  } = useCustomScroll(); // Custom scroll hook
 
-    const {
-        scrollDirection,
-        enteredSection,
-        leavedSection,
-        activeSection,
-        sectionProgress,
-    } = useCustomScroll(); // Custom scroll hook
+  //console.log(sectionProgress)
 
-    //console.log(sectionProgress)
+  // Scroll handling for smooth navigation
+  const onNavigate = (id) => {
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 100);
 
-    // Scroll handling for smooth navigation
-    const onNavigate = (id) => {
-        setTimeout(() => {
-            setIsOpen(false);
-        }, 100);
+    setIsTransitioning(true); // Set transitioning state
 
-        setIsTransitioning(true); // Set transitioning state
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 1850);
+    }
+  };
 
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-            setTimeout(() => {
-                setIsTransitioning(false);
-            }, 1850);
-        }
-    };
+  return (
+    <>
+      {/* Desktop Nav */}
+      <nav className="gap-8 hidden lg:flex">
+        {menuItems.map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{ y: 0 }}
+            whileHover={{
+              y: !(item.path === activeSection) ? [20, -30, 30] : 0, // Smooth bounce only if not active
+              transition: {
+                duration: 0.4,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              },
+            }}
+            whileTap={{
+              scale: 0.2,
+              y: 0,
+              ease: "easeInOut",
+              transition: { duration: 0.2 },
+            }}
+            onClick={() => onNavigate(item.path)}
+            className={`${
+              //item.path === activeSection
+              item.path === activeSection
+                ? "text-accent"
+                : "hover:text-shadow-accent"
+            } relative cursor-none capitalize font-medium hover:text-accent transition-all ease-in`}
+          >
+            {item.name}
 
-    return (
-        <>
-            {/* Desktop Nav */}
-            <nav className="gap-8 hidden lg:flex">
-                {menuItems.map((item, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ y: 0 }}
-                        whileHover={{
-                            y: !(item.path === activeSection) ? [20, -30, 30] : 0, // Smooth bounce only if not active
-                            transition: {
-                                duration: 0.4,
-                                repeat: Infinity,
-                                repeatType: "loop",
-                                ease: "easeInOut",
-                            },
-                        }}
-                        whileTap={{
-                            scale: 0.2,
-                            y: 0,
-                            ease: "easeInOut",
-                            transition: { duration: 0.2 },
-                        }}
-                        onClick={() => onNavigate(item.path)}
-                        className={`${
-                            //item.path === activeSection
-                            item.path === activeSection
-                                ? "text-accent"
-                                : "hover:text-shadow-accent"
-                        } relative cursor-none capitalize font-medium hover:text-accent transition-all ease-in`}
-                    >
-                        {item.name}
-
-                        {/* Section-specific progress bar */}
-                        { sectionProgress[item.path] < 1 && (
-                            <motion.div
-                                className={`
-                                    ${/*
+            {/* Section-specific progress bar */}
+            {sectionProgress[item.path] < 1 && (
+              <motion.div
+                className={`
+                                    ${
+                                      /*
                                         enteredSection === item.path ?
                                             (scrollDirection === 'down' ?
                                                 "progress-bar-left"
@@ -313,65 +313,66 @@ const Nav = () => {
                                             :
                                                 'progress-bar-right'
                                             )
-                                    */''}
+                                    */ ""
+                                    }
                                     absolute bottom-2 left-0 right-0 h-1 bg-accent
                                     `}
-                                style={{ scaleX: sectionProgress[item.path] }}
-                                transition={{
-                                    stiffness: 100,
-                                    damping: 30,
-                                    restDelta: 0.001,
-                                }}
-                            />
-                        )}
-                    </motion.div>
-                ))}
-                <HireMeBtn onNavigate={onNavigate} />
-            </nav>
-
-            {/* Mobile Nav */}
-            <Sheet open={isOpen} onOpenChange={setIsOpen} className='ease-out'>
-                <SheetTrigger asChild>
-                    <button className="flex lg:hidden justify-center items-center">
-                        <CiMenuFries className="text-[32px] text-accent" />
-                    </button>
-                </SheetTrigger>
-                <SheetContent className="flex lg:hidden flex-col">
-                    <div className="mt-24 mb-12 text-center text-4xl w">
-                        <button onClick={() => onNavigate("home")}>
-                            <h1>
-                                Kasun<span className="text-accent">.</span>
-                            </h1>
-                        </button>
-                    </div>
-                    <nav className="flex flex-col justify-center items-center gap-8">
-                        {menuItems.map((item, index) => (
-                            <button
-                                key={index}
-                                className={`cursor-none text-xl capitalize hover:text-accent transition-all ${
-                                    activeSection === item.path && "text-accent border-b-2 border-accent"
-                                }`}
-                                onClick={() => onNavigate(item.path)}
-                            >
-                                {item.name}
-                            </button>
-                        ))}
-                        <div className="pt-8">
-                            <HireMeBtn onNavigate={onNavigate} />
-                        </div>
-                    </nav>
-                </SheetContent>
-            </Sheet>
-
-            {/* Page Transition */}
-            {isTransitioning && (
-                <div className="absolute inset-0">
-                    <PageTransition />
-                </div>
+                style={{ scaleX: sectionProgress[item.path] }}
+                transition={{
+                  stiffness: 100,
+                  damping: 30,
+                  restDelta: 0.001,
+                }}
+              />
             )}
-        </>
-    );
+          </motion.div>
+        ))}
+        <HireMeBtn onNavigate={onNavigate} />
+      </nav>
+
+      {/* Mobile Nav */}
+      <Sheet open={isOpen} onOpenChange={setIsOpen} className="ease-out">
+        <SheetTrigger asChild>
+          <button className="flex lg:hidden justify-center items-center">
+            <CiMenuFries className="text-[32px] text-accent" />
+          </button>
+        </SheetTrigger>
+        <SheetContent className="flex lg:hidden flex-col">
+          <div className="mt-24 mb-12 text-center text-4xl w">
+            <button onClick={() => onNavigate("home")}>
+              <h1>
+                Kasun<span className="text-accent">.</span>
+              </h1>
+            </button>
+          </div>
+          <nav className="flex flex-col justify-center items-center gap-8">
+            {menuItems.map((item, index) => (
+              <button
+                key={index}
+                className={`cursor-none text-xl capitalize hover:text-accent transition-all ${
+                  activeSection === item.path &&
+                  "text-accent border-b-2 border-accent"
+                }`}
+                onClick={() => onNavigate(item.path)}
+              >
+                {item.name}
+              </button>
+            ))}
+            <div className="pt-8">
+              <HireMeBtn onNavigate={onNavigate} />
+            </div>
+          </nav>
+        </SheetContent>
+      </Sheet>
+
+      {/* Page Transition */}
+      {isTransitioning && (
+        <div className="absolute inset-0">
+          <PageTransition />
+        </div>
+      )}
+    </>
+  );
 };
 
 export default Nav;
-

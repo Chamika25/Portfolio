@@ -39,7 +39,6 @@
 //     );
 // }
 
-
 //2
 
 //pages
@@ -57,10 +56,8 @@ import About from "./(pages)/About";
 import Project from "./(pages)/Project";
 
 export default function Page() {
-
   return (
     <CustomScrollLayout>
-  
       <ParticlesBackground />
       <CustomCursor />
 
@@ -69,28 +66,27 @@ export default function Page() {
 
       {/* Body */}
       <section id="home" className="section">
-          <Home />
+        <Home />
       </section>
 
       <section id="about" className="section">
-          <About />
+        <About />
       </section>
 
       <section id="service" className="section">
-          <Service />
+        <Service />
       </section>
 
       <section id="projects" className="section">
-          <Project />
+        <Project />
       </section>
 
       <section id="contact" className="section">
-          <Contact />
+        <Contact />
       </section>
 
       {/* Footer */}
       <Footer />
-    
     </CustomScrollLayout>
   );
 }

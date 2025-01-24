@@ -81,7 +81,7 @@ export default Logo;
 */
 
 //  v3
-"use client"
+"use client";
 
 import { motion } from "framer-motion";
 
@@ -114,7 +114,7 @@ const Logo = () => {
         opacity: 1,
         x: 0,
       }}
-      transition= {{
+      transition={{
         opacity: {
           delay: 1,
           duration: 1.5,
@@ -127,30 +127,27 @@ const Logo = () => {
           type: "spring",
           stiffness: 100,
           damping: 8,
-        }
+        },
       }}
     >
-    <motion.div
-      className="pl-4 flex space-x-1 text-4xl font-semibold"
-      initial="initial"
-      animate="hover" // Trigger hover animation for all children
-    >
-      {letters.map((char, index) => (
-        <motion.span
-          key={index}
-          custom={index} // Pass index for staggered delay
-          variants={letterVariants} // Apply letter-specific variants
-        >
-          {char}
-        </motion.span>
-      ))}
-      <motion.span
-        className="text-accent"
-        variants={letterVariants}
+      <motion.div
+        className="pl-4 flex space-x-1 text-4xl font-semibold"
+        initial="initial"
+        animate="hover" // Trigger hover animation for all children
       >
-        .
-      </motion.span>
-    </motion.div>
+        {letters.map((char, index) => (
+          <motion.span
+            key={index}
+            custom={index} // Pass index for staggered delay
+            variants={letterVariants} // Apply letter-specific variants
+          >
+            {char}
+          </motion.span>
+        ))}
+        <motion.span className="text-accent" variants={letterVariants}>
+          .
+        </motion.span>
+      </motion.div>
     </motion.div>
   );
 };

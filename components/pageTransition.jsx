@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { AnimatePresence, motion } from "framer-motion";
 // import { usePathname } from "next/navigation";
@@ -7,22 +7,24 @@ import { AnimatePresence, motion } from "framer-motion";
 import StairTransition from "./StairTransition";
 
 const PageTransition = () => {
+  //const pathName = usePathname();
 
-    //const pathName = usePathname();
+  return (
+    <>
+      <StairTransition />
 
-    return (
-        <>
-            <StairTransition />
-
-            <AnimatePresence>
-                <motion.div
-                    initial={{opacity: 1}}
-                    animate={{opacity: 0, transition: {delay: 1, duration: 0.4, ease: 'easeInOut'}}}
-                    className="h-screen w-screen absolute bg-primary pointer-events-none top-0 left-0 z-[-1]" /* top-0 */
-                />
-            </AnimatePresence>
-        </>
-    )
-}
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{
+            opacity: 0,
+            transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
+          }}
+          className="h-screen w-screen absolute bg-primary pointer-events-none top-0 left-0 z-[-1]" /* top-0 */
+        />
+      </AnimatePresence>
+    </>
+  );
+};
 
 export default PageTransition;

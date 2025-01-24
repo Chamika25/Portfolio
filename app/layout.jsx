@@ -1,4 +1,4 @@
-import { JetBrains_Mono } from 'next/font/google';
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -15,9 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={jetbrainsMono.variable} >
-        {children}
-      </body>
+      <body className={jetbrainsMono.variable}>{children}</body>
     </html>
   );
 }

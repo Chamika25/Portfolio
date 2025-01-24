@@ -71,7 +71,6 @@ const ParticlesBackground = () => {
 
       // Handle click event to trigger push mode (click to add particles)
       const handleClick = (event) => {
-
         const par = { pos_x: event.clientX, pos_y: event.clientY };
         const particalCount = 4;
 
@@ -80,7 +79,7 @@ const ParticlesBackground = () => {
           particlesInstance.fn.modes.pushParticles(particalCount, par);
           particlesInstance.fn.modes.removeParticles(particalCount);
         }
-      }
+      };
 
       // Handle mousemove event for repulse
       const handleMouseMove = (event) => {
@@ -91,8 +90,10 @@ const ParticlesBackground = () => {
             const rect = canvas.getBoundingClientRect();
 
             const par = {
-              pos_x: (event.clientX - rect.left) * particlesInstance.canvas.pxratio,
-              pos_y: (event.clientY - rect.top) * particlesInstance.canvas.pxratio,
+              pos_x:
+                (event.clientX - rect.left) * particlesInstance.canvas.pxratio,
+              pos_y:
+                (event.clientY - rect.top) * particlesInstance.canvas.pxratio,
             };
 
             particlesInstance.interactivity.mouse.pos_x = par.pos_x;
@@ -131,7 +132,7 @@ const ParticlesBackground = () => {
     }
   }, []);
 
-  return <div id="particles-js" /> ;
+  return <div id="particles-js" />;
 };
 
 export default ParticlesBackground;

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 const MotionBtn = ({
   children,
   whileHover = { scale: 1.1 }, // Default rotation
-  whileTap = { scale: 0.95 },  // Default tap effect
-  transition = { type: "spring", stiffness: 400, damping: 10, }, // Customizable transition
+  whileTap = { scale: 0.95 }, // Default tap effect
+  transition = { type: "spring", stiffness: 400, damping: 10 }, // Customizable transition
   ...motionProps
 }) => {
   return (

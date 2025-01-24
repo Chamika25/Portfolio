@@ -42,7 +42,6 @@ import Logo from "./Logo";
 import Nav from "./Nav";
 
 const Header = () => {
-
   return (
     <header className="py-6 w-full px-8 mx-auto text-white fixed z-20 transition-colors duration-300 ease-in-out">
       <div className="flex justify-between items-center">
@@ -58,7 +57,6 @@ const Header = () => {
         <div className="flex items-center gap-8">
           <Nav />
         </div>
-
       </div>
     </header>
   );

@@ -78,7 +78,9 @@
 
 @layer utilities {
   .text-shadow-accent {
-    text-shadow: -1px -1px 20px #00ff99, 1px 5px 20px #00ff99;
+    text-shadow:
+      -1px -1px 20px #00ff99,
+      1px 5px 20px #00ff99;
   }
   .text-shadow-white {
     text-shadow: 0px 2px 25px rgba(255, 255, 255, 0.8);
@@ -122,7 +124,8 @@
   font-size: 1.1em;
 }
 
-html, body {
+html,
+body {
   height: auto; /* Ensure the height adjusts with content */
   min-height: 100vh; /* Allow for overflow content */
   margin: 0;
@@ -177,7 +180,6 @@ html::-webkit-scrollbar-thumb,
 #main-container::-webkit-scrollbar-thumb {
   background: #01ffbbbb; /* Thumb color */
   border-radius: 10px; /* Fully rounded edges */
-  
 }
 
 html::-webkit-scrollbar-thumb:hover,
@@ -191,10 +193,9 @@ html::-webkit-scrollbar-track,
   border-radius: 10px; /* Matches thumb rounding for cohesive design */
 }
 
-
 .section {
   /* border: 1px solid white; */
-  @apply pt-24 lg:pt-0 lg:min-h-[calc(100vh)] flex flex-col justify-center border border-white ;
+  @apply pt-24 lg:pt-0 lg:min-h-[calc(100vh)] flex flex-col justify-center border border-white;
 }
 
 .progress-bar-left {

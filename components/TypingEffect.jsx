@@ -164,24 +164,24 @@ import { TypeAnimation } from "react-type-animation";
 
 const TypingEffect = () => {
   return (
-    <TypeAnimation 
-        sequence={[
-          'Front End Developer',
-          1000,
-          'Back End Developer',
-          1000,
-          'Full Stack Developer',
-          1000,
-          'Tester',
-          1000,
-          'Bug Fixer',
-          1000,
+    <TypeAnimation
+      sequence={[
+        "Front End Developer",
+        1000,
+        "Back End Developer",
+        1000,
+        "Full Stack Developer",
+        1000,
+        "Tester",
+        1000,
+        "Bug Fixer",
+        1000,
       ]}
       wrapper="span"
       speed={50}
       repeat={Infinity}
     />
-  )
+  );
 };
 
 export default TypingEffect;
