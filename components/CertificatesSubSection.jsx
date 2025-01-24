@@ -45,7 +45,7 @@ const CertificatesSubSection = () => {
 
   return (
     <section>
-      <h1>Certificates</h1>
+      <h1 className="text-2xl font-semibold pb-4">Certificates</h1>
       <div className="flex flex-col gap-8 p-2">
         {certificates.map((cert, index) => (
           <div
