@@ -23,7 +23,7 @@ const EducationSubSection = () => {
 
   return (
     <div className="relative">
-      <h1>Education</h1>
+      <h1 className="text-2xl font-semibold pb-4">Education</h1>
       <div className="before:absolute before:w-[2px] before:h-full before:bg-accent before:left-0 xl:before:left-[calc(50%-1px)]">
         {education.map((item, index) => (
           <div
