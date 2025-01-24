@@ -8,13 +8,17 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Portfolio",
+  title: "Buddika Kasun",
   description: "Portfolio of D.L. Buddika Kasun",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Add the favicon */}
+        <link rel="icon" type="image/svg+xml" href="/assets/favicon/bk.svg" />
+      </head>
       <body className={jetbrainsMono.variable}>{children}</body>
     </html>
   );
