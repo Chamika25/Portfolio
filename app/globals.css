@@ -126,8 +126,8 @@
 
 html,
 body {
-  height: auto; /* Ensure the height adjusts with content */
-  min-height: 100vh; /* Allow for overflow content */
+  /* height: auto; Ensure the height adjusts with content */
+  /* min-height: 100vh; Allow for overflow content */
   margin: 0;
   padding: 0;
   position: relative;
