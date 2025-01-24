@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
-import HideUIOnScroll from "./HideUIOnScroll";
 
 const CustomScrollLayout = ({ children }) => {
   const containerRef = useRef(null);
@@ -45,12 +44,10 @@ const CustomScrollLayout = ({ children }) => {
   };
 
   return (
-    <>
-    <HideUIOnScroll /> {/* Add the HideUIOnScroll component here */}
     <div
       id="main-container"
       ref={containerRef}
-      className="lg:max-h-[100vh] overflow-auto"
+      //className="lg:max-h-[100vh] overflow-auto"
     >
       {/* Global scroll progress bar */}
       <motion.div
@@ -89,7 +86,6 @@ const CustomScrollLayout = ({ children }) => {
         />
       </motion.svg>
     </div>
-    </>
   );
 };
 

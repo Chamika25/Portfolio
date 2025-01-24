@@ -126,10 +126,8 @@
 
 html,
 body {
-  /* height: auto; Ensure the height adjusts with content */
-  /* min-height: 100vh; Allow for overflow content */
-  height: 100%;
-  overflow: hidden;
+  height: auto; /* Ensure the height adjusts with content */
+  min-height: 100vh; /* Allow for overflow content */
   margin: 0;
   padding: 0;
   position: relative;
@@ -137,6 +135,7 @@ body {
   /* overflow: hidden; */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
 body {
@@ -165,7 +164,7 @@ body {
 /* Custom Scrollbar Styling */
 html,
 #main-container {
-  height: 100vh;
+  /* height: 100vh; */
   scrollbar-width: thin; /* For Firefox - thin scrollbar */
   scrollbar-color: #01ffbb #282c3422; /* Thumb (green) and Track (dark background) */
   overflow-y: auto; /* Enable vertical scrolling */
