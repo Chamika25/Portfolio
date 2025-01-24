@@ -10,38 +10,46 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import useCustomScroll from "../hooks/useCustomScroll";
+import MotionBtn from "@/components/MotionBtn";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
 const Project = () => {
   const projects = [
     {
-      title: "Project 1",
-      image: "/public/assets/certificates/mern.png",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      link: "/project/1",
-    },
+      title: "BikzIK E-Commerce Platform",
+      image: "/assets/projects/BikzIK.png",
+      description: "BIKZIK is a modern, full-stack e-commerce platform that offers seamless shopping experiences. It is built using the latest technologies with features like user authentication, product management, and cloud image storage.",
+      link: "https://bikzik.vercel.app",
+      git: "https://github.com/Buddika-Kasun/BikzIK_E-commarce_Web-MERN-"
+    },    
     {
-      title: "Project 2",
-      image: "",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      link: "/project/2",
+      title: "UniCore ERP System",
+      image: "/assets/projects/Unicore.png",
+      description: "UniCore is a powerful ERP system built with Next.js, React, and MongoDB, designed to streamline university management with modules for resource utilization, reservations, user profiles, and administrative operations.",
+      link: "",    
+      git: "https://github.com/Buddika-Kasun/UMS_Unicore_ERP-NextJs-",
     },
     {
       title: "Project 3",
-      image: "",
+      image: "/assets/projects/Unicore.png",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       link: "/project/3",
+      git: "a",
     },
     {
       title: "Project 4",
-      image: "",
+      image: "/assets/projects/Unicore.png",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       link: "/project/4",
+      git: "a",
     },
     {
       title: "Project 5",
-      image: "",
+      image: "/assets/projects/Unicore.png",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       link: "/project/5",
+      git: "a",
     },
   ];
 
@@ -98,11 +106,11 @@ const Project = () => {
     return (
       <div
         ref={ref}
-        className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-[100px] items-center justify-center"
+        className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-start lg:items-center lg:justify-center lg:px-8 lg:pl-16"
       >
-        <div className="w-full lg:w-96 rounded-md">
+        <div className="w-full lg:min-w-[400px] lg:max-w-[400px] rounded-md">
           <Image
-            src="/assets/certificates/AzureCertificate.png"
+            src={item.image}
             width={600}
             height={600}
             alt={item.title}
@@ -110,17 +118,35 @@ const Project = () => {
           />
         </div>
         <div className="flex flex-col gap-4 p-2 lg:p-0">
-          <h2 className="text-lg lg:text-3xl text-ellipsis line-clamp-2">
+          <h2 className="text-lg lg:text-3xl font-semibold text-ellipsis line-clamp-2 leading-tight lg:leading-normal text-accent">
             {item.title}
           </h2>
-          <p>{item.description}</p>
-          <a
-            href={item.link}
-            target="_blank"
-            className="bg-accent rounded-lg w-fit px-4 text-primary lg:hover:bg-accent-hover cursor-none"
-          >
-            View Project
-          </a>
+          <p className="lg:py-4 leading-tight lg:leading-normal">{item.description}</p>
+          <div className="flex gap-6">
+            { 
+              item.link &&
+              <Link
+                href={item.link}
+                target="_blank"
+                className="bg-accent rounded-lg w-fit px-4 text-primary lg:hover:bg-accent-hover cursor-none"
+              >
+                View Project
+              </Link>
+            }
+            <MotionBtn
+              whileHover={{ rotate: 360, scale: 1.2 }}
+              transition={{
+                duration: 0.5,
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
+            >
+              <Link href={item.git} target="_blank" className='w-9 h-9 border-[1.5px] border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500 cursor-none'>
+                <FaGithub />
+              </Link>
+            </MotionBtn>
+          </div>
         </div>
       </div>
     );
@@ -128,8 +154,8 @@ const Project = () => {
 
   return (
     <div className="container max-auto lg:pt-[120px] mb-8 lg:mb-0 min-h-[calc(100vh)] h-full relative projects">
-      <div className="sticky top-28 w-full overflow-hidden">
-        <h1>Projects</h1>
+      <div className="sticky top-24 lg:top-28 w-full overflow-hidden">
+        <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>
         <motion.div
           className="flex h-full items-center w-full sticky top-0 gap-8"
           style={{
