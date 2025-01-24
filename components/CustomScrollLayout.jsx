@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
+import HideUIOnScroll from "./HideUIOnScroll";
 
 const CustomScrollLayout = ({ children }) => {
   const containerRef = useRef(null);
@@ -44,6 +45,8 @@ const CustomScrollLayout = ({ children }) => {
   };
 
   return (
+    <>
+    <HideUIOnScroll /> {/* Add the HideUIOnScroll component here */}
     <div
       id="main-container"
       ref={containerRef}
@@ -86,6 +89,7 @@ const CustomScrollLayout = ({ children }) => {
         />
       </motion.svg>
     </div>
+    </>
   );
 };
 
