@@ -30,7 +30,7 @@ const AboutMeSubSection = () => {
 
   return (
     <section className="relative">
-      <h1 className="">About Me</h1>
+      <h1 className="text-2xl font-semibold pb-4">About Me</h1>
       <p className="py-4 opacity-80">
         A passionate software engineering undergraduate with a love for
         technology, web development, and SE projects.
