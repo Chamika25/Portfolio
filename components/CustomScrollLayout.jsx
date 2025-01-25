@@ -24,19 +24,19 @@ const CustomScrollLayout = ({ children }) => {
   });
 
   // Scroll to the top of the container
-  /* const scrollToTop = () => {
+  const scrollToTop = () => {
     //containerRef.current.scrollTop = 0;
     containerRef.current.scrollTo({
       top: 0,
       behavior: "smooth", // Ensures smooth scrolling
     });
-  }; */
-  const scrollToTop = () => {
+  }; 
+  /* const scrollToTop = () => {
     container?.scrollTo({
       top: 0,
       behavior: "smooth", // Ensures smooth scrolling
     });
-  };
+  }; */
 
   const varient = {
     initial: {
@@ -61,9 +61,8 @@ const CustomScrollLayout = ({ children }) => {
   return (
     <div
       id="main-container"
-      //ref={containerRef}
+      ref={containerRef}
       //className="lg:max-h-[100vh] overflow-auto"
-      className="z-50"
     >
       {/* Global scroll progress bar */}
       <motion.div
@@ -71,7 +70,7 @@ const CustomScrollLayout = ({ children }) => {
         style={{ scaleX }}
       />
 
-      {/* {children} */}
+       {children} 
 
       <motion.svg
         className="fixed bottom-2 right-2 lg:right-5 w-20 h-20 z-50"
