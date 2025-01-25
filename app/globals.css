@@ -130,16 +130,15 @@ body {
   min-height: 100vh; /* Allow for overflow content */
   margin: 0;
   padding: 0;
-  position: relative;
   cursor: none; /* Hide the default cursor */
   /* overflow: hidden; */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  position: relative;
 }
 
 body {
   /* overflow: hidden; */
+  /* @apply min-h-screen max-h-screen overflow-auto */
 }
 
 /* Custom Cursor */

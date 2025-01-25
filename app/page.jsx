@@ -68,7 +68,8 @@ import Project from "./(pages)/Project";
 
 export default function Page() {
   return (
-    <CustomScrollLayout>
+    <>
+      <CustomScrollLayout />
       <ParticlesBackground />
       <CustomCursor />
 
@@ -98,6 +99,7 @@ export default function Page() {
 
       {/* Footer */}
       <Footer />
-    </CustomScrollLayout>
+      </>
+    //</CustomScrollLayout>
   );
 }

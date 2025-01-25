@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 const AboutNav = () => {
   const { sectionProgress, activeSection } = useCustomScroll({
     sectionsClassName: "aboutSubSection",
-  });
+  }); //console.log(activeSection);
 
   const aboutItems = [
     {

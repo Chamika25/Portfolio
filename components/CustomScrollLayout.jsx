@@ -1,10 +1,15 @@
 "use client";
 
 import { motion, useScroll, useSpring } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const CustomScrollLayout = ({ children }) => {
   const containerRef = useRef(null);
+
+  /* useEffect(() => {
+    // Initialize the bodyRef
+    containerRef.current = document.body;
+  }, []); */
 
   // Scroll progress using framer-motion
   const { scrollYProgress } = useScroll({ container: containerRef });
@@ -15,9 +20,15 @@ const CustomScrollLayout = ({ children }) => {
   });
 
   // Scroll to the top of the container
-  const scrollToTop = () => {
+  /* const scrollToTop = () => {
     //containerRef.current.scrollTop = 0;
     containerRef.current.scrollTo({
+      top: 0,
+      behavior: "smooth", // Ensures smooth scrolling
+    });
+  }; */
+  const scrollToTop = () => {
+    window.scrollTo({
       top: 0,
       behavior: "smooth", // Ensures smooth scrolling
     });
@@ -46,7 +57,7 @@ const CustomScrollLayout = ({ children }) => {
   return (
     <div
       id="main-container"
-      ref={containerRef}
+      //ref={containerRef}
       //className="lg:max-h-[100vh] overflow-auto"
     >
       {/* Global scroll progress bar */}
@@ -55,7 +66,7 @@ const CustomScrollLayout = ({ children }) => {
         style={{ scaleX }}
       />
 
-      {children}
+      {/* {children} */}
 
       <motion.svg
         className="fixed bottom-2 right-2 lg:right-5 w-20 h-20 z-10"

@@ -155,7 +155,8 @@ const useCustomScroll = () => {
 export default useCustomScroll;
 */
 
-//  v2
+//  v2 
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -173,7 +174,8 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
 
   useEffect(() => {
     // Reference the scrollable container
-    const container = document.getElementById("main-container");
+    //const container = document.getElementById("main-container");
+    const container = document.documentElement;
 
     if (!container) {
       console.error("Element with id 'main-container' not found!");
@@ -194,6 +196,7 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
     };
 
     // Section Progress Calculation
+    /*
     const calculateProgress = () => {
       const sections = Array.from(
         container.getElementsByClassName(sectionsClassName),
@@ -214,9 +217,48 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
 
         progressData[section.id] = progress;
       });
-
+      
       setSectionProgress(progressData);
     };
+    */
+    const calculateProgress = () => {
+      const sections = Array.from(document.getElementsByClassName(sectionsClassName));
+      const progressData = {};
+    
+      // Get the window's viewport dimensions
+      const windowHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+    
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+    
+        // Calculate the top and bottom of the visible area of the section in the viewport
+        const visibleTop = Math.max(rect.top, 0);  // Section's top within the window
+        const visibleBottom = Math.min(rect.bottom, windowHeight); // Section's bottom within the window
+    
+        // If the section is not in the window's visible area, no progress
+        if (visibleTop >= visibleBottom) {
+          progressData[section.id] = 0;
+          return;
+        }
+    
+        // Calculate the visible height of the section within the viewport
+        const visibleHeight = visibleBottom - visibleTop;
+    
+        // Calculate the total height of the section
+        const sectionHeight = rect.height;
+    
+        // Calculate the section's progress
+        const progress = sectionHeight === 0 ? 0 : Math.min((visibleHeight / windowHeight), 0.99) ; //console.log("section: ",section.id, "visibleHeight: ", visibleHeight, "sectionHeight: ", sectionHeight, "progress: ", progress)
+    
+        // Clamp progress between 0 and 1
+        progressData[section.id] = Math.min(Math.max(progress, 0), 1);
+      });
+    
+      // Call the function to update the state or UI with the progress
+      setSectionProgress(progressData); //console.log(progressData)
+    };
+    
 
     // Header Background Color Change
     const handleScrollHeader = () => {
@@ -308,20 +350,36 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
     };
 
     // Event listeners for scroll and resize
+    /*
     container.addEventListener("scroll", handleScrollDirection);
     container.addEventListener("scroll", calculateProgress);
     container.addEventListener("resize", calculateProgress);
     container.addEventListener("scroll", handleScrollHeader);
     container.addEventListener("scroll", handleUpArrow);
     container.addEventListener("scroll", calScrollYProgress);
+    */
+    window.addEventListener("scroll", handleScrollDirection);
+    window.addEventListener("scroll", calculateProgress);
+    window.addEventListener("resize", calculateProgress);
+    window.addEventListener("scroll", handleScrollHeader);
+    window.addEventListener("scroll", handleUpArrow);
+    window.addEventListener("scroll", calScrollYProgress);
 
     return () => {
+      /*
       container.removeEventListener("scroll", handleScrollDirection);
       container.removeEventListener("scroll", calculateProgress);
       container.removeEventListener("resize", calculateProgress);
       container.removeEventListener("scroll", handleScrollHeader);
       container.removeEventListener("scroll", handleUpArrow);
       container.removeEventListener("scroll", calScrollYProgress);
+      */
+      window.removeEventListener("scroll", handleScrollDirection);
+      window.removeEventListener("scroll", calculateProgress);
+      window.removeEventListener("resize", calculateProgress);
+      window.removeEventListener("scroll", handleScrollHeader);
+      window.removeEventListener("scroll", handleUpArrow);
+      window.removeEventListener("scroll", calScrollYProgress);
       enterObserver.disconnect();
       leaveObserver.disconnect();
       //activeObserver.disconnect();
@@ -341,3 +399,148 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
 };
 
 export default useCustomScroll;
+
+
+
+
+//  v3
+/*
+"use client";
+
+import { useEffect, useState } from "react";
+
+const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
+  // States for scroll tracking and section progress
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const [lastScrollPosition, setLastScrollPosition] = useState(0);
+  const [enteredSection, setEnteredSection] = useState({});
+  const [leavedSection, setLeavedSection] = useState({});
+  const [activeSection, setActiveSection] = useState("home");
+  const [sectionProgress, setSectionProgress] = useState({ home: 0.99 });
+  const [scrollYProgress, setScrollYProgress] = useState(0);
+
+  useEffect(() => {
+    // Use `document.documentElement` as the container
+    const container = document.documentElement;
+
+    if (!container) {
+      console.error("Document root (HTML element) not found!");
+      return;
+    }
+
+    // Scroll Direction Logic
+    const handleScrollDirection = () => {
+      const currentScrollPosition = container.scrollTop;
+
+      if (currentScrollPosition > lastScrollPosition) {
+        setScrollDirection("down");
+      } else if (currentScrollPosition < lastScrollPosition) {
+        setScrollDirection("up");
+      }
+
+      setLastScrollPosition(currentScrollPosition);
+    };
+
+    // Section Progress Calculation
+    const calculateProgress = () => {
+      const sections = Array.from(
+        document.getElementsByClassName(sectionsClassName)
+      );
+      const progressData = {};
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const visibleHeight = Math.min(
+          rect.bottom,
+          window.innerHeight
+        ) - Math.max(rect.top, 0);
+        const progress = Math.max(
+          0,
+          Math.min(visibleHeight / rect.height, 0.99)
+        );
+
+        progressData[section.id] = progress;
+      });
+
+      setSectionProgress(progressData);
+    };
+
+    // Scroll Progress for the Whole Page
+    const handleScrollProgress = () => {
+      const scrollTop = container.scrollTop;
+      const scrollHeight = container.scrollHeight - container.clientHeight;
+      const progress = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+      setScrollYProgress(progress);
+    };
+
+    // Intersection Observers
+    const enterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setEnteredSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.04 }
+    );
+
+    const leaveObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            setLeavedSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.94 }
+    );
+
+    const activeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    // Observe sections
+    const sections = document.querySelectorAll(`.${sectionsClassName}`);
+    sections.forEach((section) => {
+      enterObserver.observe(section);
+      leaveObserver.observe(section);
+      activeObserver.observe(section);
+    });
+
+    // Event Listeners
+    const handleScroll = () => {
+      handleScrollDirection();
+      calculateProgress();
+      handleScrollProgress();
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      enterObserver.disconnect();
+      leaveObserver.disconnect();
+      activeObserver.disconnect();
+    };
+  }, [lastScrollPosition, sectionsClassName]);
+
+  return {
+    scrollDirection,
+    enteredSection,
+    leavedSection,
+    activeSection,
+    sectionProgress,
+    scrollYProgress,
+  };
+};
+
+export default useCustomScroll;
+*/
