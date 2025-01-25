@@ -169,6 +169,7 @@ html,
   overflow-y: auto; /* Enable vertical scrolling */
   /* height: 100vh; */
   -webkit-overflow-scrolling: touch;
+  z-index: 100;
 }
 
 /* For Webkit-based browsers (e.g., Chrome, Edge, Safari) */
