@@ -8,10 +8,10 @@ const Photo = () => {
     <div className="h-full w-full relative z-10 group">
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{
+        whileInView={{
           opacity: 1,
           transition: {
-            delay: 2,
+            delay: 0.5,
             duration: 0.4,
             ease: "easeIn",
           },
@@ -36,7 +36,7 @@ const Photo = () => {
             initial={{
               strokeDasharray: "24 10 0 0",
             }}
-            animate={{
+            whileInView={{
               strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
               rotate: [120, 360],
             }}
@@ -58,7 +58,7 @@ const Photo = () => {
             initial={{
               strokeDasharray: "24 10 0 0",
             }}
-            animate={{
+            whileInView={{
               strokeDasharray: ["2 255 15 5", "12 22 55 42"],
               rotate: [90, 360],
             }}
@@ -80,7 +80,7 @@ const Photo = () => {
             initial={{
               strokeDasharray: "24 10 0 0",
             }}
-            animate={{
+            whileInView={{
               strokeDasharray: ["2 255 15 5", "2 155 95 15"],
               rotate: [90, 360],
             }}
@@ -95,10 +95,10 @@ const Photo = () => {
         {/* Image */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{
+          whileInView={{
             opacity: 1,
             transition: {
-              delay: 2.4,
+              delay: 1,
               duration: 0.4,
               ease: "easeInOut",
             },

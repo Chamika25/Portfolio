@@ -260,7 +260,20 @@ const Nav = () => {
         {menuItems.map((item, index) => (
           <motion.div
             key={index}
-            initial={{ y: 0 }}
+            // initial={{ y: 0 }}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ 
+              y: 0, 
+              opacity: 1, 
+              transition: {
+                y: {
+                  delay: (0.1 * index),
+                  transition: 0.2,
+                  ease: "easeIn",
+                } 
+              }
+            }}
+            //transition={{ duration: (0.5 + (0.5 * index)) }}
             whileHover={{
               y: !(item.path === activeSection) ? [20, -30, 30] : 0, // Smooth bounce only if not active
               transition: {
@@ -331,7 +344,33 @@ const Nav = () => {
             )}
           </motion.div>
         ))}
-        <HireMeBtn onNavigate={onNavigate} />
+        <motion.div 
+            initial={{
+              x: 100,
+              opacity: 0,
+            }}
+            animate= {{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{
+              x: {
+                delay: 1,
+                duration: 3,
+                ease: "easeInOut",
+                type: "spring",
+                stiffness: 100,
+                damping: 8,
+              },
+              opacity: {
+                delay: 1,
+                duration: 1.5,
+                ease: "easeInOut",
+              },
+            }}
+        >
+          <HireMeBtn onNavigate={onNavigate} />
+        </motion.div>
       </nav>
 
       {/* Mobile Nav */}
