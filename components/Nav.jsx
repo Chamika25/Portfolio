@@ -217,6 +217,10 @@ import menuItems from "@/data/nav";
 import PageTransition from "./PageTransition";
 import HireMeBtn from "./HireMeBtn";
 import useCustomScroll from "@/app/hooks/useCustomScroll";
+/* import dynamic from "next/dynamic";
+const useCustomScroll = dynamic(() => import("@/app/hooks/useCustomScroll"), {
+  ssr: false,
+}); */
 
 const Nav = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);

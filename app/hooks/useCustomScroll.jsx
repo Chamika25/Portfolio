@@ -156,7 +156,7 @@ export default useCustomScroll;
 */
 
 //  v2 
-
+/*
 "use client";
 
 import { useEffect, useState } from "react";
@@ -220,7 +220,7 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
       
       setSectionProgress(progressData);
     };
-    */
+    *
     const calculateProgress = () => {
       const sections = Array.from(document.getElementsByClassName(sectionsClassName));
       const progressData = {};
@@ -314,7 +314,7 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
                 });
             },
             { root: container, threshold: 0.5 }
-        ); */
+        ); *
 
     // Find the section name with the max value (Active section)
     const maxSectionName = Object.keys(sectionProgress).reduce(
@@ -357,7 +357,7 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
     container.addEventListener("scroll", handleScrollHeader);
     container.addEventListener("scroll", handleUpArrow);
     container.addEventListener("scroll", calScrollYProgress);
-    */
+    *
     window.addEventListener("scroll", handleScrollDirection);
     window.addEventListener("scroll", calculateProgress);
     window.addEventListener("resize", calculateProgress);
@@ -373,7 +373,7 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
       container.removeEventListener("scroll", handleScrollHeader);
       container.removeEventListener("scroll", handleUpArrow);
       container.removeEventListener("scroll", calScrollYProgress);
-      */
+      *
       window.removeEventListener("scroll", handleScrollDirection);
       window.removeEventListener("scroll", calculateProgress);
       window.removeEventListener("resize", calculateProgress);
@@ -399,7 +399,7 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
 };
 
 export default useCustomScroll;
-
+*/
 
 
 
@@ -544,3 +544,154 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
 
 export default useCustomScroll;
 */
+
+"use client";
+
+import { useEffect, useState } from "react";
+
+const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const [lastScrollPosition, setLastScrollPosition] = useState(0);
+  const [enteredSection, setEnteredSection] = useState({});
+  const [leavedSection, setLeavedSection] = useState({});
+  const [activeSection, setActiveSection] = useState("home");
+  const [sectionProgress, setSectionProgress] = useState({ home: 0.99 });
+  const [subSectionProgress, setSubSectionProgress] = useState({});
+  const [scrollYProgress, setScrollYProgress] = useState(0);
+
+  useEffect(() => {
+    // Ensure window is available (client-side only)
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const container = document.documentElement;
+
+    // Scroll Direction Logic
+    const handleScrollDirection = () => {
+      const currentScrollPosition = container.scrollTop;
+
+      if (currentScrollPosition > lastScrollPosition) {
+        setScrollDirection("down");
+      } else if (currentScrollPosition < lastScrollPosition) {
+        setScrollDirection("up");
+      }
+
+      setLastScrollPosition(currentScrollPosition);
+    };
+
+    // Section Progress Calculation
+    const calculateProgress = () => {
+      const sections = Array.from(document.getElementsByClassName(sectionsClassName));
+      const progressData = {};
+
+      const windowHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const visibleTop = Math.max(rect.top, 0);  
+        const visibleBottom = Math.min(rect.bottom, windowHeight); 
+
+        if (visibleTop >= visibleBottom) {
+          progressData[section.id] = 0;
+          return;
+        }
+
+        const visibleHeight = visibleBottom - visibleTop;
+        const sectionHeight = rect.height;
+
+        const progress = sectionHeight === 0 ? 0 : Math.min(visibleHeight / windowHeight, 0.99);
+        progressData[section.id] = Math.min(Math.max(progress, 0), 1);
+      });
+
+      setSectionProgress(progressData);
+    };
+
+    // Header Background Color Change
+    const handleScrollHeader = () => {
+      const header = document.querySelector("header");
+      if (container.scrollTop > 0) {
+        header.classList.add("bg-[#193432cc]", "shadow-lg");
+      } else {
+        header.classList.remove("bg-[#193432cc]", "shadow-lg");
+      }
+    };
+
+    // Up arrow opacity change
+    const handleUpArrow = () => {
+      const upArrow = document.getElementById("upArrow");
+      if (container.scrollTop > 10) {
+        upArrow.classList.remove("opacity-0");
+        upArrow.classList.add("opacity-100");
+      } else {
+        upArrow.classList.remove("opacity-100");
+        upArrow.classList.add("opacity-0");
+      }
+    };
+
+    // Intersection Observers
+    const enterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setEnteredSection(entry.target.id);
+          }
+        });
+      },
+      { root: container, threshold: 0.04 },
+    );
+
+    const leaveObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setLeavedSection(entry.target.id);
+          }
+        });
+      },
+      { root: container, threshold: 0.94 },
+    );
+
+    const maxSectionName = Object.keys(sectionProgress).reduce(
+      (maxName, section) => sectionProgress[section] > sectionProgress[maxName] ? section : maxName,
+      Object.keys(sectionProgress)[0],
+    );
+    setActiveSection(maxSectionName);
+
+    const sections = container.querySelectorAll("section");
+    sections.forEach((section) => {
+      enterObserver.observe(section);
+      leaveObserver.observe(section);
+    });
+
+    // Scroll Event Listeners
+    window.addEventListener("scroll", handleScrollDirection);
+    window.addEventListener("scroll", calculateProgress);
+    window.addEventListener("resize", calculateProgress);
+    window.addEventListener("scroll", handleScrollHeader);
+    window.addEventListener("scroll", handleUpArrow);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollDirection);
+      window.removeEventListener("scroll", calculateProgress);
+      window.removeEventListener("resize", calculateProgress);
+      window.removeEventListener("scroll", handleScrollHeader);
+      window.removeEventListener("scroll", handleUpArrow);
+      enterObserver.disconnect();
+      leaveObserver.disconnect();
+    };
+  }, [lastScrollPosition]);
+
+  return {
+    scrollDirection,
+    lastScrollPosition,
+    enteredSection,
+    leavedSection,
+    activeSection,
+    sectionProgress,
+    scrollYProgress,
+  };
+};
+
+export default useCustomScroll;

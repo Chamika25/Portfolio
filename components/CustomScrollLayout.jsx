@@ -6,13 +6,17 @@ import { useEffect, useRef } from "react";
 const CustomScrollLayout = ({ children }) => {
   const containerRef = useRef(null);
 
-  /* useEffect(() => {
-    // Initialize the bodyRef
-    containerRef.current = document.body;
-  }, []); */
+  let container = null;
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    container = window;
+  }, []); 
 
   // Scroll progress using framer-motion
-  const { scrollYProgress } = useScroll({ container: containerRef });
+  const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -28,7 +32,7 @@ const CustomScrollLayout = ({ children }) => {
     });
   }; */
   const scrollToTop = () => {
-    window.scrollTo({
+    container?.scrollTo({
       top: 0,
       behavior: "smooth", // Ensures smooth scrolling
     });

@@ -36,7 +36,7 @@ const Header = () => {
 export default Header; */
 
 //  v2
-
+"use client"
 // Components
 import Link from "next/link";
 import Logo from "./Logo";

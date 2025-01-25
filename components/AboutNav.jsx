@@ -1,4 +1,12 @@
+"use client"
+
 import useCustomScroll from "@/app/hooks/useCustomScroll";
+/* import dynamic from "next/dynamic";
+const useCustomScroll = dynamic(() => import("@/app/hooks/useCustomScroll"), {
+  ssr: false,
+}); */
+
+// ... rest of the code
 import { Button } from "./ui/button";
 
 const AboutNav = () => {
