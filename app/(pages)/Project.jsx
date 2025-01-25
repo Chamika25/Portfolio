@@ -181,7 +181,7 @@ const Project = () => {
       //ref={ref2}
       className="container max-auto lg:pt-[120px] mb-8 lg:mb-0 min-h-[calc(100vh)] h-full relative projects"
     >
-      <div className="sticky top-24 lg:top-28 w-full overflow-hidden">
+      <div className="sticky hidden lg:block top-24 lg:top-28 w-full overflow-hidden">
         <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>
         <motion.div
           className="flex h-full lg:items-center w-full sticky top-0 gap-8"
@@ -198,9 +198,21 @@ const Project = () => {
       </div>
 
       {/* Add extra space for smooth scrolling */}
-      {[...Array(projects.length)].map((_, i) => (
-        <div key={i} className="min-h-[100vh]" />
-      ))}
+      <div className="hidden lg:block">
+        {[...Array(projects.length)].map((_, i) => (
+          <div key={i} className="min-h-[100vh]" />
+        ))}
+      </div>
+
+      <div className="lg:hidden w-full overflow-hidden">
+        <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>
+        <div className="flex flex-col gap-16">
+          {projects.map((project, index) => (
+            <ListItem key={index} item={project} />
+          ))}
+        </div>
+      </div>
+      
     </div>
   );
 };
