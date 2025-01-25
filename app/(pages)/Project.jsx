@@ -130,7 +130,7 @@ const Project = () => {
     return (
       <div
         ref={ref}
-        className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-start lg:items-center lg:justify-center lg:px-8 lg:pl-16"
+        className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-start  lg:justify-center lg:px-8 lg:pl-16"
       >
         <div className="w-full lg:min-w-[400px] lg:max-w-[400px] rounded-md">
           <Image
@@ -138,6 +138,7 @@ const Project = () => {
             width={200}
             height={200}
             alt={item.title}
+            loading="lazy"
             className="w-full h-full object-cover rounded-md"
           />
         </div>
@@ -179,7 +180,7 @@ const Project = () => {
   return (
     <div
       //ref={ref2}
-      className="container max-auto lg:pt-[120px] mb-8 lg:mb-0 min-h-[calc(100vh)] h-full relative projects"
+      className="container max-auto lg:pt-[120px] mb-8 lg:mb-0 min-h-[calc(100vh)] h-full relative projects z-10"
     >
       <div className="sticky hidden lg:block top-24 lg:top-28 w-full overflow-hidden">
         <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>

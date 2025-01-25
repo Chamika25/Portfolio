@@ -23,7 +23,7 @@ const About = () => {
         },
       }}
     >
-      <div className="lg:container lg:mx-auto w-full relative">
+      <div className="lg:container lg:mx-auto w-full relative z-10">
         <div className="flex flex-col xl:flex-row gap-5">
           {/* Menu */}
           <div
