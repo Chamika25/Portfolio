@@ -221,7 +221,7 @@ const Project = () => {
                   height={200}
                   alt={project.title}
                   loading="lazy"
-                  className="w-full h-full object-cover rounded-md"
+                  className="w-full h-full object-cover rounded-md -z-10"
                 />
               </div>
               <div className="flex flex-col gap-4 p-2 lg:p-0">
