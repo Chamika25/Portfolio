@@ -12,7 +12,7 @@ const useCustomScroll = () => {
     useEffect(() => {
 
         const handleScroll = () => {
-            const currentScrollPosition = window.scrollY;
+            const currentScrollPosition = window?.scrollY;
 
             if (currentScrollPosition > lastScrollPosition) {
                 setScrollDirection("down");
@@ -23,10 +23,10 @@ const useCustomScroll = () => {
             setLastScrollPosition(currentScrollPosition);
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window?.addEventListener("scroll", handleScroll);
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+            window?.removeEventListener("scroll", handleScroll);
         };
 
     }, [lastScrollPosition]);
@@ -99,8 +99,8 @@ const useCustomScroll = () => {
             const sectionBottom = rect.bottom;
 
             // Calculate the percentage of the section visible in the viewport
-            const visibleHeight = Math.min(sectionBottom, window.innerHeight) - Math.max(sectionTop, 0);
-            const sectionProgressValue = Math.max(0, Math.min(visibleHeight / window.innerHeight, 0.99));
+            const visibleHeight = Math.min(sectionBottom, window?.innerHeight) - Math.max(sectionTop, 0);
+            const sectionProgressValue = Math.max(0, Math.min(visibleHeight / window?.innerHeight, 0.99));
             progressData[section.id] = sectionProgressValue; // Store progress for this section
         });
 
@@ -112,12 +112,12 @@ const useCustomScroll = () => {
         const handleScroll = () => {
             calculateProgress();
         };
-        window.addEventListener("scroll", handleScroll);
-        window.addEventListener("resize", handleScroll);
+        window?.addEventListener("scroll", handleScroll);
+        window?.addEventListener("resize", handleScroll);
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
-            window.removeEventListener("resize", handleScroll);
+            window?.removeEventListener("scroll", handleScroll);
+            window?.removeEventListener("resize", handleScroll);
         };
     }, []);
     // ----------------------------------------------------------------------------------
@@ -126,17 +126,17 @@ const useCustomScroll = () => {
     useEffect(() => {
         const handleScroll = () => {
             const header = document.querySelector("header");
-            if (window.scrollY > 0) {
+            if (window?.scrollY > 0) {
                 header.classList.add("bg-[#193432cc]", "shadow-lg");
             } else {
                 header.classList.remove("bg-[#193432cc]", "shadow-lg");
             }
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window?.addEventListener("scroll", handleScroll);
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+            window?.removeEventListener("scroll", handleScroll);
         };
     }, []);
     // -----------------------------------------------------------------------------------
@@ -225,18 +225,18 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
       const sections = Array.from(document.getElementsByClassName(sectionsClassName));
       const progressData = {};
     
-      // Get the window's viewport dimensions
-      const windowHeight = window.innerHeight;
-      const scrollTop = window.scrollY;
+      // Get the window?'s viewport dimensions
+      const windowHeight = window?.innerHeight;
+      const scrollTop = window?.scrollY;
     
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
     
         // Calculate the top and bottom of the visible area of the section in the viewport
-        const visibleTop = Math.max(rect.top, 0);  // Section's top within the window
-        const visibleBottom = Math.min(rect.bottom, windowHeight); // Section's bottom within the window
+        const visibleTop = Math.max(rect.top, 0);  // Section's top within the window?
+        const visibleBottom = Math.min(rect.bottom, windowHeight); // Section's bottom within the window?
     
-        // If the section is not in the window's visible area, no progress
+        // If the section is not in the window?'s visible area, no progress
         if (visibleTop >= visibleBottom) {
           progressData[section.id] = 0;
           return;
@@ -358,12 +358,12 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
     container.addEventListener("scroll", handleUpArrow);
     container.addEventListener("scroll", calScrollYProgress);
     *
-    window.addEventListener("scroll", handleScrollDirection);
-    window.addEventListener("scroll", calculateProgress);
-    window.addEventListener("resize", calculateProgress);
-    window.addEventListener("scroll", handleScrollHeader);
-    window.addEventListener("scroll", handleUpArrow);
-    window.addEventListener("scroll", calScrollYProgress);
+    window?.addEventListener("scroll", handleScrollDirection);
+    window?.addEventListener("scroll", calculateProgress);
+    window?.addEventListener("resize", calculateProgress);
+    window?.addEventListener("scroll", handleScrollHeader);
+    window?.addEventListener("scroll", handleUpArrow);
+    window?.addEventListener("scroll", calScrollYProgress);
 
     return () => {
       /*
@@ -374,12 +374,12 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
       container.removeEventListener("scroll", handleUpArrow);
       container.removeEventListener("scroll", calScrollYProgress);
       *
-      window.removeEventListener("scroll", handleScrollDirection);
-      window.removeEventListener("scroll", calculateProgress);
-      window.removeEventListener("resize", calculateProgress);
-      window.removeEventListener("scroll", handleScrollHeader);
-      window.removeEventListener("scroll", handleUpArrow);
-      window.removeEventListener("scroll", calScrollYProgress);
+      window?.removeEventListener("scroll", handleScrollDirection);
+      window?.removeEventListener("scroll", calculateProgress);
+      window?.removeEventListener("resize", calculateProgress);
+      window?.removeEventListener("scroll", handleScrollHeader);
+      window?.removeEventListener("scroll", handleUpArrow);
+      window?.removeEventListener("scroll", calScrollYProgress);
       enterObserver.disconnect();
       leaveObserver.disconnect();
       //activeObserver.disconnect();
@@ -452,7 +452,7 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
         const rect = section.getBoundingClientRect();
         const visibleHeight = Math.min(
           rect.bottom,
-          window.innerHeight
+          window?.innerHeight
         ) - Math.max(rect.top, 0);
         const progress = Math.max(
           0,
@@ -522,10 +522,10 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
       handleScrollProgress();
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window?.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window?.removeEventListener("scroll", handleScroll);
       enterObserver.disconnect();
       leaveObserver.disconnect();
       activeObserver.disconnect();
@@ -560,8 +560,8 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
   const [scrollYProgress, setScrollYProgress] = useState(0);
 
   useEffect(() => {
-    // Ensure window is available (client-side only)
-    if (typeof window === "undefined") {
+    // Ensure window? is available (client-side only)
+    if (typeof window === "undefined" || typeof document === "undefined") {
       return;
     }
 
@@ -585,8 +585,8 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
       const sections = Array.from(document.getElementsByClassName(sectionsClassName));
       const progressData = {};
 
-      const windowHeight = window.innerHeight;
-      const scrollTop = window.scrollY;
+      const windowHeight = window?.innerHeight;
+      const scrollTop = window?.scrollY;
 
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
@@ -616,6 +616,21 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
       } else {
         header.classList.remove("bg-[#193432cc]", "shadow-lg");
       }
+    };
+
+    const calScrollYProgress = () => {
+      const section = container.querySelector(`.${sectionsClassName}`); // Get the section by class name
+      if (!section) return;
+
+      const containerHeight = container.scrollHeight - container.clientHeight;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      // Calculate the scroll position and progress for the section
+      const sectionScrollTop = Math.max(0, container.scrollTop - sectionTop); // Scroll position inside section
+      const sectionProgress = Math.min(1, sectionScrollTop / sectionHeight);
+
+      setScrollYProgress(sectionProgress);
     };
 
     // Up arrow opacity change
@@ -666,18 +681,20 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
     });
 
     // Scroll Event Listeners
-    window.addEventListener("scroll", handleScrollDirection);
-    window.addEventListener("scroll", calculateProgress);
-    window.addEventListener("resize", calculateProgress);
-    window.addEventListener("scroll", handleScrollHeader);
-    window.addEventListener("scroll", handleUpArrow);
+    window?.addEventListener("scroll", handleScrollDirection);
+    window?.addEventListener("scroll", calculateProgress);
+    window?.addEventListener("resize", calculateProgress);
+    window?.addEventListener("scroll", handleScrollHeader);
+    window?.addEventListener("scroll", handleUpArrow);
+    window?.addEventListener("scroll", calScrollYProgress);
 
     return () => {
-      window.removeEventListener("scroll", handleScrollDirection);
-      window.removeEventListener("scroll", calculateProgress);
-      window.removeEventListener("resize", calculateProgress);
-      window.removeEventListener("scroll", handleScrollHeader);
-      window.removeEventListener("scroll", handleUpArrow);
+      window?.removeEventListener("scroll", handleScrollDirection);
+      window?.removeEventListener("scroll", calculateProgress);
+      window?.removeEventListener("resize", calculateProgress);
+      window?.removeEventListener("scroll", handleScrollHeader);
+      window?.removeEventListener("scroll", handleUpArrow);
+      window?.removeEventListener("scroll", calScrollYProgress);
       enterObserver.disconnect();
       leaveObserver.disconnect();
     };

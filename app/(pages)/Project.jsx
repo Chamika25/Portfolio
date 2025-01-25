@@ -8,13 +8,14 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useCustomScroll from "../hooks/useCustomScroll";
 import MotionBtn from "@/components/MotionBtn";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
 const Project = () => {
+
   const projects = [
     {
       title: "BikzIK E-Commerce Platform",
@@ -57,11 +58,34 @@ const Project = () => {
     sectionsClassName: "projects",
   }); //console.log(scrollYProgress); output = 0 to 1 value
 
-  //const xTranslate = useTransform(scrollYProgress, [0,1], [0, - window?.innerWidth * project?.length]); console.log(xTranslate);
+  /* const ref2 = useRef();
+  const { scrollYProgress: scroll } = useScroll(ref2);
+  const xxTranslate = useTransform(scroll, [0,1], [0, - window?.innerWidth * projects?.length]); console.log(xxTranslate); */
 
   // Dynamically calculate the X translation
-  const translateX =
-    scrollYProgress * -window?.innerWidth * (projects?.length - 0.55 || 1);
+  //const translateX = scrollYProgress * -window.innerWidth * (projects?.length - 0.55 || 1);
+  const [translateX, setTranslateX] = useState(0);
+
+  useEffect(() => {
+    // Add an event listener to handle scroll and update the translateX value dynamically
+    const handleScroll = () => {
+      const progress = scrollYProgress;
+      const width = window?.innerWidth || 0;
+      const translation =
+        progress * -width * (projects?.length - 0.55 || 1);
+      setTranslateX(translation);
+    };
+
+    // Trigger the scroll update once at mount
+    handleScroll();
+
+    // Add event listener
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollYProgress, projects]);
 
   const imageVariant = {
     initial: {
@@ -153,7 +177,10 @@ const Project = () => {
   };
 
   return (
-    <div className="container max-auto lg:pt-[120px] mb-8 lg:mb-0 min-h-[calc(100vh)] h-full relative projects">
+    <div
+      //ref={ref2}
+      className="container max-auto lg:pt-[120px] mb-8 lg:mb-0 min-h-[calc(100vh)] h-full relative projects"
+    >
       <div className="sticky top-24 lg:top-28 w-full overflow-hidden">
         <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>
         <motion.div
@@ -162,7 +189,7 @@ const Project = () => {
             transform: `translateX(${translateX}px)`, // Apply X translation based on scroll progress
             transition: "transform 0.1s ease-out", // Smooth transition
           }}
-          //style={{x: translateX}}
+          //style={{x: xxTranslate}}
         >
           {projects.map((project, index) => (
             <ListItem key={index} item={project} />

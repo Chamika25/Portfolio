@@ -10,7 +10,7 @@ const ParticlesBackground = () => {
     if (typeof window !== "undefined") {
       // Initialize particles.js with the interactivity events enabled
       const initializeParticles = () => {
-        window.particlesJS("particles-js", {
+        window?.particlesJS("particles-js", {
           particles: {
             number: {
               value: 150,
@@ -74,8 +74,8 @@ const ParticlesBackground = () => {
         const par = { pos_x: event.clientX, pos_y: event.clientY };
         const particalCount = 4;
 
-        if (window.pJSDom && window.pJSDom.length > 0) {
-          const particlesInstance = window.pJSDom[0].pJS;
+        if (window?.pJSDom && window?.pJSDom.length > 0) {
+          const particlesInstance = window?.pJSDom[0].pJS;
           particlesInstance.fn.modes.pushParticles(particalCount, par);
           particlesInstance.fn.modes.removeParticles(particalCount);
         }
@@ -83,8 +83,8 @@ const ParticlesBackground = () => {
 
       // Handle mousemove event for repulse
       const handleMouseMove = (event) => {
-        if (window.pJSDom && window.pJSDom.length > 0) {
-          const particlesInstance = window.pJSDom[0].pJS;
+        if (window?.pJSDom && window?.pJSDom.length > 0) {
+          const particlesInstance = window?.pJSDom[0].pJS;
           if (particlesInstance) {
             const canvas = particlesInstance.canvas.el;
             const rect = canvas.getBoundingClientRect();
@@ -105,8 +105,8 @@ const ParticlesBackground = () => {
 
       // Cleanup interactivity when mouse leaves the canvas
       const handleMouseLeave = () => {
-        if (window.pJSDom && window.pJSDom.length > 0) {
-          const particlesInstance = window.pJSDom[0].pJS;
+        if (window?.pJSDom && window?.pJSDom.length > 0) {
+          const particlesInstance = window?.pJSDom[0].pJS;
           if (particlesInstance) {
             particlesInstance.interactivity.mouse.pos_x = null;
             particlesInstance.interactivity.mouse.pos_y = null;
@@ -116,18 +116,18 @@ const ParticlesBackground = () => {
       };
 
       // Add event listeners for mousemove and mouseleave
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseleave", handleMouseLeave);
+      window?.addEventListener("mousemove", handleMouseMove);
+      window?.addEventListener("mouseleave", handleMouseLeave);
 
       // Add event listeners for click
-      window.addEventListener("click", handleClick);
+      window?.addEventListener("click", handleClick);
 
       // Cleanup event listeners on component unmount
       return () => {
         clearTimeout(timer);
-        window.removeEventListener("mousemove", handleMouseMove);
-        window.removeEventListener("mouseleave", handleMouseLeave);
-        window.removeEventListener("click", handleClick);
+        window?.removeEventListener("mousemove", handleMouseMove);
+        window?.removeEventListener("mouseleave", handleMouseLeave);
+        window?.removeEventListener("click", handleClick);
       };
     }
   }, []);
