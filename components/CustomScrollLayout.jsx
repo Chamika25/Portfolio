@@ -63,11 +63,11 @@ const CustomScrollLayout = ({ children }) => {
       id="main-container"
       //ref={containerRef}
       //className="lg:max-h-[100vh] overflow-auto"
-      className="z-40"
+      className="z-50"
     >
       {/* Global scroll progress bar */}
       <motion.div
-        className="progress-bar-left fixed left-0 right-0 top-0 bg-accent h-[2px]"
+        className="progress-bar-left fixed left-0 right-0 top-0 bg-accent h-[2px] z-50"
         style={{ scaleX }}
       />
 
