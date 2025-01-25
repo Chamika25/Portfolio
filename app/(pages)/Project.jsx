@@ -182,7 +182,7 @@ const Project = () => {
       //ref={ref2}
       className="container max-auto lg:pt-[120px] mb-8 lg:mb-0 min-h-[calc(100vh)] h-full relative projects z-10"
     >
-      <div className="sticky block lg:block top-24 lg:top-28 w-full overflow-hidden">
+      <div className="sticky hidden lg:block top-24 lg:top-28 w-full overflow-hidden">
         <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>
         <motion.div
           className="flex h-full lg:items-center w-full sticky top-0 gap-8"
@@ -193,59 +193,13 @@ const Project = () => {
           //style={{x: xxTranslate}}
         >
           {projects.map((project, index) => (
-            // <ListItem key={index} item={project} />
-            <div
-            key={index}
-              className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-start  lg:justify-center lg:px-8 lg:pl-16"
-            >
-              <div className="w-full lg:min-w-[400px] lg:max-w-[400px] rounded-md">
-                <Image
-                  src={project.image}
-                  width={200}
-                  height={200}
-                  alt={project.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover rounded-md"
-                />
-              </div>
-              <div className="flex flex-col gap-4 p-2 lg:p-0">
-                <h2 className="text-lg lg:text-3xl font-semibold text-ellipsis line-clamp-2 leading-tight lg:leading-normal text-accent">
-                  {project.title}
-                </h2>
-                <p className="lg:py-4 leading-tight lg:leading-normal">{project.description}</p>
-                <div className="flex gap-6">
-                  { 
-                    project.link &&
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      className="bg-accent rounded-lg w-fit px-4 text-primary lg:hover:bg-accent-hover cursor-none"
-                    >
-                      View Project
-                    </Link>
-                  }
-                  <MotionBtn
-                    whileHover={{ rotate: 360, scale: 1.2 }}
-                    transition={{
-                      duration: 0.5,
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 10,
-                    }}
-                  >
-                    <Link href={project.git} target="_blank" className='w-9 h-9 border-[1.5px] border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500 cursor-none'>
-                      <FaGithub />
-                    </Link>
-                  </MotionBtn>
-                </div>
-              </div>
-            </div>
+            <ListItem key={index} item={project} />
           ))}
         </motion.div>
       </div>
 
       {/* Add extra space for smooth scrolling */}
-      <div className="block lg:block">
+      <div className="hidden lg:block">
         {[...Array(projects.length)].map((_, i) => (
           <div key={i} className="min-h-[100vh]" />
         ))}
