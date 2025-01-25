@@ -135,8 +135,8 @@ const Project = () => {
         <div className="w-full lg:min-w-[400px] lg:max-w-[400px] rounded-md">
           <Image
             src={item.image}
-            width={600}
-            height={600}
+            width={200}
+            height={200}
             alt={item.title}
             className="w-full h-full object-cover rounded-md"
           />
@@ -184,7 +184,7 @@ const Project = () => {
       <div className="sticky top-24 lg:top-28 w-full overflow-hidden">
         <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>
         <motion.div
-          className="flex h-full items-center w-full sticky top-0 gap-8"
+          className="flex h-full lg:items-center w-full sticky top-0 gap-8"
           style={{
             transform: `translateX(${translateX}px)`, // Apply X translation based on scroll progress
             transition: "transform 0.1s ease-out", // Smooth transition
