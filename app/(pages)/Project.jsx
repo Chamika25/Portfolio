@@ -211,6 +211,7 @@ const Project = () => {
           {projects.map((project, index) => (
             // <ListItem key={index} item={project} />
             <div
+              key={index}
               className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-start  lg:justify-center lg:px-8 lg:pl-16"
             >
               <div className="w-full lg:min-w-[400px] lg:max-w-[400px] rounded-md">
