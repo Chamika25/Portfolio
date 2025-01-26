@@ -423,12 +423,12 @@ const Nav = () => {
                 }}
                 transition={{
                   x: {
-                    duration: 0.5,
+                    duration: 0.3,
                     //ease: "easeInOut",
                     delay: (0.1 * index),
                   },
                   opacity: {
-                    duration: 1
+                    duration: 0.5
                   }
                 }}
                 key={index}
@@ -450,9 +450,9 @@ const Nav = () => {
                 y: 0,
                 opacity: 1,
                 transition: {
-                  duration: 0.4,
+                  duration: 0.3,
                   ease: "easeInOut",
-                  delay: 0.8,
+                  delay: 0.5,
                 },
               }}
               className="pt-8"
