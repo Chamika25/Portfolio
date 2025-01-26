@@ -65,11 +65,22 @@ const AboutNav = ({view}) => {
           key={index}
           variants={variant}
           initial='initial'
-          //whileInView='animate'
+          /* whileInView='animate'
+          viewport={{amount: 0.6}}
+          exit={{
+            opacity: 0,
+            x: -50,
+            transition: {
+              duration: 0.5,
+              ease: "easeInOut",
+            },
+          }} */
           animate={view ? 'animate' : 'initial'}
-          transition={{
+          /* transition={{
+            opacity: { duration: view ? 0.5 : 0.2 }, // Faster for initial
+            x: { duration: view ? 0.5 : 0.2 }, // Faster for initial
             delay: index * 0.5,
-          }}
+          }} */
         >
           <Button
             variants={variant}
