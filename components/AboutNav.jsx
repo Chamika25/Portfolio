@@ -8,8 +8,9 @@ const useCustomScroll = dynamic(() => import("@/app/hooks/useCustomScroll"), {
 
 // ... rest of the code
 import { Button } from "./ui/button";
+import { animate, delay, motion, useInView } from "framer-motion";
 
-const AboutNav = () => {
+const AboutNav = ({view}) => {
   const { sectionProgress, activeSection } = useCustomScroll({
     sectionsClassName: "aboutSubSection",
   }); //console.log(activeSection);
@@ -41,16 +42,43 @@ const AboutNav = () => {
     }
   };
 
+  const variant = {
+    initial: {
+      opacity: 0,
+      x: -50,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      //transition: {
+      //  duration: 1,
+        //ease: "easeInOut",
+      //},
+      //staggerChildren: 0.5,
+    }
+  };
+
   return (
     <nav className="grid grid-cols-2 gap-4 xl:flex xl:flex-col">
       {aboutItems.map((item, index) => (
-        <Button
+        <motion.div
           key={index}
-          className={`${activeSection === item.path ? "bg-accent text-primary" : "bg-accent bg-opacity-20  text-white"} rounded-md lg:hover:text-primary`} //lg:bg-[#38383dbb]
-          onClick={() => onNavigate(item.path)}
+          variants={variant}
+          initial='initial'
+          //whileInView='animate'
+          animate={view ? 'animate' : 'initial'}
+          transition={{
+            delay: index * 0.5,
+          }}
         >
-          {item.name}
-        </Button>
+          <Button
+            variants={variant}
+            className={`${activeSection === item.path ? "bg-accent text-primary" : "bg-accent bg-opacity-20  text-white"} rounded-md lg:hover:text-primary w-full`} //lg:bg-[#38383dbb]
+            onClick={() => onNavigate(item.path)}
+          >
+            {item.name}
+          </Button>
+        </motion.div>
       ))}
     </nav>
   );

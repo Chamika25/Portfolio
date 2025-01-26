@@ -5,31 +5,25 @@ import AboutNav from "@/components/AboutNav";
 import CertificatesSubSection from "@/components/CertificatesSubSection";
 import EducationSubSection from "@/components/EducationSubSection";
 import SkillsSubSection from "@/components/SkillsSubSection";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import useCustomScroll from "../hooks/useCustomScroll";
+import { useRef } from "react";
 
 const About = () => {
   const { sectionProgress } = useCustomScroll();
 
+  const ref = useRef(null);
+  
+  const isInView = useInView(ref, { margin: "-300px 0px -400px 0px" } ); console.log(isInView)
+  
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          delay: 1,
-          duration: 0.4,
-          ease: "easeIn",
-        },
-      }}
-    >
-      <div className="lg:container lg:mx-auto w-full relative ">
+      <div ref={ref} className="lg:container lg:mx-auto w-full relative ">
         <div className="flex flex-col xl:flex-row gap-5">
           {/* Menu */}
           <div
-            className={`flex flex-col lg:max-w-80 lg:min-w-64 h-fit lg:mx-auto xl:mx-0 gap-6 sticky top-[87.5px] p-4 px-8 lg:p-0 xl:top-[20vh] xl:pt-[100px] z-10 ${sectionProgress.home == 0 && "bg-[#193432cc]"} lg:bg-transparent`}
+            className={`flex flex-col lg:max-w-80 lg:min-w-64 h-fit lg:mx-auto xl:mx-0 gap-6 sticky top-[87.5px] p-4 px-8 lg:p-0 xl:top-[20vh] xl:pt-[100px] z-10 ${sectionProgress.home == 0 && isInView && "bg-[#193432cc]"} lg:bg-transparent`}
           >
-            <AboutNav />
+            <AboutNav view={isInView} />
           </div>
 
           {/* Content */}
@@ -52,7 +46,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </motion.div>
   );
 };
 

@@ -42,9 +42,6 @@
 //2
 
 "use client"
-//pages
-import Home from "./(pages)/Home";
-import Service from "./(pages)/Service";
 
 import dynamic from 'next/dynamic';
 // Components
@@ -60,11 +57,24 @@ const ParticlesBackground = dynamic(() => import("@/components/ParticlesBackgrou
 const CustomScrollLayout = dynamic(() => import("@/components/CustomScrollLayout"), {
   ssr: false
 });
-import Header from "@/components/Header";
-import Contact from "./(pages)/Contact";
-import Footer from "@/components/Footer";
-import About from "./(pages)/About";
+//import Header from "@/components/Header";
+const Header = dynamic(() => import("@/components/Header"), {
+  ssr: false
+});
+//pages
+//import Home from "./(pages)/Home";
+const Home = dynamic(() => import("./(pages)/Home"), {
+  ssr: false
+});
+//import About from "./(pages)/About";
+const About = dynamic(() => import("./(pages)/About"), {
+  ssr: false
+});
+import Service from "./(pages)/Service";
 import Project from "./(pages)/Project";
+import Contact from "./(pages)/Contact";
+
+import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
