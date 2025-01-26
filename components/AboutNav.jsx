@@ -79,7 +79,7 @@ const AboutNav = ({view}) => {
           transition={{
             //opacity: { duration: view ? 0.5 : 0.2 }, // Faster for initial
             //x: { duration: view ? 0.5 : 0.2 }, // Faster for initial
-            delay: index * 0.5,
+            delay: view && index * 0.5,
           }} 
         >
           <Button
