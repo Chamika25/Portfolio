@@ -14,7 +14,7 @@ const About = () => {
 
   const ref = useRef(null);
   
-  const isInView = useInView(ref, { margin: "-20% 0px -30% 0px" } ); console.log(isInView)
+  const isInView = useInView(ref, { margin: "-40% 0px -40% 0px" } ); //console.log(isInView)
   
   return (
       <div ref={ref} className="lg:container lg:mx-auto w-full relative ">

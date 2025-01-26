@@ -54,7 +54,7 @@ const AboutNav = ({view}) => {
       //  duration: 1,
         //ease: "easeInOut",
       //},
-      //staggerChildren: 0.5,
+      staggerChildren: 0.5,
     }
   };
 
@@ -76,11 +76,11 @@ const AboutNav = ({view}) => {
             },
           }} */
           animate={view ? 'animate' : 'initial'}
-          /* transition={{
-            opacity: { duration: view ? 0.5 : 0.2 }, // Faster for initial
-            x: { duration: view ? 0.5 : 0.2 }, // Faster for initial
+          transition={{
+            //opacity: { duration: view ? 0.5 : 0.2 }, // Faster for initial
+            //x: { duration: view ? 0.5 : 0.2 }, // Faster for initial
             delay: index * 0.5,
-          }} */
+          }} 
         >
           <Button
             variants={variant}
