@@ -303,37 +303,37 @@ const Nav = () => {
             {sectionProgress[item.path] < 1 && (
               <motion.div
                 className={`
-                                    ${
-                                      /*
-                                        enteredSection === item.path ?
-                                            (scrollDirection === 'down' ?
-                                                "progress-bar-left"
-                                            :
-                                                "progress-bar-right"
-                                            )
-                                        :
-                                            (scrollDirection === 'down' ?
-                                                "progress-bar-right"
-                                            :
-                                                "progress-bar-left"
-                                            )
-                                    */ /*
-                                        scrollDirection === 'down' ?
-                                            (enteredSection === item.path ?
-                                                'progress-bar-left'
-                                            :
-                                                'progress-bar-right'
-                                            )
-                                        :
-                                            (leavedSection === item.path ?
-                                                'progress-bar-left'
-                                            :
-                                                'progress-bar-right'
-                                            )
-                                    */ ""
-                                    }
-                                    absolute bottom-2 left-0 right-0 h-1 bg-accent
-                                    `}
+                  ${
+                    /*
+                      enteredSection === item.path ?
+                          (scrollDirection === 'down' ?
+                              "progress-bar-left"
+                          :
+                              "progress-bar-right"
+                          )
+                      :
+                          (scrollDirection === 'down' ?
+                              "progress-bar-right"
+                          :
+                              "progress-bar-left"
+                          )
+                  */ /*
+                      scrollDirection === 'down' ?
+                          (enteredSection === item.path ?
+                              'progress-bar-left'
+                          :
+                              'progress-bar-right'
+                          )
+                      :
+                          (leavedSection === item.path ?
+                              'progress-bar-left'
+                          :
+                              'progress-bar-right'
+                          )
+                  */ ""
+                  }
+                  absolute bottom-2 left-0 right-0 h-1 bg-accent
+                  `}
                 style={{ scaleX: sectionProgress[item.path] }}
                 transition={{
                   stiffness: 100,
@@ -383,14 +383,54 @@ const Nav = () => {
         <SheetContent className="flex lg:hidden flex-col">
           <div className="mt-24 mb-12 text-center text-4xl w">
             <button onClick={() => onNavigate("home")}>
-              <h1>
+              <motion.h1
+                initial={{
+                  y: -50,
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    duration: 0.5,
+                    ease: "easeInOut",
+                    delay: 0.3,
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 8,
+                  },
+                }}
+              >
                 Kasun<span className="text-accent">.</span>
-              </h1>
+              </motion.h1>
             </button>
           </div>
           <nav className="flex flex-col justify-center items-center gap-8">
             {menuItems.map((item, index) => (
-              <button
+              <motion.button
+                initial={{
+                  x: 300,
+                  opacity: 0,
+                }}
+                animate={{
+                  x: 0,
+                  opacity: 1,
+                  /* transition: {
+                    duration: 0.5,
+                    //ease: "easeInOut",
+                    delay: (0.1 * index),
+                  }, */
+                }}
+                transition={{
+                  x: {
+                    duration: 0.5,
+                    //ease: "easeInOut",
+                    delay: (0.1 * index),
+                  },
+                  opacity: {
+                    duration: 1
+                  }
+                }}
                 key={index}
                 className={`cursor-none text-xl capitalize hover:text-accent transition-all ${
                   activeSection === item.path &&
@@ -399,11 +439,26 @@ const Nav = () => {
                 onClick={() => onNavigate(item.path)}
               >
                 {item.name}
-              </button>
+              </motion.button>
             ))}
-            <div className="pt-8">
+            <motion.div 
+              initial={{
+                y: 200,
+                opacity: 0,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: {
+                  duration: 0.4,
+                  ease: "easeInOut",
+                  delay: 0.8,
+                },
+              }}
+              className="pt-8"
+            >
               <HireMeBtn onNavigate={onNavigate} />
-            </div>
+            </motion.div>
           </nav>
         </SheetContent>
       </Sheet>
