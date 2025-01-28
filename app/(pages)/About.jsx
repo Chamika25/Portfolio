@@ -1,6 +1,9 @@
 "use client";
 
-import AboutMeSubSection from "@/components/AboutMeSubSection";
+//import AboutMeSubSection from "@/components/AboutMeSubSection";
+const AboutMeSubSection = dynamic(() => import("@/components/AboutMeSubSection"), {
+  ssr: false,
+});
 import AboutNav from "@/components/AboutNav";
 import CertificatesSubSection from "@/components/CertificatesSubSection";
 import EducationSubSection from "@/components/EducationSubSection";
@@ -8,6 +11,7 @@ import SkillsSubSection from "@/components/SkillsSubSection";
 import { motion, useInView } from "framer-motion";
 import useCustomScroll from "../hooks/useCustomScroll";
 import { useRef } from "react";
+import dynamic from "next/dynamic";
 
 const About = () => {
   const { sectionProgress } = useCustomScroll();
