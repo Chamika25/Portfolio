@@ -19,7 +19,7 @@ const Social = ({ containerStyle, iconStyle }) => {
               damping: 10,
             }}
           >
-            <Link href={item.url} key={index} className={iconStyle}>
+            <Link href={item.url} target="_blank" key={index} className={iconStyle}>
               {item.icon}
             </Link>
           </MotionBtn>
