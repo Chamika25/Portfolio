@@ -40,7 +40,11 @@ export default Header; */
 // Components
 import Link from "next/link";
 import Logo from "./Logo";
-import Nav from "./Nav";
+//import Nav from "./Nav";
+import dynamic from "next/dynamic";
+const Nav = dynamic(() => import("./Nav"), {
+  ssr: false,
+});
 import { useScroll, useSpring, motion } from "framer-motion";
 
 const Header = () => {
