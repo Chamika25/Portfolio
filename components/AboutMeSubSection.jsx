@@ -1,8 +1,18 @@
+"use client"
+
 import TextShadingView from "@/app/animations/TextShadingView";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import isMobile from "is-mobile";
 
 const AboutMeSubSection = () => {
+
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  useEffect(() => {
+    setIsMobileDevice(isMobile());
+  }, []);
+
   const aboutMeDetails = [
     {
       title: "Name",
@@ -30,9 +40,36 @@ const AboutMeSubSection = () => {
     },
   ];
 
+  const viewportMarginH1 = isMobile()
+    ? "-40% 0px -25% 0px" // For mobile devices
+    : "-15% 0px -25% 0px"; // For larger screens
+
+  const viewportMarginP = isMobile()
+    ? "-40% 0px -25% 0px" // For mobile devices
+    : "-20% 0px -25% 0px"; // For larger screens
+
   return (
     <section className="relative">
-      <h1 className="text-2xl font-semibold pb-4">About Me</h1>
+      <motion.h1
+        initial={{
+          opacity: 0,
+          y: -50,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.8,
+          },
+        }}
+        viewport={{
+          margin: viewportMarginH1,
+          //once: true,
+        }}
+        className="text-2xl font-semibold pb-4"
+      >
+        About Me
+      </motion.h1>
       <p className="py-4 opacity-80">
         <TextShadingView>
           A passionate software engineering undergraduate with a love for
@@ -43,7 +80,7 @@ const AboutMeSubSection = () => {
         {aboutMeDetails.map((item, index) => (
           <motion.div
             key={index}
-            className="flex flex-col leading-normal lg:flex-row lg:items-center lg:gap-3 pr-8"
+            className="flex flex-col leading-normal lg:flex-row lg:items-center lg:gap-3 pr-8 overflow-hidden"
             /* whileInView={{
               opacity: 1,
               x: 0,
@@ -68,7 +105,7 @@ const AboutMeSubSection = () => {
                   //delay: index * 0.2,
                 }
               }}
-              viewport={{margin: "-25% 0px -25% 0px"}}
+              viewport={{margin: viewportMarginP}}
             >
               {item.title}:
             </motion.p>
@@ -86,7 +123,7 @@ const AboutMeSubSection = () => {
                   //delay: index * 0.2, // Matches the delay for the title
                 }
               }}
-              viewport={{margin: "-25% 0px -25% 0px"}}
+              viewport={{margin: viewportMarginP}}
             >
               {item.description}
             </motion.p>
