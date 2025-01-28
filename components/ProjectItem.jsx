@@ -5,6 +5,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import MotionBtn from "./MotionBtn";
 import { FaGithub } from "react-icons/fa";
+import Image from "next/image";
 
 const ProjectItem = ({ item }) => {
 
