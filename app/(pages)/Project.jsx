@@ -32,25 +32,18 @@ const Project = () => {
       git: "https://github.com/Buddika-Kasun/UMS_Unicore_ERP-NextJs-",
     },
     {
-      title: "Project 3",
-      image: "/assets/projects/Unicore.png",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      link: "/project/3",
-      git: "a",
+      title: "Supplement Shop Admin",
+      image: "/assets/projects/SupplementAdmin.png",
+      description: "A modern admin dashboard for managing a supplement shop. Built with Next.js 14, MongoDB, and Tailwind CSS, it features CRUD operations for categories, subcategories, products, and admin users, with secure OAuth authentication.",
+      link: "",
+      git: "https://github.com/Buddika-Kasun/Suppliment_shop_Admin_Web-NextJs-"
     },
     {
-      title: "Project 4",
-      image: "/assets/projects/Unicore.png",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      link: "/project/4",
-      git: "a",
-    },
-    {
-      title: "Project 5",
-      image: "/assets/projects/Unicore.png",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      link: "/project/5",
-      git: "a",
+      title: "Supplement Shop Client",
+      image: "/assets/projects/SupplementClient.png",
+      description: "A sleek and responsive supplement store built with Next.js 14, MongoDB, and Styled Components. Features include product listings, category-based filtering, featured product banners, and a shopping cart for a seamless user experience.",
+      link: "",
+      git: "https://github.com/Buddika-Kasun/Suppliment_shop_User_Web-NextJs-",
     },
   ];
 
