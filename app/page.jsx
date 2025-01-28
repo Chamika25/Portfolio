@@ -61,6 +61,7 @@ const CustomScrollLayout = dynamic(() => import("@/components/CustomScrollLayout
 const Header = dynamic(() => import("@/components/Header"), {
   ssr: false
 });
+
 //pages
 //import Home from "./(pages)/Home";
 const Home = dynamic(() => import("./(pages)/Home"), {
@@ -70,11 +71,28 @@ const Home = dynamic(() => import("./(pages)/Home"), {
 const About = dynamic(() => import("./(pages)/About"), {
   ssr: false
 });
-import Service from "./(pages)/Service";
-import Project from "./(pages)/Project";
-import Contact from "./(pages)/Contact";
 
-import Footer from "@/components/Footer";
+// import Blog from "./(pages)/Service";
+const Service = dynamic(() => import("./(pages)/Service"), {
+  ssr: false
+});
+
+// import Project from "./(pages)/Project";
+const Project = dynamic(() => import("./(pages)/Project"), {
+  ssr: false
+});
+
+// import Contact from "./(pages)/Contact";
+const Contact = dynamic(() => import("./(pages)/Contact"), {
+  ssr: false
+});
+
+// import Footer from "@/components/Footer";
+const Footer = dynamic(() => import("@/components/Footer"), {
+  ssr: false
+});
+
+// export default function Page() {
 
 export default function Page() {
   return (

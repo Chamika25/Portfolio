@@ -14,6 +14,12 @@ import MotionBtn from "@/components/MotionBtn";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
+//import ProjectItem from "@/components/ProjectItem";
+/* import dynamic from "next/dynamic";
+const ProjectItem = dynamic(() => import("@/components/ProjectItem") , {
+  ssr: false,
+}); */
+
 const Project = () => {
 
   const projects = [
@@ -114,6 +120,7 @@ const Project = () => {
       },
     },
   };
+  
 
   const ListItem = ({ item }) => {
     const ref = useRef();
@@ -170,11 +177,16 @@ const Project = () => {
     );
   };
 
+  const ref = useRef(null);
+
+  const inView = useInView(ref, { margin: "-40% 0px -40% 0px" });
+
   return (
     <div
-      //ref={ref2}
+      //ref={ref}
       className="container max-auto lg:pt-[120px] mb-8 lg:mb-0 min-h-[calc(100vh)] h-full relative projects z-10"
     >
+      {/* Desktop */}
       <div className="sticky hidden lg:block top-24 lg:top-28 w-full overflow-hidden">
         <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>
         <motion.div
@@ -198,16 +210,23 @@ const Project = () => {
         ))}
       </div>
 
+      {/* Mobile */}
       <div className="lg:hidden w-full overflow-hidden">
         <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>
         <div className="flex flex-col gap-16">
           {projects.map((project, index) => (
+            //<ProjectItem item={project} key={index} />
             // <ListItem key={index} item={project} />
-            <div
+            <motion.div
               key={index}
+              variants={textVariant}
+              //initial="initial"
+              //animate={inView ? 'animate' : 'initial'}
+              //whileInView="animate"
+              //viewport={{amount: 0.5}}
               className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-start  lg:justify-center lg:px-8 lg:pl-16"
             >
-              <div className="w-full lg:min-w-[400px] lg:max-w-[400px] rounded-md">
+              <motion.div variants={textVariant} className="w-full lg:min-w-[400px] lg:max-w-[400px] rounded-md">
                 <Image
                   src={project.image}
                   width={200}
@@ -215,9 +234,9 @@ const Project = () => {
                   alt={project.title}
                   loading="lazy"
                   className="w-full h-full object-cover rounded-md -z-10"
-                />
-              </div>
-              <div className="flex flex-col gap-4 p-2 lg:p-0">
+                  />
+              </motion.div>
+              <motion.div variants={textVariant} className="flex flex-col gap-4 p-2 lg:p-0">
                 <h2 className="text-lg lg:text-3xl font-semibold text-ellipsis line-clamp-2 leading-tight lg:leading-normal text-accent">
                   {project.title}
                 </h2>
@@ -226,9 +245,9 @@ const Project = () => {
                   { 
                     project.link &&
                     <Link
-                      href={project.link}
-                      target="_blank"
-                      className="bg-accent rounded-lg w-fit px-4 text-primary lg:hover:bg-accent-hover cursor-none"
+                    href={project.link}
+                    target="_blank"
+                    className="bg-accent rounded-lg w-fit px-4 text-primary lg:hover:bg-accent-hover cursor-none"
                     >
                       View Project
                     </Link>
@@ -237,8 +256,8 @@ const Project = () => {
                       <FaGithub />
                     </Link>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
