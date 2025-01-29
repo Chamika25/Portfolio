@@ -50,7 +50,6 @@ const CertificatesSubSection = () => {
     ? "-40% 0px -25% 0px" // For mobile devices
     : "-15% 0px -25% 0px"; // For larger screens
 
-  
   const viewportMarginP = isMobile()
     ? "-40% 0px -40% 0px" // For mobile devices
     : "-50% 0px -50% 0px"; // For larger screens
@@ -74,7 +73,10 @@ const CertificatesSubSection = () => {
     },
     animate: {
       y: 0,
-      opacity: 1
+      opacity: 1,
+      transition: {
+        duration: 0.3
+      }
     },
   }
 
@@ -85,7 +87,10 @@ const CertificatesSubSection = () => {
     },
     animate: {
       y: 0,
-      opacity: 1
+      opacity: 1,
+      transition: {
+        duration: 0.3
+      }
     }
   }
 
