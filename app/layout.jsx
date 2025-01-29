@@ -18,9 +18,6 @@ export default function RootLayout({ children }) {
       <head>
         {/* Add the favicon */}
         <link rel="icon" type="image/svg+xml" href="/assets/favicon/bk.svg" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-
       </head>
       <body className={jetbrainsMono.variable}>{children}</body>
     </html>
