@@ -57,7 +57,7 @@ const Service = () => {
   ];
 
   const viewportMarginH1 = isMobile()
-    ? "-40% 0px -25% 0px" // For mobile devices
+    ? "-25% 0px -25% 0px" // For mobile devices
     : "-15% 0px -25% 0px"; // For larger screens
 
   const viewportMarginP = isMobile()

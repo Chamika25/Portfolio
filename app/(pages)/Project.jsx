@@ -184,6 +184,36 @@ const Project = () => {
 
   const isInMobile = isMobile();
 
+  const leftVariant = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    }
+  }
+
+  const rightVariant = {
+    initial: {
+      opacity: 0,
+      x: 100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    }
+  }
+
   return (
     <div
       //ref={ref}
@@ -194,7 +224,26 @@ const Project = () => {
           /* Desktop */
           <>
           <div className="sticky hidden lg:block top-24 lg:top-28 w-full overflow-hidden">
-            <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>
+            <motion.h1 
+              initial={{
+                opacity: 0,
+                y: -50,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.8,
+                },
+              }}
+              viewport={{
+                margin: "-15% 0px -25% 0px",
+                //once: true,
+              }}
+              className="text-2xl font-semibold pb-4 lg:pb-8"
+            >
+              Projects
+            </motion.h1>
             <motion.div
               className="flex h-full lg:items-center w-full sticky top-0 gap-8"
               style={{
@@ -202,6 +251,7 @@ const Project = () => {
                 transition: "transform 0.1s ease-out", // Smooth transition
               }}
               //style={{x: xxTranslate}}
+              
             >
               {projects.map((project, index) => (
                 <ListItem key={index} item={project} />
@@ -217,8 +267,27 @@ const Project = () => {
           </>
         ) : (
           /* Mobile */
-          <div className="lg:hidden w-full overflow-hidden">
-            <h1 className="text-2xl font-semibold pb-4 lg:pb-8">Projects</h1>
+          <div className="lg:hidden w-full">
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: -50,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.8,
+                },
+              }}
+              viewport={{
+                margin: "-25% 0px -25% 0px",
+                //once: true,
+              }}
+              className="text-2xl font-semibold pb-4 lg:pb-8"
+            >
+                Projects
+            </motion.h1>
             <div className="flex flex-col gap-16">
               {projects.map((project, index) => (
                 //<ProjectItem item={project} key={index} />
@@ -232,7 +301,15 @@ const Project = () => {
                   //viewport={{amount: 0.5}}
                   className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-start  lg:justify-center lg:px-8 lg:pl-16"
                 >
-                  <motion.div variants={textVariant} className="w-full lg:min-w-[400px] lg:max-w-[400px] rounded-md">
+                  <motion.div
+                    variants={leftVariant}
+                    initial='initial'
+                    whileInView='animate'
+                    viewport={{
+                      margin: "-25% 0px -25% 0px",
+                    }}
+                    className="w-full lg:min-w-[400px] lg:max-w-[400px] rounded-md"
+                  >
                     <Image
                       src={project.image}
                       width={200}
@@ -242,12 +319,36 @@ const Project = () => {
                       className="w-full h-full object-cover rounded-md -z-10"
                       />
                   </motion.div>
-                  <motion.div variants={textVariant} className="flex flex-col gap-4 p-2 lg:p-0">
-                    <h2 className="text-lg lg:text-3xl font-semibold text-ellipsis line-clamp-2 leading-tight lg:leading-normal text-accent">
+                  <div className="flex flex-col gap-4 p-2 lg:p-0">
+                    <motion.h2 
+                      variants={rightVariant}
+                      initial='initial'
+                      whileInView='animate'
+                      viewport={{
+                        margin: "-25% 0px -25% 0px",
+                      }}
+                      className="text-lg lg:text-3xl font-semibold text-ellipsis line-clamp-2 leading-tight lg:leading-normal text-accent">
                       {project.title}
-                    </h2>
-                    <p className="lg:py-4 leading-tight lg:leading-normal">{project.description}</p>
-                    <div className="flex gap-6">
+                    </motion.h2>
+                    <motion.p
+                      variants={leftVariant}
+                      initial='initial'
+                      whileInView='animate'
+                      viewport={{
+                        margin: "-25% 0px -25% 0px",
+                      }}
+                      className="lg:py-4 leading-tight lg:leading-normal">
+                        {project.description}
+                      </motion.p>
+                    <motion.div
+                      variants={rightVariant}
+                      initial='initial'
+                      whileInView='animate'
+                      viewport={{
+                        margin: "-25% 0px 0px 0px",
+                      }}
+                      className="flex gap-6"
+                    >
                       { 
                         project.link &&
                         <Link
@@ -261,8 +362,8 @@ const Project = () => {
                         <Link href={project.git} target="_blank" className='w-9 h-9 border-[1.5px] border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500 cursor-none'>
                           <FaGithub />
                         </Link>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  </div>
                 </motion.div>
               ))}
             </div>
