@@ -26,7 +26,7 @@ const Footer = () => {
   }
 
   const viewportMargin = isMobile()
-    ? "-10% 0px -15% 0px" // For mobile devices
+    ? "-10% 0px -10% 0px" // For mobile devices
     : "-10% 0px -5% 0px"; // For larger screens
 
   return (
