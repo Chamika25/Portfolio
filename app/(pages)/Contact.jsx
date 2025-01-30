@@ -6,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { animate, motion } from "framer-motion";
+import TextShadingView from "../animations/TextShadingView";
 
 const info = [
   {
@@ -182,50 +184,144 @@ const Contact = () => {
 
     }
     else{
-      console.log("Form validation failed. Please check the errors.");
+      //console.log("Form validation failed. Please check the errors.");
       toast.error("Form validation failed. Please check the errors", {
         className: "custom-toast",
         position: 'top-left',
-        autoClose: 2000,
+        autoClose: 2500,
       });
       
     }
   };
 
+  const itemVariantLeft = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.3 },
+    },
+  }
+
+  const itemVariantRight = {
+    initial: {
+      opacity: 0,
+      x: 100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.3 },
+    },
+  }
+
+  const viewMargin = "-20% 0px -25% 0px";
+
   return (
     <div className="container max-auto lg:pt-[70px] mb-8 lg:mb-0">
       <div className="flex flex-col lg:flex-row gap-[30px]">
-        <div className="order-1 lg:order-none">
+        <div className="order-1 lg:order-none overflow-hidden">
           {/* Form */}
           <form className="flex flex-col gap-2 p-6 bg-[#27272c50] rounded-xl">
-            <h3 className="text-3xl text-accent pb-4">Let&apos;s work together</h3>
+            <motion.h3
+              initial={{
+                opacity: 0,
+                x: -100,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: 0.5 },
+              }}
+              viewport={{
+                margin: "-10% 0px -25% 0px",
+              }}
+              className="text-3xl text-accent pb-4"
+            >
+              Let&apos;s work together
+            </motion.h3>
             <p className="text-white/60 text-sm">
-              I&apos;m here to help you achieve your goals. Let&apos;s connect and create
-              a unique digital experience together.
+              <TextShadingView>
+                I&apos;m here to help you achieve your goals. Let&apos;s connect and create
+                a unique digital experience together.
+              </TextShadingView>
             </p>
-            <div className="pt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className={`flex flex-col ${!(errors?.firstName) && 'lg:pb-4'}`}>
+            <motion.div
+              className="pt-2 grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
+              <motion.div 
+                variants={itemVariantLeft} 
+                initial='initial'
+                whileInView='animate'
+                viewport={{
+                  margin: viewMargin
+                }}
+                className={`flex flex-col ${!(errors?.firstName) && 'lg:pb-4'}`}
+              >
                 <Input type="firstName" placeholder="First Name" name="firstName" onChange={handleInputChange} value={formData.firstName} />
                 {errors.firstName && <p className="text-red-400 text-xs">{errors.firstName}</p>}
-              </div>
-              <div className={`flex flex-col ${!(errors?.lastName) && 'lg:pb-4'}`}>
+              </motion.div>
+              <motion.div 
+                variants={itemVariantRight}
+                initial='initial'
+                whileInView='animate'
+                viewport={{
+                  margin: viewMargin
+                }}
+                className={`flex flex-col ${!(errors?.lastName) && 'lg:pb-4'}`}
+              >
                 <Input type="lastName" placeholder="Last Name" name="lastName" onChange={handleInputChange} value={formData.lastName} />
                 {errors.lastName && <p className="text-red-400 text-xs">{errors.lastName}</p>}
-              </div>
-              <div className={`flex flex-col ${!(errors?.email) && 'lg:pb-4'}`}>
+              </motion.div>
+              <motion.div 
+                variants={itemVariantLeft}
+                initial='initial'
+                whileInView='animate'
+                viewport={{
+                  margin: viewMargin
+                }}
+                className={`flex flex-col ${!(errors?.email) && 'lg:pb-4'}`}
+              >
                 <Input type="email" placeholder="Email" name="email" onChange={handleInputChange} value={formData.email} />
                 {errors.email && <p className="text-red-400 text-xs">{errors.email}</p>}
-              </div>
-              <div className={`flex flex-col ${!(errors?.phone) && 'lg:pb-4'}`}>
+              </motion.div>
+              <motion.div 
+                variants={itemVariantRight}
+                initial='initial'
+                whileInView='animate'
+                viewport={{
+                  margin: viewMargin
+                }}
+                className={`flex flex-col pb-2 ${!(errors?.phone) && 'lg:pb-6'}`}
+              >
                 <Input type="phone" placeholder="Phone" name="phone" onChange={handleInputChange} value={formData.phone} />
                 {errors.phone && <p className="text-red-400 text-xs">{errors.phone}</p>}
-              </div>
-            </div>
-            <div className={`flex flex-col ${!(errors?.subject) && 'lg:pb-4'}`}>
+              </motion.div>
+            </motion.div>
+            <motion.div 
+              variants={itemVariantLeft}
+              initial='initial'
+              whileInView='animate'
+              viewport={{
+                margin: viewMargin
+              }}
+              className={`flex flex-col pb-2 ${!(errors?.subject) && 'lg:pb-6'}`}
+            >
               <Input type="subject" placeholder="Subject" className="w-full" name="subject" onChange={handleInputChange} value={formData.subject} />
               {errors.subject && <p className="text-red-400 text-xs">{errors.subject}</p>}
-            </div>
-            <div className="flex flex-col lg:pb-2">
+            </motion.div>
+            <motion.div
+              variants={itemVariantRight} 
+              initial='initial'
+              whileInView='animate'
+              viewport={{
+                margin: viewMargin
+              }}
+              className="flex flex-col lg:pb-2"
+            >
               <Textarea
                 className="h-[100px]"
                 placeholder="Type your message here" 
@@ -234,37 +330,106 @@ const Contact = () => {
                 onChange={handleInputChange}
               />
               {errors.message && <p className="text-red-400 text-xs">{errors.message}</p>}
-            </div>
-            <div className="flex items-center justify-center lg:justify-start">
+            </motion.div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: { 
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 10,
+                 },
+              }}
+              viewport={{
+                margin: "-10% 0px -10% 0px",
+              }}
+              className="flex items-center justify-center lg:justify-start"
+            >
               <Button 
                 type="submit" 
-                className="max-w-36 text-sm h-[30px] mt-2"
+                className="w-full md:max-w-36 text-sm h-[30px] mt-2"
                 onClick={handleSubmit}
               >
                 Send message
               </Button>
-            </div>
+            </motion.div>
           </form>
         </div>
         {/* Info */}
         <div className="flex-1 flex items-center lg:justify-end order-2 lg:order-none mb-8 lg:mb-0 lg:pr-10 lg:pl-4">
-          <ul className="flex flex-col gap-10 w-full">
+          <motion.ul
+            /* variants={{
+              initial: {},
+              animate: { staggerChildren: 0.2}
+            }}
+            initial='initial'
+            whileInView='animate'
+            viewport={{
+              margin: "-20% 0px -20% 0px",
+            }} */
+            className="flex flex-col gap-10 w-full"
+          >
             {info.map((item, index) => {
               return (
-                <li key={index} className="flex items-center gap-6">
+                <motion.li 
+                  variants={{
+                    initial: {
+                      opacity: 0,
+                      y: -50,
+                    },
+                    animate: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { 
+                        duration: 0.5,
+                        //delay: index * 0.2
+                        staggerChildren: 0.2
+                      },
+                    },
+                  }}
+                  initial='initial'
+                  whileInView='animate'
+                  viewport={{
+                    margin: "-20% 0px -20% 0px",
+                  }}
+                  key={index} 
+                  className="flex items-center gap-6"
+                >
                   <div className="min-w-[52px] h-[52px] lg:min-w-[60px] lg:h-[60px] bg-[#27272c60] text-accent rounded-md flex items-center justify-center">
                     <div className="text-[25px]">{item.icon}</div>
                   </div>
-                  <div className="flex flex-col">
+                  <motion.div 
+                    variants={{
+                      initial: {
+                        opacity: 0,
+                        x: -50,
+                      },
+                      animate: {
+                        opacity: 1,
+                        x: 0,
+                        transition: { 
+                          delay: 0.4,
+                          duration: 0.3,
+                        },
+                      },
+                    }}
+                    className="flex flex-col"
+                  >
                     <p className="text-white/60 text-sm">{item.title}</p>
                     <h3 className="text-base text-ellipsis line-clamp-2">
                       {item.value}
                     </h3>
-                  </div>
-                </li>
+                  </motion.div>
+                </motion.li>
               );
             })}
-          </ul>
+          </motion.ul>
         </div>
       </div>
     </div>

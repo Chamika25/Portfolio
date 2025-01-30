@@ -224,7 +224,7 @@ html::-webkit-scrollbar-track,
   margin: 20px 10px 0px 10px;
   font-size: 16px;
   padding: 10px 20px;
-  color: #193432ff;
+  /* color: #193432ff; */
   background-color: #01ffbbdd;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
