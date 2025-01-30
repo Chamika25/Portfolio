@@ -44,6 +44,7 @@
 "use client"
 
 import dynamic from 'next/dynamic';
+import { ToastContainer, toast } from 'react-toastify';
 // Components
 //import CustomCursor from "@/components/CustomCursor";
 const CustomCursor = dynamic(() => import("@/components/CustomCursor"), {
@@ -100,6 +101,7 @@ export default function Page() {
       {/* <CustomScrollLayout /> */}
       <ParticlesBackground />
       <CustomCursor />
+      <ToastContainer />
 
       {/* Header */}
       <Header />
