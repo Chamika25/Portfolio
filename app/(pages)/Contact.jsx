@@ -362,7 +362,7 @@ const Contact = () => {
           </form>
         </div>
         {/* Info */}
-        <div className="flex-1 flex items-center lg:justify-end order-2 lg:order-none mb-8 lg:mb-0 lg:pr-10 lg:pl-4">
+        <div className="flex-1 flex items-center lg:justify-end order-2 lg:order-none mt-4 md:mt-0 mb-8 lg:mb-0 lg:pr-10 lg:pl-4">
           <motion.ul
             /* variants={{
               initial: {},
