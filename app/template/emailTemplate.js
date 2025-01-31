@@ -26,7 +26,7 @@ export const emailTemplate = (firstName, lastName, email, phone, subject, messag
       }
       .header {
         text-align: center;
-        background-color: #01ffbb;
+        background-color: #4CAF50;
         padding: 20px;
         color: #fff;
         border-radius: 8px 8px 0 0;
@@ -52,7 +52,7 @@ export const emailTemplate = (firstName, lastName, email, phone, subject, messag
         border-radius: 0 0 8px 8px;
       }
       .footer a {
-        color: #01ffbb;
+        color: #4CAF50;
         text-decoration: none;
       }
       .footer a:hover {
