@@ -30,6 +30,13 @@ const Project = () => {
       description: "BIKZIK is a modern, full-stack e-commerce platform that offers seamless shopping experiences. It is built using the latest technologies with features like user authentication, product management, and cloud image storage.",
       link: "https://bikzik.vercel.app",
       git: "https://github.com/Buddika-Kasun/BikzIK_E-commarce_Web-MERN-"
+    },
+    {
+      title: "My Portfolio",
+      image: "/assets/projects/Portfolio.png",
+      description: "A sleek and responsive personal portfolio website built with Next.js 15, React 19, and Tailwind CSS. It showcases projects, skills, and experiences with smooth animations powered by Framer Motion. Optimized for performance and accessibility.",
+      link: "https://buddikakasun.vercel.app", 
+      git: "https://github.com/Buddika-Kasun/Portfolio" 
     },    
     {
       title: "UniCore ERP System",
@@ -154,7 +161,7 @@ const Project = () => {
               <Link
                 href={item.link}
                 target="_blank"
-                className="bg-accent rounded-lg w-fit px-4 text-primary lg:hover:bg-accent-hover cursor-none"
+                className="bg-accent rounded-lg w-fit px-4 text-primary lg:hover:bg-accent-hover cursor-none lg:hover:scale-105 lg:hover:transition-all duration-200"
               >
                 View Project
               </Link>

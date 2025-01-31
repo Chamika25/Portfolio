@@ -46,14 +46,14 @@ export async function POST(req) {
     });
 
     if (error) {
-        console.error('Error sending email:', error);
+        //console.error('Error sending email:', error);
         return NextResponse.json(
           { message: 'Failed to send email. Please try again later.' },
           { status: 500 }
         );
     }
     else {
-        console.log('Email sent:', data);
+        //console.log('Email sent:', data);
         // Return success response
         return NextResponse.json(
           { message: 'Mail sent successfully.' },
@@ -62,7 +62,7 @@ export async function POST(req) {
     }
 
   } catch (error) {
-    console.error('Error processing request:', error);
+    //console.error('Error processing request:', error);
     return NextResponse.json(
       { message: 'Internal server error.' },
       { status: 500 }
