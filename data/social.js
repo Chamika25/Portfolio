@@ -7,8 +7,7 @@ const social = [
   },
   {
     icon: <FaLinkedin />,
-    //url: "https://www.linkedin.com/in/your-username",
-    url: ''
+    url: "https://www.linkedin.com/in/buddika-kasun-",
   },
   {
     icon: <FaYoutube />,
