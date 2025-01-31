@@ -155,32 +155,65 @@ const Contact = () => {
     }
   
     setErrors(newErrors);
+
+    if (Object.keys(newErrors).length !== 0) {
+      // Remove error message after 2 seconds
+      setTimeout(() => {
+        setErrors({});
+      }, 6000);
+      return;
+    }
   
     // Return sanitized data if no errors, otherwise return null
     return Object.keys(newErrors).length === 0 ? sanitizedFormData : null;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     const validatedData = validate();
-    // Send form data to server or API
-    if (validatedData) {
-      console.log("Form validated data:", validatedData);
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
 
-      toast.success("Message sent", {
-        className: "custom-toast",
-        position: 'top-center',
-        autoClose: 2000,
-      });
+    if (validatedData) {
+
+      try {
+
+        const response = await fetch('/api/sendMessage', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': process.env.NEXT_PUBLIC_API_SECRET_KEY,
+          },
+          body: JSON.stringify(validatedData),
+        })
+
+        if (response.ok) {
+
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+  
+          toast.success("Message sent", {
+            className: "custom-toast",
+            position: 'top-center',
+            autoClose: 2000,
+          });
+
+        } else {
+          throw new Error('Failed to send message');
+        }
+      } catch (error) {
+        //console.error('Error:', error);
+        toast.error("Failed to send message. Please try again later.", {
+          className: "custom-toast",
+          position: 'top-left',
+          autoClose: 2500,
+        });
+      }
 
     }
     else{
