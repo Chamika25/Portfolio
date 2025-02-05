@@ -19,6 +19,15 @@ import { SiSpringboot } from "react-icons/si";
 import { FaDocker } from "react-icons/fa6";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { SiPostman } from "react-icons/si";
+import { FaUnity } from "react-icons/fa";
+import { SiAutodeskmaya } from "react-icons/si";
+import { RiBlenderLine } from "react-icons/ri";
+import { SiAdobephotoshop } from "react-icons/si";
+import { SiAdobeillustrator } from "react-icons/si";
+import { SiAdobeaftereffects } from "react-icons/si";
+import { SiAdobepremierepro } from "react-icons/si";
+import { FaFigma } from "react-icons/fa";
+
 
 import { animate, motion } from "framer-motion";
 import isMobile from "is-mobile";
@@ -28,9 +37,41 @@ const SkillsSubSection = () => {
   
   const skills = [
     {
+      name: "Unity",
+      icon: <FaUnity className="w-full h-full p-2" />,
+    },
+    {
+      name: "3D Maya",
+      icon: <SiAutodeskmaya className="w-full h-full p-4" />,
+    },
+    {
+      name: "Blender",
+      icon: <RiBlenderLine className="w-full h-full p-4" />,
+    },
+    {
+      name: "Adobe Photoshop",
+      icon: <SiAdobephotoshop className="w-full h-full p-3" />,
+    },
+    {
+      name: "Adobe Illustrator",
+      icon: <SiAdobeillustrator className="w-full h-full p-3" />,
+    },
+    {
+      name: "Adobe After Effects",
+      icon: <SiAdobeaftereffects className="w-full h-full p-3" />,
+    },
+    {
+      name: "Adobe Premiere Pro",
+      icon: <SiAdobepremierepro className="w-full h-full p-3" />,
+    },
+    {
+      name: "Figma",
+      icon: <FaFigma className="w-full h-full p-3" />,
+    },
+    /* {
       name: "Next Js",
       icon: <TbBrandNextjs className="w-full h-full" />,
-    },
+    }, */
     {
       name: "Mongo DB",
       icon: <BiLogoMongodb className="w-full h-full p-2" />,
@@ -71,22 +112,22 @@ const SkillsSubSection = () => {
       name: "CSS3",
       icon: <FaCss3 className="w-full h-full p-4" />,
     },
-    {
+    /* {
       name: "Tailwind",
       icon: <RiTailwindCssFill className="w-full h-full p-4" />,
-    },
+    }, */
     {
       name: "Git",
       icon: <DiGit className="w-full h-full " />,
     },
-    {
+    /* {
       name: "Vercel",
       icon: <RiVercelFill className="w-full h-full p-4" />,
     },
     {
       name: "Python",
       icon: <FaPython className="w-full h-full p-2" />,
-    },
+    }, */
     {
       name: "SQL Server",
       icon: <DiMsqlServer className="w-full h-full p-1" />,
@@ -99,7 +140,7 @@ const SkillsSubSection = () => {
       name: "Spring Boot",
       icon: <SiSpringboot className="w-full h-full p-2" />,
     },
-    {
+    /* {
       name: "Docker",
       icon: <FaDocker className="w-full h-full p-2" />,
     },
@@ -110,7 +151,7 @@ const SkillsSubSection = () => {
     {
       name: "Postman",
       icon: <SiPostman className="w-full h-full p-2" />,
-    },
+    }, */
     {
       name: "C",
       icon: (

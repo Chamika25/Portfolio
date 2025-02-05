@@ -40,7 +40,7 @@ const Footer = () => {
         viewport={{
           margin: viewportMargin
         }}
-        className="container flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 bg-[#193432cc] shadow-lg py-8 lg:py-6"
+        className="container flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 bg-[#8c52ff33] shadow-lg py-8 lg:py-6"
       >
         <motion.div
           variants={{
@@ -58,7 +58,7 @@ const Footer = () => {
           }}
         >
           <div class="text-sm flex flex-col lg:flex-row items-center justify-center lg:gap-2">
-            <p>© 2025 D.L.Buddika Kasun.</p>
+            <p>© 2025 P.K.S.Dilshan.</p>
             <p>All rights reserved.</p>
           </div>
         </motion.div>

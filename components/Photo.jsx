@@ -29,7 +29,7 @@ const Photo = () => {
             cx="253"
             cy="253"
             r="250"
-            stroke="#01ffbb"
+            stroke="#8c52ff"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -51,7 +51,7 @@ const Photo = () => {
             cx="253"
             cy="253"
             r="230"
-            stroke="#01ffbb"
+            stroke="#8c52ff"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -73,7 +73,7 @@ const Photo = () => {
             cx="253"
             cy="253"
             r="290"
-            stroke="#01ffbb"
+            stroke="#8c52ff"
             strokeWidth="1"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -118,7 +118,7 @@ const Photo = () => {
             quality={100}
             fill
             alt=""
-            className="object-contain p-6 rounded-full brightness-150"
+            className="object-contain p-6 rounded-full"
           />
         </motion.div>
       </motion.div>
