@@ -16,10 +16,10 @@ const ParticlesBackground = () => {
               value: 150,
               density: { enable: true, value_area: 1500 },
             },
-            color: { value: "#8649ff" },
+            color: { value: "#00ff99" },
             shape: {
               type: "circle",
-              stroke: { width: 2, color: "#8c52ff" },
+              stroke: { width: 2, color: "#00ff99" },
               polygon: { nb_sides: 5 },
             },
             opacity: {

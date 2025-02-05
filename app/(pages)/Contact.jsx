@@ -13,17 +13,17 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    value: "+94 781307931",
+    value: "+94 715315915",
   },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    value: "kvsandeepa123@gmail.com",
+    value: "buddikakasun80@gmail.com",
   },
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    value: "No:104, Dheerananda MW, Alamodara, Galpatha, Sri Lanka",
+    value: "No:12, Parakkrama MW, Panadura, Sri Lanka",
   },
 ];
 

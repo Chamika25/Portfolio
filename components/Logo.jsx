@@ -87,7 +87,7 @@ import { motion } from "framer-motion";
 
 const Logo = () => {
   // Split your text into an array of characters
-  const text = "Dilshan";
+  const text = "Kasun";
   const letters = text.split("");
 
   // Define animation for individual letters

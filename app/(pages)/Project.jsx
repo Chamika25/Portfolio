@@ -14,7 +14,6 @@ import MotionBtn from "@/components/MotionBtn";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import isMobile from "is-mobile";
-import { FaFigma } from "react-icons/fa";
 
 //import ProjectItem from "@/components/ProjectItem";
 /* import dynamic from "next/dynamic";
@@ -25,20 +24,19 @@ const ProjectItem = dynamic(() => import("@/components/ProjectItem") , {
 const Project = () => {
 
   const projects = [
-    /* {
+    {
       title: "BikzIK E-Commerce Platform",
       image: "/assets/projects/BikzIK.png",
       description: "BIKZIK is a modern, full-stack e-commerce platform that offers seamless shopping experiences. It is built using the latest technologies with features like user authentication, product management, and cloud image storage.",
       link: "https://bikzik.vercel.app",
       git: "https://github.com/Buddika-Kasun/BikzIK_E-commarce_Web-MERN-"
-    }, */
+    },
     {
       title: "My Portfolio",
       image: "/assets/projects/Portfolio.png",
       description: "A sleek and responsive personal portfolio website built with Next.js 15, React 19, and Tailwind CSS. It showcases projects, skills, and experiences with smooth animations powered by Framer Motion. Optimized for performance and accessibility.",
-      link: "https://sandeepa.vercel.app", 
-      git: "https://github.com/Buddika-Kasun/Portfolio",
-      figma: "a", 
+      link: "https://buddikakasun.vercel.app", 
+      git: "https://github.com/Buddika-Kasun/Portfolio" 
     },    
     {
       title: "UniCore ERP System",
@@ -46,15 +44,13 @@ const Project = () => {
       description: "UniCore is a powerful ERP system built with Next.js, React, and MongoDB, designed to streamline university management with modules for resource utilization, reservations, user profiles, and administrative operations.",
       link: "",    
       git: "https://github.com/Buddika-Kasun/UMS_Unicore_ERP-NextJs-",
-      figma: "a", 
     },
     {
       title: "Supplement Shop Admin",
       image: "/assets/projects/SupplementAdmin.png",
       description: "A modern admin dashboard for managing a supplement shop. Built with Next.js 14, MongoDB, and Tailwind CSS, it features CRUD operations for categories, subcategories, products, and admin users, with secure OAuth authentication.",
       link: "",
-      git: "https://github.com/Buddika-Kasun/Suppliment_shop_Admin_Web-NextJs-",
-      figma: "a", 
+      git: "https://github.com/Buddika-Kasun/Suppliment_shop_Admin_Web-NextJs-"
     },
     {
       title: "Supplement Shop Client",
@@ -62,7 +58,6 @@ const Project = () => {
       description: "A sleek and responsive supplement store built with Next.js 14, MongoDB, and Styled Components. Features include product listings, category-based filtering, featured product banners, and a shopping cart for a seamless user experience.",
       link: "",
       git: "https://github.com/Buddika-Kasun/Suppliment_shop_User_Web-NextJs-",
-      figma: "a", 
     },
   ];
 
@@ -180,11 +175,9 @@ const Project = () => {
                 damping: 10,
               }}
             >
-              { item.figma &&
-                <Link href={item.git} target="_blank" className='w-9 h-9 border-[1.5px] border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500 cursor-none pl-[1px]'>
-                  <FaFigma />
-                </Link>
-              }
+              <Link href={item.git} target="_blank" className='w-9 h-9 border-[1.5px] border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500 cursor-none'>
+                <FaGithub />
+              </Link>
             </MotionBtn>
           </div>
         </div>

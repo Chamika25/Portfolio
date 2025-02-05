@@ -16,7 +16,7 @@ const AboutMeSubSection = () => {
   const aboutMeDetails = [
     {
       title: "Name",
-      description: "P.K.S.Dilshan",
+      description: "D. L. Buddika Kasun",
     },
     {
       title: "Nationality",
@@ -24,15 +24,15 @@ const AboutMeSubSection = () => {
     },
     {
       title: "Phone",
-      description: "+94 78 130 7931",
+      description: "+94 71 531 5915",
     },
     {
       title: "Email",
-      description: "kvsandeepa123@gmail.com",
+      description: "buddikakasun80@gmail.com",
     },
     {
       title: "Address",
-      description: "No: 104, Dheerananda MW, Alamodara, Galpatha, Sri Lanka",
+      description: "No: 12, Parakkrama MW, Panadura, Sri Lanka",
     },
     {
       title: "Languages",

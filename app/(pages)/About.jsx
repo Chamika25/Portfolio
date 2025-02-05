@@ -40,9 +40,9 @@ const About = () => {
               <SkillsSubSection />
             </div>
 
-            {/* <div className="aboutSubSection" id="certificate">
+            <div className="aboutSubSection" id="certificate">
               <CertificatesSubSection />
-            </div> */}
+            </div>
 
             <div className="aboutSubSection" id="education">
               <EducationSubSection />

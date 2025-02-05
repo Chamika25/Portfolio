@@ -79,14 +79,14 @@
 @layer utilities {
   .text-shadow-accent {
     text-shadow:
-      -1px -1px 20px #8c52ff,
-      1px 5px 20px #8c52ff;
+      -1px -1px 20px #00ff99,
+      1px 5px 20px #00ff99;
   }
   .text-shadow-white {
     text-shadow: 0px 2px 25px rgba(255, 255, 255, 0.8);
   }
   .button-shadow-accent {
-    box-shadow: 0px 2px 20px #8c52ff;
+    box-shadow: 0px 2px 20px #00ff99;
   }
 }
 
@@ -156,8 +156,8 @@ body {
   /* display: flex; */
   justify-content: center;
   align-items: center;
-  box-shadow: 0 3px 20px #a376fd;
-  background-color: #8c52ff;
+  box-shadow: 0 3px 20px #01ffbb;
+  background-color: #01ffbb;
 }
 
 /* Custom Scrollbar Styling */
@@ -165,7 +165,7 @@ html,
 #main-container {
   /* height: 100vh; */
   scrollbar-width: thin; /* For Firefox - thin scrollbar */
-  scrollbar-color: #8c52ff #282c3422; /* Thumb (green) and Track (dark background) */
+  scrollbar-color: #01ffbb #282c3422; /* Thumb (green) and Track (dark background) */
   overflow-y: auto; /* Enable vertical scrolling */
   /* height: 100vh; */
   -webkit-overflow-scrolling: touch;
@@ -181,13 +181,13 @@ html::-webkit-scrollbar,
 
 html::-webkit-scrollbar-thumb,
 #main-container::-webkit-scrollbar-thumb {
-  background: #8c52ff; /* Thumb color */
+  background: #01ffbbbb; /* Thumb color */
   border-radius: 10px; /* Fully rounded edges */
 }
 
 html::-webkit-scrollbar-thumb:hover,
 #main-container::-webkit-scrollbar-thumb:hover {
-  background: #8c52ff; /* Lighter green for hover effect */
+  background: #01ffbb; /* Lighter green for hover effect */
 }
 
 html::-webkit-scrollbar-track,
@@ -225,7 +225,7 @@ html::-webkit-scrollbar-track,
   font-size: 16px;
   padding: 10px 20px;
   /* color: #193432ff; */
-  background-color: #8c52ffbb;
+  background-color: #01ffbbdd;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   @apply w-[calc(100vw-20px)] lg:max-w-md lg:w-full;
