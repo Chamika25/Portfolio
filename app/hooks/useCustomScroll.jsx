@@ -612,9 +612,9 @@ const useCustomScroll = ({ sectionsClassName = "section" } = {}) => {
     const handleScrollHeader = () => {
       const header = document.querySelector("header");
       if (container.scrollTop > 0) {
-        header.classList.add("bg-[#193432cc]", "shadow-lg");
+        header.classList.add("bg-[#8c52ff33]", "shadow-lg");
       } else {
-        header.classList.remove("bg-[#193432cc]", "shadow-lg");
+        header.classList.remove("bg-[#8c52ff33]", "shadow-lg");
       }
     };
 

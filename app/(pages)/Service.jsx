@@ -7,9 +7,9 @@ import React from "react";
 const Service = () => {
   const services = [
     {
-      title: "Front-End Development",
+      title: "Game Development",
       description:
-        "Crafting responsive, user-friendly, and visually engaging interfaces using React and Next.js. Expertise in building modern, fast, and SEO-friendly web applications with cutting-edge technologies like HTML, CSS, and JavaScript.",
+        "Building interactive, fun, and dynamic gaming experiences. Specializing in designing, coding, and testing video games using modern game development tools and engines. Passionate about creating unique gameplay mechanics, immersive worlds, and engaging storylines.",
       variant: {
         initial: {
           opacity: 0,
@@ -19,9 +19,9 @@ const Service = () => {
       }
     },
     {
-      title: "Back-End Development",
+      title: "Graphic Designing",
       description:
-        "Developing robust, scalable, and secure server-side solutions using Next.js, Node.js, Express, MongoDB, SQL, Spring Boot, and ASP.NET. Expertise in creating RESTful APIs, managing databases, and implementing backend logic for complex systems.",
+        "Designing visually appealing graphics, logos, and branding materials that communicate your message clearly. Specialized in creating designs that attract attention and enhance brand identity, ensuring a strong visual impact for both digital and print media.",
       variant: {
         initial: {
           opacity: 0,
@@ -31,9 +31,9 @@ const Service = () => {
       }
     },
     {
-      title: "Testing",
+      title: "3D Modeling",
       description:
-        "Ensuring software reliability through comprehensive testing strategies, including unit testing, integration testing, and end-to-end testing.",
+        "Bringing concepts to life with realistic and visually striking 3D models. Experience in creating detailed 3D assets for games, animation, and virtual simulations. Proficient in modeling, texturing, and rendering to produce immersive, high-quality 3D designs.",
       variant: {
         initial: {
           opacity: 0,
@@ -43,9 +43,9 @@ const Service = () => {
       }
     },
     {
-      title: "Bug Fixing",
+      title: "Content Creation",
       description:
-        "Diagnosing and resolving software issues efficiently to enhance performance and maintain seamless functionality.",
+        "Crafting engaging and relevant content for diverse audiences. Expertise in writing, video production, and digital media management. Focused on delivering high-quality, informative, and creative content that resonates with users across different platforms.",
       variant: {
         initial: {
           opacity: 0,
