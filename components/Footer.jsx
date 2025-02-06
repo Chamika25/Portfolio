@@ -58,7 +58,7 @@ const Footer = () => {
           }}
         >
           <div class="text-sm flex flex-col lg:flex-row items-center justify-center lg:gap-2">
-            <p>© 2025 D.L.Buddika Kasun.</p>
+            <p>© 2025 U. K. D. Chamika Dilhara.</p>
             <p>All rights reserved.</p>
           </div>
         </motion.div>

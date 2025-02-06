@@ -24,10 +24,10 @@ const AboutNav = ({view}) => {
       name: "Skills",
       path: "skills",
     },
-    {
+    /* {
       name: "Certificate",
       path: "certificate",
-    },
+    }, */
     {
       name: "Education",
       path: "education",

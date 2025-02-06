@@ -25,7 +25,7 @@ const About = () => {
         <div className="flex flex-col xl:flex-row gap-5">
           {/* Menu */}
           <div
-            className={`flex flex-col lg:max-w-80 lg:min-w-64 h-fit lg:mx-auto xl:mx-0 gap-6 sticky top-[87.5px] p-4 px-8 lg:p-0 xl:top-[20vh] xl:pt-[100px] z-10 ${sectionProgress.home == 0 && isInView && "bg-[#193432cc]"} lg:bg-transparent`}
+            className={`flex flex-col lg:max-w-80 lg:min-w-64 h-fit lg:mx-auto xl:mx-0 gap-6 sticky top-[87.5px] p-4 px-8 lg:p-0 xl:top-[20vh] xl:pt-[100px] z-10 ${sectionProgress.home == 0 && isInView && "bg-[#4cc9f0cc]"} lg:bg-transparent`}
           >
             <AboutNav view={isInView} />
           </div>
@@ -40,9 +40,9 @@ const About = () => {
               <SkillsSubSection />
             </div>
 
-            <div className="aboutSubSection" id="certificate">
+            {/* <div className="aboutSubSection" id="certificate">
               <CertificatesSubSection />
-            </div>
+            </div> */}
 
             <div className="aboutSubSection" id="education">
               <EducationSubSection />

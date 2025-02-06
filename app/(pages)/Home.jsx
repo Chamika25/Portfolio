@@ -54,7 +54,7 @@ const Home = () => {
           >
             <span className="w">Hello, I&apos;m</span>
             <br />
-            <span className="text-accent">Buddika Kasun</span>
+            <span className="text-accent">Chamika Dilhara</span>
             <br />
           </motion.h1>
           <h2 className="text-xl lg:text-4xl mb-6">

@@ -23,41 +23,24 @@ const ProjectItem = dynamic(() => import("@/components/ProjectItem") , {
 
 const Project = () => {
 
-  const projects = [
-    {
-      title: "BikzIK E-Commerce Platform",
-      image: "/assets/projects/BikzIK.png",
-      description: "BIKZIK is a modern, full-stack e-commerce platform that offers seamless shopping experiences. It is built using the latest technologies with features like user authentication, product management, and cloud image storage.",
-      link: "https://bikzik.vercel.app",
-      git: "https://github.com/Buddika-Kasun/BikzIK_E-commarce_Web-MERN-"
-    },
-    {
-      title: "My Portfolio",
-      image: "/assets/projects/Portfolio.png",
-      description: "A sleek and responsive personal portfolio website built with Next.js 15, React 19, and Tailwind CSS. It showcases projects, skills, and experiences with smooth animations powered by Framer Motion. Optimized for performance and accessibility.",
-      link: "https://buddikakasun.vercel.app", 
-      git: "https://github.com/Buddika-Kasun/Portfolio" 
-    },    
+  const projects = [   
     {
       title: "UniCore ERP System",
       image: "/assets/projects/Unicore.png",
       description: "UniCore is a powerful ERP system built with Next.js, React, and MongoDB, designed to streamline university management with modules for resource utilization, reservations, user profiles, and administrative operations.",
-      link: "",    
-      git: "https://github.com/Buddika-Kasun/UMS_Unicore_ERP-NextJs-",
+      link: "https://github.com/Buddika-Kasun/UMS_Unicore_ERP-NextJs-",
     },
     {
       title: "Supplement Shop Admin",
       image: "/assets/projects/SupplementAdmin.png",
       description: "A modern admin dashboard for managing a supplement shop. Built with Next.js 14, MongoDB, and Tailwind CSS, it features CRUD operations for categories, subcategories, products, and admin users, with secure OAuth authentication.",
-      link: "",
-      git: "https://github.com/Buddika-Kasun/Suppliment_shop_Admin_Web-NextJs-"
+      link: "https://github.com/Buddika-Kasun/Suppliment_shop_Admin_Web-NextJs-"
     },
     {
       title: "Supplement Shop Client",
       image: "/assets/projects/SupplementClient.png",
       description: "A sleek and responsive supplement store built with Next.js 14, MongoDB, and Styled Components. Features include product listings, category-based filtering, featured product banners, and a shopping cart for a seamless user experience.",
-      link: "",
-      git: "https://github.com/Buddika-Kasun/Suppliment_shop_User_Web-NextJs-",
+      link: "https://github.com/Buddika-Kasun/Suppliment_shop_User_Web-NextJs-",
     },
   ];
 
@@ -166,7 +149,7 @@ const Project = () => {
                 View Project
               </Link>
             }
-            <MotionBtn
+            {/* <MotionBtn
               whileHover={{ rotate: 360, scale: 1.2 }}
               transition={{
                 duration: 0.5,
@@ -178,7 +161,7 @@ const Project = () => {
               <Link href={item.git} target="_blank" className='w-9 h-9 border-[1.5px] border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500 cursor-none'>
                 <FaGithub />
               </Link>
-            </MotionBtn>
+            </MotionBtn> */}
           </div>
         </div>
       </div>

@@ -166,15 +166,13 @@ const TypingEffect = () => {
   return (
     <TypeAnimation
       sequence={[
-        "Front End Developer",
+        "Sound Engineer",
         1000,
-        "Back End Developer",
+        "3D Modeler",
         1000,
-        "Full Stack Developer",
+        "Video Editor",
         1000,
-        "Tester",
-        1000,
-        "Bug Fixer",
+        "Game Developer",
         1000,
       ]}
       wrapper="span"

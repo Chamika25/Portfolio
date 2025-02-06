@@ -8,7 +8,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Buddika Kasun",
+  title: "Chamika Dilhara",
   description: "Portfolio of D.L. Buddika Kasun",
 };
 

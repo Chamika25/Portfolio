@@ -18,14 +18,14 @@ const EducationSubSection = () => {
       title: "GCE Advanced Level (A/L)",
       year: 2020,
       description:
-      "Achieved 3 A's in the Technology Stream with an island rank of 20. Completed studies at Taxila Central College, Horana, demonstrating exceptional performance and expertise in technology-focused subjects.",
+      "Achieved 3 B's in the Technology Stream. Completed studies at Taxila Central College, Horana, demonstrating exceptional performance and expertise in technology-focused subjects.",
       direct: 'right',
     },
     {
       title: "GCE Ordinary Level (O/L)",
       year: 2017,
       description:
-        "Achieved 6 A's, 2 B's, and 1 C while studying at Royal College, Panadura. Main subjects with distinctions (A's) include Mathematics, Science, ICT and English, showcasing strong analytical and linguistic skills.",
+        "Achieved 9 A's while studying at Taxila Central College, Horana. Main subjects with distinctions (A's) include Mathematics, Science and English, showcasing strong analytical and linguistic skills.",
       direct: 'left',
     },
   ];
