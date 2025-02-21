@@ -63,7 +63,7 @@ const Home = () => {
           <div className="max-w-[500px] mb-9 text-white/80 w">
             <TextShadingView>
               I excel at crafting elegant digital experiences and I am
-              proficient in verious programming languages and thechnology.
+              proficient in verious multimedia technology.
             </TextShadingView>
           </div>
 

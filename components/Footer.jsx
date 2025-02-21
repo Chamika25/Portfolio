@@ -40,7 +40,7 @@ const Footer = () => {
         viewport={{
           margin: viewportMargin
         }}
-        className="container flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 bg-[#193432cc] shadow-lg py-8 lg:py-6"
+        className="container flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 bg-[#4cc9f0aa] shadow-lg py-8 lg:py-6"
       >
         <motion.div
           variants={{

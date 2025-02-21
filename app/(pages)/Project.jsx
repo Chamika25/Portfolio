@@ -25,22 +25,22 @@ const Project = () => {
 
   const projects = [   
     {
-      title: "UniCore ERP System",
-      image: "/assets/projects/Unicore.png",
-      description: "UniCore is a powerful ERP system built with Next.js, React, and MongoDB, designed to streamline university management with modules for resource utilization, reservations, user profiles, and administrative operations.",
-      link: "https://github.com/Buddika-Kasun/UMS_Unicore_ERP-NextJs-",
+      title: "3D House Modeling and Design",
+      image: "/assets/projects/s2.png",
+      description: "The 3D House Modeling and Design project showcases a highly detailed and realistic architectural model, created using Autodesk Maya. This project reflects a seamless blend of creativity and technical expertise, aiming to bring architectural concepts to life in a visually compelling manner.",
+      link: "https://drive.google.com/drive/folders/1WFayMehtA4ckQtkLaKk158AnblIu2IV5?usp=sharing",
     },
     {
-      title: "Supplement Shop Admin",
-      image: "/assets/projects/SupplementAdmin.png",
-      description: "A modern admin dashboard for managing a supplement shop. Built with Next.js 14, MongoDB, and Tailwind CSS, it features CRUD operations for categories, subcategories, products, and admin users, with secure OAuth authentication.",
-      link: "https://github.com/Buddika-Kasun/Suppliment_shop_Admin_Web-NextJs-"
+      title: "3D Ball-Collecting Game",
+      image: "/assets/projects/s1.png",
+      description: "The 3D Ball-Collecting Game is an interactive and visually engaging project developed using Unity Engine and C#. In this game, players navigate a dynamic environment, collecting balls while engaging with thoughtfully designed mechanics and vibrant visuals.",
+      link: " https://lnkd.in/ewMgVNyJ"
     },
     {
-      title: "Supplement Shop Client",
-      image: "/assets/projects/SupplementClient.png",
-      description: "A sleek and responsive supplement store built with Next.js 14, MongoDB, and Styled Components. Features include product listings, category-based filtering, featured product banners, and a shopping cart for a seamless user experience.",
-      link: "https://github.com/Buddika-Kasun/Suppliment_shop_User_Web-NextJs-",
+      title: "Redesigned SLT Mobitel App Interface",
+      image: "/assets/projects/s4.png",
+      description: "Evaluated and redesigned the home interface of the SLT Mobitel app with the goal of improving user experience and interface clarity. This redesign focuses on enhancing usability while maintaining a visually appealing and cohesive look.",
+      link: " https://lnkd.in/eXEuPZWd",
     },
   ];
 
@@ -121,16 +121,16 @@ const Project = () => {
     return (
       <div
         ref={ref}
-        className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-start  lg:justify-center lg:px-8 lg:pl-16"
+        className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-start lg:justify-center lg:px-8 lg:pl-16"
       >
-        <div className="w-full lg:min-w-[400px] lg:max-w-[400px] rounded-md">
+        <div className="w-full lg:min-w-[400px] lg:max-w-[400px] lg:min-h-[400px] lg:max-h-[400px] rounded-md">
           <Image
             src={item.image}
             width={200}
             height={200}
             alt={item.title}
             loading="lazy"
-            className="w-full h-full object-cover rounded-md"
+            className=" h-full w-full object-fit rounded-md"
           />
         </div>
         <div className="flex flex-col gap-4 p-2 lg:p-0">
@@ -209,55 +209,8 @@ const Project = () => {
       //ref={ref}
       className="container max-auto lg:pt-[120px] mb-8 lg:mb-0 min-h-[calc(100vh)] h-full relative projects z-10"
     >
-      {
-        !isInMobile ? (
-          /* Desktop */
-          <>
-          <div className="sticky hidden lg:block top-24 lg:top-28 w-full overflow-hidden">
-            <motion.h1 
-              initial={{
-                opacity: 0,
-                y: -50,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 0.8,
-                },
-              }}
-              viewport={{
-                margin: "-15% 0px -25% 0px",
-                //once: true,
-              }}
-              className="text-2xl font-semibold pb-4 lg:pb-8"
-            >
-              Projects
-            </motion.h1>
-            <motion.div
-              className="flex h-full lg:items-center w-full sticky top-0 gap-8"
-              style={{
-                transform: `translateX(${translateX}px)`, // Apply X translation based on scroll progress
-                transition: "transform 0.1s ease-out", // Smooth transition
-              }}
-              //style={{x: xxTranslate}}
-              
-            >
-              {projects.map((project, index) => (
-                <ListItem key={index} item={project} />
-              ))}
-            </motion.div>
-          </div>
-          {/* Add extra space for smooth scrolling */}
-          <div className="hidden lg:block">
-            {[...Array(projects.length)].map((_, i) => (
-              <div key={i} className="min-h-[100vh]" />
-            ))}
-          </div>
-          </>
-        ) : (
-          /* Mobile */
-          <div className="lg:hidden w-full">
+      
+          <div className=" w-full">
             <motion.h1
               initial={{
                 opacity: 0,
@@ -289,7 +242,7 @@ const Project = () => {
                   //animate={inView ? 'animate' : 'initial'}
                   //whileInView="animate"
                   //viewport={{amount: 0.5}}
-                  className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-start  lg:justify-center lg:px-8 lg:pl-16"
+                  className="h-full min-w-full overflow-hidden flex flex-col lg:flex-row lg:gap-20 items-center lg:justify-center lg:px-8 lg:pl-16 lg:pb-8 lg:pt-4"
                 >
                   <motion.div
                     variants={leftVariant}
@@ -349,17 +302,13 @@ const Project = () => {
                           View Project
                         </Link>
                       }
-                        <Link href={project.git} target="_blank" className='w-9 h-9 border-[1.5px] border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500 cursor-none'>
-                          <FaGithub />
-                        </Link>
                     </motion.div>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
-        )
-      }
+        
 
     </div>
   );
