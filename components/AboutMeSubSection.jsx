@@ -73,7 +73,7 @@ const AboutMeSubSection = () => {
       <p className="py-4 opacity-80">
         <TextShadingView>
           A passionate multimedia undergraduate with a love for
-          sound engineering, 3D modeling, and UI/UX projects.
+          digital marketer, sound engineering, 3D modeling, and UI/UX projects.
         </TextShadingView>
       </p>
       <div className="grid lg:grid-cols-2 gap-4 p-4">
