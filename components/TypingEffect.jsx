@@ -166,6 +166,8 @@ const TypingEffect = () => {
   return (
     <TypeAnimation
       sequence={[
+        "Digital Marketer",
+        1000,
         "Sound Engineer",
         1000,
         "3D Modeler",
