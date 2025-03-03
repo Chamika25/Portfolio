@@ -16,7 +16,7 @@ const AboutMeSubSection = () => {
   const aboutMeDetails = [
     {
       title: "Name",
-      description: "D. L. Buddika Kasun",
+      description: "U. K. D. Chamika Dilhara",
     },
     {
       title: "Nationality",
@@ -24,15 +24,15 @@ const AboutMeSubSection = () => {
     },
     {
       title: "Phone",
-      description: "+94 71 531 5915",
+      description: "+94 714669699",
     },
     {
       title: "Email",
-      description: "buddikakasun80@gmail.com",
+      description: "chamikadilharaw@gmail.com",
     },
     {
       title: "Address",
-      description: "No: 12, Parakkrama MW, Panadura, Sri Lanka",
+      description: "314/3, Wijemanna Mawatha, Wilegoda, Kalutara North",
     },
     {
       title: "Languages",
@@ -72,8 +72,8 @@ const AboutMeSubSection = () => {
       </motion.h1>
       <p className="py-4 opacity-80">
         <TextShadingView>
-          A passionate software engineering undergraduate with a love for
-          technology, web development, and SE projects.
+          A passionate multimedia undergraduate with a love for
+          sound engineering, 3D modeling, and UI/UX projects.
         </TextShadingView>
       </p>
       <div className="grid lg:grid-cols-2 gap-4 p-4">

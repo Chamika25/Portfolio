@@ -25,12 +25,12 @@ const CustomCursor = () => {
     // White text hover effects
     const onMouseEnterWhiteText = () => {
       cursor.style.backgroundColor = "transparent";
-      cursor.style.border = "2px solid #01ffbb";
+      cursor.style.border = "2px solid #4cc9f0";
       cursor.style.mixBlendMode = "normal";
     };
 
     const onMouseLeaveWhiteText = () => {
-      cursor.style.backgroundColor = "#01ffbb";
+      cursor.style.backgroundColor = "#4cc9f0";
       cursor.style.border = "none";
       cursor.style.mixBlendMode = "difference";
     };

@@ -7,9 +7,9 @@ import React from "react";
 const Service = () => {
   const services = [
     {
-      title: "Front-End Development",
+      title: "Audio Engineering",
       description:
-        "Crafting responsive, user-friendly, and visually engaging interfaces using React and Next.js. Expertise in building modern, fast, and SEO-friendly web applications with cutting-edge technologies like HTML, CSS, and JavaScript.",
+        "Producing high-quality sound experiences through mixing, mastering, and sound design. Expertise in crafting immersive audio landscapes for music, film, games, and multimedia projects using industry-standard tools like Pro Tools, Ableton Live, and FL Studio.",
       variant: {
         initial: {
           opacity: 0,
@@ -19,9 +19,9 @@ const Service = () => {
       }
     },
     {
-      title: "Back-End Development",
+      title: "3D Development",
       description:
-        "Developing robust, scalable, and secure server-side solutions using Next.js, Node.js, Express, MongoDB, SQL, Spring Boot, and ASP.NET. Expertise in creating RESTful APIs, managing databases, and implementing backend logic for complex systems.",
+        "Creating stunning 3D assets and environments with precision and realism. Specializing in modeling, texturing, and rendering for games, animation, and virtual experiences using tools like Blender, Maya, and Unreal Engine.",
       variant: {
         initial: {
           opacity: 0,
@@ -31,9 +31,9 @@ const Service = () => {
       }
     },
     {
-      title: "Testing",
+      title: "Game Development",
       description:
-        "Ensuring software reliability through comprehensive testing strategies, including unit testing, integration testing, and end-to-end testing.",
+        "Building engaging and interactive gaming experiences with Unity and Unreal Engine. Proficient in game mechanics, physics, AI, and immersive storytelling to bring creative visions to life in 2D and 3D games.",
       variant: {
         initial: {
           opacity: 0,
@@ -43,9 +43,9 @@ const Service = () => {
       }
     },
     {
-      title: "Bug Fixing",
+      title: "UI/UX Design",
       description:
-        "Diagnosing and resolving software issues efficiently to enhance performance and maintain seamless functionality.",
+        "Designing intuitive, visually appealing, and user-centric interfaces. Expertise in wireframing, prototyping, and interaction design using Figma and Adobe XD to enhance user experiences across web and mobile platforms.",
       variant: {
         initial: {
           opacity: 0,

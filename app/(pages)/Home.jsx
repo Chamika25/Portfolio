@@ -54,7 +54,7 @@ const Home = () => {
           >
             <span className="w">Hello, I&apos;m</span>
             <br />
-            <span className="text-accent">Buddika Kasun</span>
+            <span className="text-accent">Chamika Dilhara</span>
             <br />
           </motion.h1>
           <h2 className="text-xl lg:text-4xl mb-6">
@@ -63,7 +63,7 @@ const Home = () => {
           <div className="max-w-[500px] mb-9 text-white/80 w">
             <TextShadingView>
               I excel at crafting elegant digital experiences and I am
-              proficient in verious programming languages and thechnology.
+              proficient in verious multimedia technology.
             </TextShadingView>
           </div>
 

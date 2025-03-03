@@ -401,7 +401,7 @@ const Nav = () => {
                   },
                 }}
               >
-                Kasun<span className="text-accent">.</span>
+                Chamika<span className="text-accent">.</span>
               </motion.h1>
             </button>
           </div>

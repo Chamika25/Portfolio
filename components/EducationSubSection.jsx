@@ -11,21 +11,21 @@ const EducationSubSection = () => {
       "Bachelor of Information and Communication Technology (BICT) (Hons.)",
       year: "Expected 2027",
       description:
-      "Currently pursuing a Bachelor of Information and Communication Technology (BICT) (Hons.) at the University of Sri Jayewardenepura. Acquired comprehensive knowledge and skills in areas such as advanced mathematics, physics, statistics, data structures, cybersecurity, networking, and programming. Proficient in multiple programming languages including C, C#, C++, Java, Python, SQL, and MongoDB, as well as front-end and back-end technologies like React, JavaScript, HTML, and CSS. Gained experience in IoT, machine learning, data mining, multimedia systems, and more.",
+      "Currently pursuing a Bachelor of Information and Communication Technology (BICT) (Hons.) at the University of Sri Jayewardenepura. Acquired comprehensive knowledge and skills in areas such as advanced mathematics, physics, statistics, data structures, multimedia, cybersecurity, networking, and programming. I'm honing skills toward roles like creative director, video editor, effects artist, A/V engineer, sound effects editor, 3D modeler, and production artist.",
       direct: 'left',
     },
     {
       title: "GCE Advanced Level (A/L)",
       year: 2020,
       description:
-      "Achieved 3 A's in the Technology Stream with an island rank of 20. Completed studies at Taxila Central College, Horana, demonstrating exceptional performance and expertise in technology-focused subjects.",
+      "Achieved 3 B's in the Technology Stream. Completed studies at Taxila Central College, Horana, demonstrating exceptional performance and expertise in technology-focused subjects.",
       direct: 'right',
     },
     {
       title: "GCE Ordinary Level (O/L)",
       year: 2017,
       description:
-        "Achieved 6 A's, 2 B's, and 1 C while studying at Royal College, Panadura. Main subjects with distinctions (A's) include Mathematics, Science, ICT and English, showcasing strong analytical and linguistic skills.",
+        "Achieved 9 A's while studying at Taxila Central College, Horana. Main subjects with distinctions (A's) include Mathematics, Science and English, showcasing strong analytical and linguistic skills.",
       direct: 'left',
     },
   ];
