@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const TypingEffect = () => {
   // Text to animate
-  const text = "Buddika Kasun";
+  const text = "Chamika Dilhara";
   const letters = text.split("");
 
   // Define animation for typing and backspace effect

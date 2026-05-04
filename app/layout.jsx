@@ -19,7 +19,8 @@ export default function RootLayout({ children }) {
         {/* Add the favicon */}
         <link rel="icon" type="image/svg+xml" href="/assets/favicon/bk.svg" />
       </head>
-      <body className={jetbrainsMono.variable}>{children}</body>
+      <body className={jetbrainsMono.variable} suppressHydrationWarning>
+        {children}</body>
     </html>
   );
 }

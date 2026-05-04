@@ -54,18 +54,6 @@ const SkillsSubSection = () => {
       icon: <SiAdobeaftereffects className="w-full h-full p-4" />,
     },
     {
-      name: "Unity",
-      icon: <FaUnity className="w-full h-full p-2" />
-    },
-    {
-      name: "Blender",
-      icon: <SiBlender className="w-full h-full p-3" />,
-    },
-    {
-      name: "Autodesk Maya",
-      icon: <SiAutodeskmaya className="w-full h-full p-3" />,
-    },
-    {
       name: "Protools",
       icon: <SiProtools className="w-full h-full p-4" />,
     },
@@ -136,38 +124,38 @@ const SkillsSubSection = () => {
         </svg>
       ),
     },*/
-    {
-      name: "C#",
-      icon: (
-        <svg
-          className="w-full h-full p-2"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 64 64"
-        >
-          <text
-            x="40%"
-            y="50%"
-            textAnchor="middle"
-            fill="currentColor"
-            fontSize="80"
-            fontWeight="bold"
-            dy=".35em"
-          >
-            C
-          </text>
-          <text
-            x="60%"
-            y="50%"
-            fill="currentColor"
-            fontSize="25"
-            fontWeight="bold"
-            dy=".35em"
-          >
-            #
-          </text>
-        </svg>
-      ),
-    },
+    // {
+    //   name: "C#",
+    //   icon: (
+    //     <svg
+    //       className="w-full h-full p-2"
+    //       xmlns="http://www.w3.org/2000/svg"
+    //       viewBox="0 0 64 64"
+    //     >
+    //       <text
+    //         x="40%"
+    //         y="50%"
+    //         textAnchor="middle"
+    //         fill="currentColor"
+    //         fontSize="80"
+    //         fontWeight="bold"
+    //         dy=".35em"
+    //       >
+    //         C
+    //       </text>
+    //       <text
+    //         x="60%"
+    //         y="50%"
+    //         fill="currentColor"
+    //         fontSize="25"
+    //         fontWeight="bold"
+    //         dy=".35em"
+    //       >
+    //         #
+    //       </text>
+    //     </svg>
+    //   ),
+    // },
     /*
     {
       name: "C++",
