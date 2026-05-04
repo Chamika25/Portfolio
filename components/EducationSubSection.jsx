@@ -9,7 +9,7 @@ const EducationSubSection = () => {
     {
       title:
       "Bachelor of Information and Communication Technology (BICT) (Hons.)",
-      year: "Expected 2027",
+      year: "2026",
       description:
       "Currently pursuing a Bachelor of Information and Communication Technology (BICT) (Hons.) at the University of Sri Jayewardenepura. Acquired comprehensive knowledge and skills in areas such as advanced mathematics, physics, statistics, data structures, multimedia, cybersecurity, networking, and programming. I'm honing skills toward roles like creative director, video editor, effects artist, A/V engineer, sound effects editor, 3D modeler, and production artist.",
       direct: 'left',

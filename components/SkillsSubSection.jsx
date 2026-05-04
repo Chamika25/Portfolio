@@ -38,29 +38,26 @@ const SkillsSubSection = () => {
   
   const skills = [
     {
-      name: "Adobe Premiere Pro",
-      icon: <SiAdobepremierepro className="w-full h-full p-4" />,
+      name: "Adobe Photoshop",
+      icon: <SiAdobephotoshop className="w-full h-full p-4" />,
     },
     {
       name: "Adobe Illustrator",
       icon: <SiAdobeillustrator className="w-full h-full p-4" />,
     },
     {
-      name: "Adobe Photoshop",
-      icon: <SiAdobephotoshop className="w-full h-full p-4" />,
+      name: "Adobe Premiere Pro",
+      icon: <SiAdobepremierepro className="w-full h-full p-4" />,
     },
     {
       name: "Adobe After Effects",
       icon: <SiAdobeaftereffects className="w-full h-full p-4" />,
     },
     {
-      name: "Protools",
-      icon: <SiProtools className="w-full h-full p-4" />,
+      name: "Blender",
+      icon: <SiBlender className="w-full h-full p-4" />,
     },
-    {
-      name: "Figma",
-      icon: <IoLogoFigma className="w-full h-full p-4" />,
-    },
+    
     /* 
     {
       name: "MySQL",

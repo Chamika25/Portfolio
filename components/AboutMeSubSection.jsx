@@ -72,8 +72,8 @@ const AboutMeSubSection = () => {
       </motion.h1>
       <p className="py-4 opacity-80">
         <TextShadingView>
-          A passionate multimedia undergraduate with a love for
-          digital marketer, sound engineering, 3D modeling, and UI/UX projects.
+          “A passionate multimedia graduate with a love for Graphic Design, 
+           3D Animation, Digital Marketing, Video Editing, and Motion Graphic Design.”
         </TextShadingView>
       </p>
       <div className="grid lg:grid-cols-2 gap-4 p-4">

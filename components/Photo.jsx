@@ -113,7 +113,7 @@ const Photo = () => {
           className="relative w-[298px] h-[298px] xl:w-[380px] xl:h-[380px] rounded-full overflow-hidden mix-blend-lighten"
         >
           <Image
-            src="/assets/dp/dp3.png"
+            src="/assets/dp/dp5.png"
             priority
             quality={100}
             fill

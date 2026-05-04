@@ -7,9 +7,9 @@ import React from "react";
 const Service = () => {
   const services = [
     {
-      title: "Audio Engineering",
+      title: "Graphic Design",
       description:
-        "Producing high-quality sound experiences through mixing, mastering, and sound design. Expertise in crafting immersive audio landscapes for music, film, games, and multimedia projects using industry-standard tools like Pro Tools, Ableton Live, and FL Studio.",
+        "Creating visually appealing designs for branding, social media, and digital platforms. Skilled in design posters, banners, and marketing materials using modern design principles. Experienced with Adobe Photoshop, Illustrator and Canva.",
       variant: {
         initial: {
           opacity: 0,
@@ -19,9 +19,9 @@ const Service = () => {
       }
     },
     {
-      title: "3D Development",
+      title: "Video Editing",
       description:
-        "Creating stunning 3D assets and environments with precision and realism. Specializing in modeling, texturing, and rendering for games, animation, and virtual experiences using tools like Blender, Maya, and Unreal Engine.",
+        "Producing high-quality video content with smooth transitions, effects, and storytelling techniques. Experienced in editing promotional videos, reels, advertisements, and social media content. Skilled in Adobe Premiere Pro and CapCut for professional video production.",
       variant: {
         initial: {
           opacity: 0,
@@ -31,9 +31,9 @@ const Service = () => {
       }
     },
     {
-      title: "Game Development",
+      title: "Motion Graphic Design",
       description:
-        "Building engaging and interactive gaming experiences with Unity and Unreal Engine. Proficient in game mechanics, physics, AI, and immersive storytelling to bring creative visions to life in 2D and 3D games.",
+        "Creating engaging motion graphics and animated visual content for digital media projects. Combining animation, typography, and visual effects to enhance audience interaction. Experienced in Adobe After Effects and creative motion design workflows.",
       variant: {
         initial: {
           opacity: 0,
@@ -43,9 +43,9 @@ const Service = () => {
       }
     },
     {
-      title: "UI/UX Design",
+      title: "Digital Marketing",
       description:
-        "Designing intuitive, visually appealing, and user-centric interfaces. Expertise in wireframing, prototyping, and interaction design using Figma and Adobe XD to enhance user experiences across web and mobile platforms.",
+        "Developing creative digital marketing strategies to improve brand awareness and audience engagement. Experienced in social media marketing, content creation, and campaign management. Focused on creating impactful content for platforms like Facebook, Instagram, and YouTube.",
       variant: {
         initial: {
           opacity: 0,

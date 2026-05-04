@@ -25,22 +25,22 @@ const Project = () => {
 
   const projects = [   
     {
-      title: "3D House Modeling and Design",
-      image: "/assets/projects/s2.png",
-      description: "The 3D House Modeling and Design project showcases a highly detailed and realistic architectural model, created using Autodesk Maya. This project reflects a seamless blend of creativity and technical expertise, aiming to bring architectural concepts to life in a visually compelling manner.",
-      link: "https://drive.google.com/drive/folders/1WFayMehtA4ckQtkLaKk158AnblIu2IV5?usp=sharing",
+      title: "Creative Graphic Design Projects",
+      image: "/assets/projects/s5.png",
+      description: "A showcase of professionally designed social media posts, advertising banners, and promotional creatives developed for digital marketing campaigns. These designs highlight creativity, visual storytelling, typography, and branding skills for modern digital platforms.",
+      link: "https://drive.google.com/drive/folders/113wLmJFY3Q3JNBGmtBRa1IYc5oB7Dq_w?usp=drive_link",
     },
     {
-      title: "3D Ball-Collecting Game",
+      title: "Creative Motion Graphics Showcase",
       image: "/assets/projects/s1.png",
-      description: "The 3D Ball-Collecting Game is an interactive and visually engaging project developed using Unity Engine and C#. In this game, players navigate a dynamic environment, collecting balls while engaging with thoughtfully designed mechanics and vibrant visuals.",
+      description: "A collection of motion graphic videos designed with Adobe After Effects, featuring modern animations, cinematic transitions, text effects, and visual storytelling techniques for promotional and multimedia projects.",
       link: " https://lnkd.in/ewMgVNyJ"
     },
     {
-      title: "Redesigned SLT Mobitel App Interface",
-      image: "/assets/projects/s4.png",
-      description: "Evaluated and redesigned the home interface of the SLT Mobitel app with the goal of improving user experience and interface clarity. This redesign focuses on enhancing usability while maintaining a visually appealing and cohesive look.",
-      link: " https://lnkd.in/eXEuPZWd",
+      title: "3D Visual Animation Projects",
+      image: "/assets/projects/s7.png",
+      description: "A collection of 3D animation video created with Blender, highlighting detailed modeling, realistic environments, camera animations, lighting effects, and cinematic rendering. These projects demonstrate creativity, technical skills, and visual storytelling for animation and multimedia productions.",
+      link: " https://drive.google.com/drive/folders/1FZJbZvJWN_aLdy89fVXkUC_7rnYf6kbJ?usp=sharing",
     },
   ];
 
