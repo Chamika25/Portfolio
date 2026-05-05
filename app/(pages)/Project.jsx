@@ -34,7 +34,7 @@ const Project = () => {
       title: "Creative Motion Graphics Showcase",
       image: "/assets/projects/s6.png",
       description: "A collection of motion graphic videos designed with Adobe After Effects, featuring modern animations, cinematic transitions, text effects, and visual storytelling techniques for promotional and multimedia projects.",
-      link: " https://lnkd.in/ewMgVNyJ"
+      link: " https://drive.google.com/drive/folders/1Zu92Rimm4bR08p5mOOtzvRWHbATaYZZG?usp=sharing"
     },
     {
       title: "3D Visual Animation Projects",

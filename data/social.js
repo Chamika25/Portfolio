@@ -3,11 +3,11 @@ import { FaGithub, FaLinkedin, FaYoutube, FaTwitter } from "react-icons/fa";
 const social = [
   {
     icon: <FaGithub />,
-    url: "https://github.com/buddika-kasun",
+    url: "https://github.com/Chamika25",
   },
   {
     icon: <FaLinkedin />,
-    url: "https://www.linkedin.com/in/buddika-kasun-",
+    url: "www.linkedin.com/in/chamika-dilhara-631641335",
   },
   {
     icon: <FaYoutube />,

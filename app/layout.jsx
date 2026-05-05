@@ -9,7 +9,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata = {
   title: "Chamika Dilhara",
-  description: "Portfolio of D.L. Buddika Kasun",
+  description: "Portfolio of U.K.D.Chamika Dilhara",
 };
 
 export default function RootLayout({ children }) {
